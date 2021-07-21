@@ -11,9 +11,13 @@ const Slika=()=>{
     const link="https://www.almaks.rs/get-image/"+odabranaOpasnost
 
     return(
+        <>
+        {opasnostValue&&
         <div>
            <img width='26px' height='26px' src={link} alt="" />
         </div>
+        }
+        </>
     )
 }
 export default Slika

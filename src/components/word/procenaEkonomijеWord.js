@@ -57,7 +57,7 @@ const ProcenaEkonomijeWord = () => {
     <>
             {ekonomijaInfoValue &&
                 <div style={{ fontFamily: "sans-serif" }}>
-                    <h1 style={{ fontSize: "14.5px", textDecoration: "underline" }}>Процена вероватноће</h1>
+                    <h3 style={{ fontSize: "14.5px", textDecoration: "underline" }}>Процена вероватноће</h3>
                     <p style={{ fontSize: "14.5px" }}>Разматрајучћи опасност на основу доступних података и анализа, радна група за процену ризика се пределила да вероватноћу одреди на основу вероватноће појављивања земљотреса.</p>
                    <table style={{ fontFamily: "sans-serif", borderCollapse: "collapse", fontSize: "11px", width: "100%" }}>
                         <thead style={{ fontSize: "13px" }}>

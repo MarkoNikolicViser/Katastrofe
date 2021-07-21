@@ -1,8 +1,19 @@
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useState, useContext, useRef, useEffect } from 'react';
+import { TContext } from '../context'
 import Slika from './Slika'
 
 
-const Matrica = () => {
+const MatricaEkonimijaWord = () => {
+
+
+
+    const { verKolona, infraIdRed, } = useContext(TContext)
+    const [verKolonaValue, setVerKolonaValue] = verKolona
+    const[infraIdRedValue,setInfraIdRedValue]=infraIdRed;
+    const [proracun, setProracun] = useState()
+
+
+
 
     const [tabela, setTabela] = useState({
         peti: [1, 2, 3, 4, 5],
@@ -17,6 +28,13 @@ const Matrica = () => {
     const OpcijaVerovatnoceRef4 = useRef([])
     const OpcijaVerovatnoceRef5 = useRef([])
 
+    const Proracun = () => {
+        const rez = verKolonaValue + (infraIdRedValue - 1) * 5
+        setProracun(rez)
+    }
+    useEffect(() => {
+        Proracun()
+    }, [proracun]);
     useEffect(() => {
         OpcijaVerovatnoceRef5.current[1].style.backgroundColor = "green"
         OpcijaVerovatnoceRef5.current[2].style.backgroundColor = "green"
@@ -46,50 +64,55 @@ const Matrica = () => {
     }, []);
 
 
-    const[test,setTest]=useState(9)
 
     return (
         <>
             <div style={{ fontFamily: "sans-serif" }}>
 
-                <table style={{ fontFamily: "sans-serif", borderCollapse: "collapse", fontSize: "11px", width: "auto", height: "auto" }}>
+                <table style={{ fontFamily: "sans-serif", borderCollapse: "collapse", fontSize: "11px", width: "350px", height: "100px" }}>
                     <tbody style={{ fontSize: "13px" }}>
                         <tr id="prva" style={{ textAlign: "center" }}>
+                            <td>Катастрофалне 5</td>
                             {tabela.prvi.map(m => (
-                                <td ref={el => OpcijaVerovatnoceRef1.current[m] = el} key={m} style={{ border: "1px solid black", padding: "6px 10px 6px 10px",width:"60px",height:"60px" }}>
-                                    {m}{test===m&&<Slika />}
+                                <td ref={el => OpcijaVerovatnoceRef1.current[m] = el} key={m} style={{ border: "1px solid black", padding: "6px 10px 6px 10px", width: "60px", height: "60px" }}>
+                                    {proracun === m && <Slika />}
                                 </td>
                             ))}
                         </tr>
                         <tr style={{ textAlign: "center" }}>
+                            <td>Озбиљне 4</td>
                             {tabela.drugi.map(m => (
-                                <td ref={el => OpcijaVerovatnoceRef2.current[m] = el} key={m} style={{ border: "1px solid black", padding: "6px 10px 6px 10px",width:"60px",height:"60px" }}>
-                                    {m}{test===m&&<Slika />}
+                                <td ref={el => OpcijaVerovatnoceRef2.current[m] = el} key={m} style={{ border: "1px solid black", padding: "6px 10px 6px 10px", width: "60px", height: "60px" }}>
+                                    {proracun === m && <Slika />}
                                 </td>
                             ))}
                         </tr>
                         <tr style={{ textAlign: "center" }}>
+                            <td>Умерене 3</td>
                             {tabela.treci.map(m => (
-                                <td ref={el => OpcijaVerovatnoceRef3.current[m] = el} key={m} style={{ border: "1px solid black", padding: "6px 10px 6px 10px",width:"60px",height:"60px" }}>
-                                    {m}{test===m&&<Slika />}
+                                <td ref={el => OpcijaVerovatnoceRef3.current[m] = el} key={m} style={{ border: "1px solid black", padding: "6px 10px 6px 10px", width: "60px", height: "60px" }}>
+                                    {proracun === m && <Slika />}
                                 </td>
                             ))}
                         </tr>
                         <tr style={{ textAlign: "center" }}>
+                            <td>Мале 2</td>
                             {tabela.cetvrti.map(m => (
-                                <td ref={el => OpcijaVerovatnoceRef4.current[m] = el} key={m} style={{ border: "1px solid black", padding: "6px 10px 6px 10px",width:"60px",height:"60px" }}>
-                                    {m}{test===m&&<Slika />}
+                                <td ref={el => OpcijaVerovatnoceRef4.current[m] = el} key={m} style={{ border: "1px solid black", padding: "6px 10px 6px 10px", width: "60px", height: "60px" }}>
+                                    {proracun === m && <Slika />}
                                 </td>
                             ))}
                         </tr>
                         <tr style={{ textAlign: "center" }}>
+                            <td>Минималне 1</td>
                             {tabela.peti.map(m => (
-                                <td ref={el => OpcijaVerovatnoceRef5.current[m] = el} key={m} style={{ border: "1px solid black", padding: "6px 10px 6px 10px",width:"60px",height:"60px" }}>
-                                    {m}{test===m&&<Slika />}
+                                <td ref={el => OpcijaVerovatnoceRef5.current[m] = el} key={m} style={{ border: "1px solid black", padding: "6px 10px 6px 10px", width: "60px", height: "60px" }}>
+                                    {proracun === m && <Slika />}
                                 </td>
                             ))}
                         </tr>
                         <tr>
+                            <th></th>
                             <th>1</th>
                             <th>2</th>
                             <th>3</th>
@@ -102,4 +125,5 @@ const Matrica = () => {
         </>
     )
 }
-export default Matrica
+
+export default MatricaEkonimijaWord;
