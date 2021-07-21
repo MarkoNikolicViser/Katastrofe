@@ -29,6 +29,9 @@ export const TProvider=(props)=>{
     const[ekonomijaInfo,setEkonomijaInfo]=useState()
     const[infroInfo,setInfroInfo]=useState()
     const[verKolona,setVerKolona]=useState()
+    const[zivotIdRed,setZivotIdRed]=useState(0)
+    const[ekonomijaIdRed,setEkonomijaIdRed]=useState(0)
+    const[infraIdRed,setInfraIdRed]=useState(0)
 
 
     return(
@@ -44,7 +47,10 @@ export const TProvider=(props)=>{
             zivotInfo:[zivotInfo,setZivotInfo],
             ekonomijaInfo:[ekonomijaInfo,setEkonomijaInfo],
             infroInfo:[infroInfo,setInfroInfo],
-            verKolona:[verKolona,setVerKolona]
+            verKolona:[verKolona,setVerKolona],
+            zivotIdRed:[zivotIdRed,setZivotIdRed],
+            ekonomijaIdRed:[ekonomijaIdRed,setEkonomijaIdRed],
+            infraIdRed:[infraIdRed,setInfraIdRed]
          }}>
             {props.children}
         </TContext.Provider>
