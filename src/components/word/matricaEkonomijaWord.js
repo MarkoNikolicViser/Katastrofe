@@ -63,9 +63,7 @@ const MatricaEkonimijaWord = () => {
         OpcijaVerovatnoceRef1.current[25].style.backgroundColor = "red"
     }, []);
 
-useEffect(() => {
-    console.log("test")
-}, []);
+
 
     return (
         <>
