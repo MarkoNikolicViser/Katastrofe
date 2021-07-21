@@ -1,56 +1,97 @@
 import React, { useState, useContext, useRef, useEffect } from 'react';
 import { TContext } from '../context'
+import Slika from './Slika'
 
 const ProcenaVerovatnoceWord = () => {
 
-    const { procVerovatnoce, odabranaVerovatnoca, odabranaVrednostVer } = useContext(TContext)
+    const { procVerovatnoce, odabranaVerovatnoca, odabranaVrednostVer, verKolona } = useContext(TContext)
     const [procVerovatnoceValue, setProcVerovatnoceValue] = useState(procVerovatnoce);
     const [odabranaVerovatnocaValue, setodabranaVerovatnocaValue] = odabranaVerovatnoca
-    const[odabranaVrednostVerValue,setOdabranaVrednostVerValue]=odabranaVrednostVer
+    const [odabranaVrednostVerValue, setOdabranaVrednostVerValue] = odabranaVrednostVer
 
+    const[verKolonaValue,setVerKolonaValue]=verKolona
 
     const VrednostVerovatnoceRef = useRef([])
-    const KategorijaVerovatoceRef = useRef([{prvi:[]},{drugi:[]},{treci:[]},{cetvrti:[]},{peti:[]}])
+    const OpcijaVerovatnoceRef1 = useRef([])
+    const OpcijaVerovatnoceRef2 = useRef([])
+    const OpcijaVerovatnoceRef3 = useRef([])
+    const OpcijaVerovatnoceRef4 = useRef([])
+    const OpcijaVerovatnoceRef5 = useRef([])
 
+    const ikona1 = {
+        opasonost: 'zemljotres',
+        slika: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/73/Flat_tick_icon.svg/1200px-Flat_tick_icon.svg.png"
+    };
 
     const tabelaRef = useRef()
 
     const [tabela, setTabela] = useState(
         {
             heder: ["Kатегорија", "(а)Вероватноћа", "(б)Учсеталост", "(ц)Стручна процена", "Одобрено"],
-            prvi: ["1", "< 1%", "1 догађај у 100 година и ређе", "Занемарљива", ""],
-            drugi: ["2", "1 - 5%", "1 догађај у 20 до 100 година", "Мала", ""],
-            treci: ["3", "6 - 50%", "1 догађај у 20 до 100 година", "Средња", ""],
-            cetvrti: ["4", "51 - 98%", "1 догађај у 1 до 2 године", "Велика", ""],
-            peti: ["5", "> 98%", "1 догађај годишње и чешће", "Изразито велика", ""]
+            prvi: ["1", "< 1 %", "1 догађај у 100 година и ређе", "Занемарљива"],
+            drugi: ["2", "1 - 5 %", "1 догађај у 20 до 100 година", "Мала"],
+            treci: ["3", "6 - 50 %", "1 догађај у 2 до 20 година", "Средња"],
+            cetvrti: ["4", "51 - 98 %", "1 догађај у 1 до 2 године", "Велика"],
+            peti: ["5", "> 98 %", "1 догађај годишње и чешће", "Изразито велика"]
         }
     )
 
+    const [divSlika, setdivSlika] = useState({ prvi: true, drugi: false, treci: false, cetvrti: false, peti: false })
 
-    // useEffect(() => {
-    //     KategorijaVerovatoce1Ref.current.map(m=>{
-    //          if (odabranaVerovatnocaValue == 'verovatnoca' && odabranaVrednostVerValue==m.id) {
-    //         VrednostVerovatnoceRef.current[1].style.backgroundColor = "#d3d3d3"
-    //         KategorijaVerovatoce1Ref.current[m.id].style.backgroundColor="#d3d3d3";
-    //     }
-    //     })
-    // }, [procVerovatnoceValue,odabranaVrednostVerValue]);
+    useEffect(() => {
+        if (odabranaVerovatnocaValue == 'verovatnoca') {
+            VrednostVerovatnoceRef.current[1].style.backgroundColor = "#d3d3d3"
+        }
+        else if (odabranaVerovatnocaValue == 'ucestalost') {
+            VrednostVerovatnoceRef.current[2].style.backgroundColor = "#d3d3d3"
 
+        }
+        else if (odabranaVerovatnocaValue == 'strucna') {
+            VrednostVerovatnoceRef.current[3].style.backgroundColor = "#d3d3d3"
 
+        }
+        OpcijaVerovatnoceRef1.current.map((m, index) => {
+            if (m.id == odabranaVrednostVerValue) {
+                OpcijaVerovatnoceRef1.current[index].style.backgroundColor = '#d3d3d3'
+                OpcijaVerovatnoceRef1.current[0].style.backgroundColor = '#d3d3d3'
+                setdivSlika({ prvi: true, drugi: false, treci: false, cetvrti: false, peti: false })
+                setVerKolonaValue(1)
+            }
+        })
+        OpcijaVerovatnoceRef2.current.map((m, index) => {
+            if (m.id == odabranaVrednostVerValue) {
+                OpcijaVerovatnoceRef2.current[index].style.backgroundColor = '#d3d3d3'
+                OpcijaVerovatnoceRef2.current[0].style.backgroundColor = '#d3d3d3'
+                setdivSlika({ prvi: false, drugi: true, treci: false, cetvrti: false, peti: false })
+                setVerKolonaValue(2)
+            }
+        })
+        OpcijaVerovatnoceRef3.current.map((m, index) => {
+            if (m.id == odabranaVrednostVerValue) {
+                OpcijaVerovatnoceRef3.current[index].style.backgroundColor = '#d3d3d3'
+                OpcijaVerovatnoceRef3.current[0].style.backgroundColor = '#d3d3d3'
+                setdivSlika({ prvi: false, drugi: false, treci: true, cetvrti: false, peti: false })
+                setVerKolonaValue(3)
+            }
+        })
+        OpcijaVerovatnoceRef4.current.map((m, index) => {
+            if (m.id == odabranaVrednostVerValue) {
+                OpcijaVerovatnoceRef4.current[index].style.backgroundColor = '#d3d3d3'
+                OpcijaVerovatnoceRef4.current[0].style.backgroundColor = '#d3d3d3'
+                setdivSlika({ prvi: false, drugi: false, treci: false, cetvrti: true, peti: false })
+                setVerKolonaValue(4)
+            }
+        })
+        OpcijaVerovatnoceRef5.current.map((m, index) => {
+            if (m.id == odabranaVrednostVerValue) {
+                OpcijaVerovatnoceRef5.current[index].style.backgroundColor = '#d3d3d3'
+                OpcijaVerovatnoceRef5.current[0].style.backgroundColor = '#d3d3d3'
+                setdivSlika({ prvi: false, drugi: false, treci: false, cetvrti: false, peti: true })
+                setVerKolonaValue(5)
+            }
+        })
 
-    // useEffect(() => {
-    //     if (odabranaVerovatnocaValue == 'verovatnoca') {
-    //         VrednostVerovatnoceRef.current[1].style.backgroundColor = "#d3d3d3"
-    //     }
-    //     else if (odabranaVerovatnocaValue == 'ucestalost') {
-    //         VrednostVerovatnoceRef.current[2].style.backgroundColor = "#d3d3d3"
-
-    //     }
-    //     else if (odabranaVerovatnocaValue == 'strucna') {
-    //         VrednostVerovatnoceRef.current[3].style.backgroundColor = "#d3d3d3"
-
-    //     }
-    // }, [procVerovatnoceValue]);
+    }, [procVerovatnoceValue, odabranaVrednostVerValue]);
 
     return (
         <>
@@ -70,28 +111,43 @@ const ProcenaVerovatnoceWord = () => {
                         <tbody style={{ fontSize: "13px" }}>
                             <tr style={{ textAlign: "center" }}>
                                 {tabela.prvi.map((m, index) => (
-                                    <td id={index} key={index} ref={el => KategorijaVerovatoceRef.current[index].prvi = el} style={{ border: "1px solid black", padding: "6px 10px 6px 10px" }}>{m}</td>
+                                    <td id={m} ref={el => OpcijaVerovatnoceRef1.current[index] = el} key={index} style={{ border: "1px solid black", padding: "6px 10px 6px 10px" }}>{m}</td>
                                 ))}
+                                <td style={{ border: "1px solid black"}}>
+                                    {divSlika.prvi && <Slika />}
+                                </td>
                             </tr>
                             <tr style={{ textAlign: "center" }}>
                                 {tabela.drugi.map((m, index) => (
-                                    <td id={index} key={index} ref={el => KategorijaVerovatoceRef.drugi.current[index] = el} style={{ border: "1px solid black", padding: "6px 10px 6px 10px" }}>{m}</td>
+                                    <td id={m} ref={el => OpcijaVerovatnoceRef2.current[index] = el} key={index} style={{ border: "1px solid black", padding: "6px 10px 6px 10px" }}>{m}</td>
                                 ))}
+                                <td style={{ border: "1px solid black"}}>
+                                    {divSlika.drugi && <Slika />}
+                                </td>
                             </tr>
                             <tr style={{ textAlign: "center" }}>
                                 {tabela.treci.map((m, index) => (
-                                    <td id={index} key={index} ref={el => KategorijaVerovatoceRef.treci.current[index] = el} style={{ border: "1px solid black", padding: "6px 10px 6px 10px" }}>{m}</td>
+                                    <td id={m} ref={el => OpcijaVerovatnoceRef3.current[index] = el} key={index} style={{ border: "1px solid black", padding: "6px 10px 6px 10px" }}>{m}</td>
                                 ))}
+                                <td style={{ border: "1px solid black"}}>
+                                    {divSlika.treci && <Slika />}
+                                </td>
                             </tr>
                             <tr style={{ textAlign: "center" }}>
                                 {tabela.cetvrti.map((m, index) => (
-                                    <td id={index} key={index} ref={el => KategorijaVerovatoceRef.cetvrti.current[index] = el} style={{ border: "1px solid black", padding: "6px 10px 6px 10px" }}>{m}</td>
+                                    <td id={m} ref={el => OpcijaVerovatnoceRef4.current[index] = el} key={index} style={{ border: "1px solid black", padding: "6px 10px 6px 10px" }}>{m}</td>
                                 ))}
+                                <td style={{ border: "1px solid black"}}>
+                                    {divSlika.cetvrti && <Slika />}
+                                </td>
                             </tr>
                             <tr style={{ textAlign: "center" }}>
                                 {tabela.peti.map((m, index) => (
-                                    <td id={index} key={index} ref={el => KategorijaVerovatoceRef.peti.current[index] = el} style={{ border: "1px solid black", padding: "6px 10px 6px 10px" }}>{m}</td>
+                                    <td id={m} ref={el => OpcijaVerovatnoceRef5.current[index] = el} key={index} style={{ border: "1px solid black", padding: "6px 10px 6px 10px" }}>{m}</td>
                                 ))}
+                                <td style={{ border: "1px solid black"}}>
+                                    {divSlika.peti && <Slika />}
+                                </td>
                             </tr>
                         </tbody>
                     </table>

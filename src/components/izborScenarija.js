@@ -25,8 +25,8 @@ useEffect(() => {
 
     return(
         <div className="izbor-scenarija">
-            <button onClick={Izaberi} ref={NajverovatnijiRef} value="najverovatniji">Najverovatniji nezeljeni dogadjaj</button>
-            <button onClick={Izaberi} ref={NezeljeniRef} value="nezeljeni">Nezeljeni dogadjaj sa najtezim mogucim posledicama</button>
+            <button onClick={Izaberi} ref={NajverovatnijiRef} value="najverovatniji">Највероватнији нежељени догађај</button>
+            <button onClick={Izaberi} ref={NezeljeniRef} value="nezeljeni">Нежељени догађај са најтежим могућим последицама</button>
         </div>
     )
 }

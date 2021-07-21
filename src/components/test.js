@@ -3,7 +3,7 @@ import React,{useRef,useState,useEffect} from 'react'
 
 const Test=()=>{
 
-    const[broj,setBroj]=useState(5)
+    const[broj,setBroj]=useState(4)
 
 const d1Ref=useRef(null);
 const d2Ref=useRef(null);

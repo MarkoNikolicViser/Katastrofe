@@ -25,10 +25,10 @@ useEffect(() => {
 
     return(
         <div className="procena">
-        <h1>Odabir Procene</h1>
+        <h1>Одабир процене</h1>
         <div className="izbor-procene">
-            <button onClick={Procena} ref={DrustvoRef} value="drustvo">Privredno Drustvo</button>
-            <button onClick={Procena} ref={OpstinaRef} value="opstina">Opstina</button>
+            <button onClick={Procena} ref={DrustvoRef} value="drustvo">Привредно друштво</button>
+            <button onClick={Procena} ref={OpstinaRef} value="opstina">Општина</button>
         </div>
         </div>
     )

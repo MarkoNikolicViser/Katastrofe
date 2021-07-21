@@ -25,6 +25,10 @@ export const TProvider=(props)=>{
     })
     const[odabranaVerovatnoca,setOdabranaVerovatnoca]=useState()
     const[odabranaVrednostVer,setOdabranaVrednostVer]=useState()
+    const[zivotInfo,setZivotInfo]=useState()
+    const[ekonomijaInfo,setEkonomijaInfo]=useState()
+    const[infroInfo,setInfroInfo]=useState()
+    const[verKolona,setVerKolona]=useState()
 
 
     return(
@@ -36,8 +40,11 @@ export const TProvider=(props)=>{
             procVerovatnoce:[procVerovatnoce,setProcVerovatnoce],
             procPosledica:[procPosledica,setProcPosledica],
             odabranaVerovatnoca:[odabranaVerovatnoca,setOdabranaVerovatnoca],
-            odabranaVrednostVer:[odabranaVrednostVer,setOdabranaVrednostVer]
-
+            odabranaVrednostVer:[odabranaVrednostVer,setOdabranaVrednostVer],
+            zivotInfo:[zivotInfo,setZivotInfo],
+            ekonomijaInfo:[ekonomijaInfo,setEkonomijaInfo],
+            infroInfo:[infroInfo,setInfroInfo],
+            verKolona:[verKolona,setVerKolona]
          }}>
             {props.children}
         </TContext.Provider>

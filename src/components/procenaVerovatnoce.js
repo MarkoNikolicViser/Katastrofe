@@ -15,8 +15,8 @@ const StrucnaRef=useRef(null)
 const VrednostVerovatnoceRef=useRef([])
 
 const[verovatnocaNiz,setVerovatnocaNiz]=useState(["< 1 %","1 - 5 %","6 - 50 %","51 - 98 %","> 98 %"])
-const[ucestanostNiz,setUncestanostNiz]=useState(["1 dogadjaj u 100god i redje","1 dogadjaj u 20 do 100 godina i redje","1 dogadjaj u 2 do 20 godina","1 dogadjaj u 1 do 2 godine","1 dogadjaj godisnje ili cesce"])
-const[strucnaProcena,setStrucnaProcena]=useState(["Zanemarliva","Mala","Srednja","Velika","Izuzeno velika"])
+const[ucestanostNiz,setUncestanostNiz]=useState(["1 догађај у 100 година и ређе","1 догађај у 20 до 100 година","1 догађај у 2 до 20 година","1 догађај у 1 до 2 године","1 догађај годишње и чешће"])
+const[strucnaProcena,setStrucnaProcena]=useState(["Занемарљива","Мала","Средња","Велика","Изразито велика"])
 
 const PromenaVerovatnoce=(e)=>{
 if(e.target.value==="verovatnoca"){
@@ -51,8 +51,9 @@ const OdabirVredostiVerovatnoce=(e)=>{
             niz.map(m=>{
                 VrednostVerovatnoceRef.current[m].style.backgroundColor="white"     
             })
-            setOdabranaVrednostVerValue(e.target.value)
+            setOdabranaVrednostVerValue(e.target.id)
         }
+        
         useEffect(() => {
             if(procVerovatnoceValue.ucestalost)
             UcestalostRef.current.style.backgroundColor="grey";
@@ -64,11 +65,11 @@ const OdabirVredostiVerovatnoce=(e)=>{
 
     return(
         <div className="verovatnoce">
-            <h3>Izaberi verovatnoce</h3>
-                <div>
-                    <button onClick={PromenaVerovatnoce} ref={VerovatnocaRef} value="verovatnoca">Verovatnoca</button>
-                    <button onClick={PromenaVerovatnoce} ref={UcestalostRef} value="ucestalost">Ucestalost</button>
-                    <button onClick={PromenaVerovatnoce} ref={StrucnaRef} value="strucna">Strucna Procena</button>
+            <h3>Изабери вероватноће</h3>
+                <div className="izborVerovatnoce">
+                    <button onClick={PromenaVerovatnoce} ref={VerovatnocaRef} value="verovatnoca">Вероватноћа</button>
+                    <button onClick={PromenaVerovatnoce} ref={UcestalostRef} value="ucestalost">Учсеталост</button>
+                    <button onClick={PromenaVerovatnoce} ref={StrucnaRef} value="strucna">Стручна процена</button>
                 </div>
                 <div className="procene-nizovi">
         {/* ////////////////////////////////////////////////////// */}

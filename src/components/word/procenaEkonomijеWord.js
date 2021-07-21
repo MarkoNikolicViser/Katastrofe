@@ -3,21 +3,21 @@ import { TContext } from '../context'
 import Slika from './Slika'
 
 
-const ProcenaPosledica = () => {
+const ProcenaEkonomijeWord = () => {
 
 
-  const { zivotInfo } = useContext(TContext)
-  const[zivotInfoValue,setZivotInfoValue]=zivotInfo
+  const { ekonomijaInfo } = useContext(TContext)
   const [divSlika, setdivSlika] = useState({ prvi: true, drugi: false, treci: false, cetvrti: false, peti: false })
+  const[ekonomijaInfoValue,setEkonomijaInfoValue]=ekonomijaInfo
 
 
   const [tabela, setTabela] = useState({
     heder: ["Категорија", "Величина последица", "Критеријум", "Одабрано"],
-    prvi: ["1", "Минимална", "< 5"],
-    drugi: ["2", "Мала", "5 - 20"],
-    treci: ["3", "Умерена", "21-50"],
-    cetvrti: ["4", "Озбиљна", "51-150"],
-    peti: ["5", "Катастрофална", "> 150"]
+    prvi: ["1", "Минимална", "Од 0,1 - 1 %"],
+    drugi: ["2", "Мала", "Од 1,1 - 3 %"],
+    treci: ["3", "Умерена", "Од 3,1 - 7 %"],
+    cetvrti: ["4", "Озбиљна", "Од 7,1 - 10 %"],
+    peti: ["5", "Катастрофална", "чији износ прелази 10%"]
   })
   const VrednostPoslediceRef1 = useRef([])
   const VrednostPoslediceRef2 = useRef([])
@@ -26,36 +26,36 @@ const ProcenaPosledica = () => {
   const VrednostPoslediceRef5 = useRef([])
 
   useEffect(() => {
-    if(zivotInfoValue<5)
+    if(ekonomijaInfoValue>0.1&&ekonomijaInfoValue<=1)
     VrednostPoslediceRef1.current.map(m=>{
       m.style.backgroundColor='#d3d3d3'
       setdivSlika({ prvi: true, drugi: false, treci: false, cetvrti: false, peti: false })
     })
-    else if(zivotInfoValue>=5&&zivotInfoValue<=20)
+    else if(ekonomijaInfoValue>1&&ekonomijaInfoValue<=3)
     VrednostPoslediceRef2.current.map(m=>{
       m.style.backgroundColor='#d3d3d3'
       setdivSlika({ prvi: false, drugi: true, treci: false, cetvrti: false, peti: false })
     })
-    else if(zivotInfoValue>20&&zivotInfoValue<=50)
+    else if(ekonomijaInfoValue>3&&ekonomijaInfoValue<=7)
     VrednostPoslediceRef3.current.map(m=>{
       m.style.backgroundColor='#d3d3d3'
       setdivSlika({ prvi: false, drugi: false, treci: true, cetvrti: false, peti: false })
     })
-    else if(zivotInfoValue>50&&zivotInfoValue<=150)
+    else if(ekonomijaInfoValue>7&&ekonomijaInfoValue<=10)
     VrednostPoslediceRef4.current.map(m=>{
       m.style.backgroundColor='#d3d3d3'
       setdivSlika({ prvi: false, drugi: false, treci: false, cetvrti: true, peti: false })
     })
-    else if(zivotInfoValue>150)
+    else if(ekonomijaInfoValue>10)
     VrednostPoslediceRef5.current.map(m=>{
       m.style.backgroundColor='#d3d3d3'
       setdivSlika({ prvi: false, drugi: false, treci: false, cetvrti: false, peti: true })
     })
-  }, [zivotInfoValue]);
+  }, [ekonomijaInfoValue]);
 
   return (
     <>
-            {zivotInfoValue &&
+            {ekonomijaInfoValue &&
                 <div style={{ fontFamily: "sans-serif" }}>
                     <h1 style={{ fontSize: "14.5px", textDecoration: "underline" }}>Процена вероватноће</h1>
                     <p style={{ fontSize: "14.5px" }}>Разматрајучћи опасност на основу доступних података и анализа, радна група за процену ризика се пределила да вероватноћу одреди на основу вероватноће појављивања земљотреса.</p>
@@ -115,4 +115,4 @@ const ProcenaPosledica = () => {
         </>
   )
 }
-export default ProcenaPosledica
+export default ProcenaEkonomijeWord

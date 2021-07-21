@@ -1,7 +1,10 @@
 import React from 'react';
 import ProcenaVerovatnoceWord from './word/procenaVerovatnoceWord'
 import ProcenaPosledica from './word/procenaPosledicaWord';
+import ProcenaEkonomijeWord from './word/procenaEkonomijеWord';
 import {Link} from 'react-router-dom'
+import ProcenaPoKritInfraWord from './word/procenaPoKritInfraWord';
+import Matrica from './word/matricaWord';
 
 const Preview=()=>{
 
@@ -28,6 +31,9 @@ const Preview=()=>{
         <div id="source-html">
             <ProcenaVerovatnoceWord/>
             <ProcenaPosledica/>
+            <ProcenaEkonomijeWord/>
+            <ProcenaPoKritInfraWord/>
+            <Matrica/>
             </div>
             <Link to="/">
             <button>Nazad</button>

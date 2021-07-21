@@ -143,3 +143,8 @@ height: 2.5rem;
   align-items: center;
   justify-content: center;
 }
+.izborVerovatnoce{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
