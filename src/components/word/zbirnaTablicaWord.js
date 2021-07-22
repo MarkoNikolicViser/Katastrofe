@@ -62,36 +62,28 @@ const ZbirnaTablicaWord = () => {
                         <td style={{ border: "1px solid black", padding: "6px 10px 6px 10px" }}>Веома висок</td>
                         <td style={{ border: "1px solid black", padding: "6px 10px 6px 10px" }}>НЕПРИХВАТЉИВ</td>
                         <td style={{textAlign:"center"}}>Веома висок и висок ниво ризика, захтевају третман</td>
-                        <td style={{ border: "1px solid black", textAlign:"center"  }}>
-                        {prikazi.cetvrti && <Slika />}
-                        </td>
+                        <td style={{ border: "1px solid black", textAlign:"center"  }}>{prikazi.cetvrti && <Slika />}</td>
                     </tr>
                     <tr style={{height:"30px"}}>
                         <td style={{ backgroundColor: "orange", border: "1px solid black" }}></td>
                         <td style={{ border: "1px solid black", padding: "6px 10px 6px 10px" }}>Висок</td>
                         <td style={{ border: "1px solid black", padding: "6px 10px 6px 10px" }}>НЕПРИХВАТЉИВ</td>
                         <td style={{borderBottom:"1px solid black", textAlign:"center",paddingTop:"-10px"  }}>ризика ради смaњења на ниво прихватљивости</td>
-                        <td style={{ border: "1px solid black", textAlign:"center"  }}>
-                        {prikazi.treci && <Slika />}
-                        </td>
+                        <td style={{ border: "1px solid black", textAlign:"center"  }}>{prikazi.treci && <Slika />}</td>
                     </tr>
                     <tr style={{height:"30px"}}>
                         <td style={{ backgroundColor: "yellow", border: "1px solid black" }}></td>
                         <td style={{ border: "1px solid black", padding: "6px 10px 6px 10px" }}>Умерен</td>
                         <td style={{ border: "1px solid black", padding: "6px 10px 6px 10px" }}>ПРИХВАТЉИВ</td>
                         <td style={{borderBottom:"1px solid black",textAlign:"center"}}>Умерени ризик може да значи потребу предузимања неких радњи</td>
-                        <td style={{ border: "1px solid black", textAlign:"center"  }}>
-                        {prikazi.drugi && <Slika />}
-                        </td>
+                        <td style={{ border: "1px solid black", textAlign:"center"  }}>{prikazi.drugi && <Slika />}</td>
                     </tr>
                     <tr style={{height:"30px"}}>
                         <td style={{ backgroundColor: "green", border: "1px solid black" }}></td>
                         <td style={{ border: "1px solid black", padding: "6px 10px 6px 10px" }}>Умерен</td>
                         <td style={{ border: "1px solid black", padding: "6px 10px 6px 10px" }}>НИЗАК</td>
                         <td style={{borderBottom:"1px solid black",textAlign:"center"}}>Низак ризик, може значити да се не предузима нкаква радња</td>
-                        <td style={{ border: "1px solid black", textAlign:"center" }}>
-                        {prikazi.prvi && <Slika />}
-                        </td>
+                        <td style={{ border: "1px solid black", textAlign:"center" }}>{prikazi.prvi && <Slika />}</td>
                     </tr>
                 </tbody>
             </table>

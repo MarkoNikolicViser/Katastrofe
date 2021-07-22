@@ -5,11 +5,11 @@ import {Link} from 'react-router-dom'
 const Save=()=>{
 
     return(
-        <div>
-            <Link to="/preview">
+        <div className='save'>
                 <button>Sacuvaj sve</button>
+                <Link to="/preview">
                 <button>Vidi Preview</button>
-            </Link>
+                </Link>
         </div>
     )
 }

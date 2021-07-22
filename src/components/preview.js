@@ -53,41 +53,26 @@ const Preview = () => {
                     <table style={{ fontFamily: "sans-serif", borderCollapse: "collapse", fontSize: "11px", width: "100%" }}>
                         <tbody>
                             <tr>
-                                {zivotIdRedValue && <>
+                                {zivotIdRedValue ?( <>
                                     <td style={{ border: "1px solid black" }}>
                                         <MatricaZivot />
                                     </td>
-                                    <td>
-                                        <LegendaZivot />
-                                    </td>
-                                </>}
-                                {ekonomijaIdRedValue && <>
-                                    <td style={{ border: "1px solid black" }}>
-                                        <MatricaEkonomija />
-                                    </td>
-                                    <td>
-                                        <LegendaEkonomija />
-                                    </td>
-                                </>}
+                                    <td><LegendaZivot /></td>
+                                </>):null}
+                                {ekonomijaIdRedValue ?( <>
+                                    <td style={{ border: "1px solid black" }}><MatricaEkonomija /></td>
+                                    <td><LegendaEkonomija /></td>
+                                </>):null}
                             </tr>
                             <tr>
-                                {infraIdRedValue && <>
-                                    <td style={{ border: "1px solid black" }}>
-                                        <MatricaInfra />
-                                    </td>
-                                    <td>
-                                        <LegendaInfra />
-                                    </td>
-                                </>}
-                                <td style={{ border: "1px solid black" }}>
-                                    <MatricaZbirna />
-                                </td>
-                                <td>
-                                    <LegendaZbirna />
-                                </td>
+                                {infraIdRedValue ? (<>
+                                    <td style={{ border: "1px solid black" }}><MatricaInfra /></td>
+                                    <td><LegendaInfra /></td>
+                                </>):null}
+                                <td style={{ border: "1px solid black" }}><MatricaZbirna /></td>
+                                <td><LegendaZbirna /></td>
                             </tr>
                         </tbody>
-
                     </table>
                     <ZbirnaTablicaWord />
                 </div>

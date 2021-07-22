@@ -148,3 +148,23 @@ height: 2.5rem;
   align-items: center;
   justify-content: center;
 }
+.proba{
+  display: flex;
+  width: 100%;
+}
+.proba1{
+  width: 50%;
+  border: 0.1rem solid black;
+  margin:3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.save{
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  padding-bottom: 3rem;
+}

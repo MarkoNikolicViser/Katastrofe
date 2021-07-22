@@ -74,41 +74,31 @@ const MatricaEkonimijaWord = () => {
                         <tr id="prva" style={{ textAlign: "center" }}>
                             <td>Катастрофалне 5</td>
                             {tabela.prvi.map(m => (
-                                <td ref={el => OpcijaVerovatnoceRef1.current[m] = el} key={m} style={{ border: "1px solid black", padding: "6px 10px 6px 10px", width: "60px", height: "60px" }}>
-                                    {proracun === m && <Slika />}
-                                </td>
+                                <td ref={el => OpcijaVerovatnoceRef1.current[m] = el} key={m} style={{ border: "1px solid black", padding: "6px 10px 6px 10px", width: "60px", height: "60px" }}>{proracun === m && <Slika/>}</td>
                             ))}
                         </tr>
                         <tr style={{ textAlign: "center" }}>
                             <td>Озбиљне 4</td>
                             {tabela.drugi.map(m => (
-                                <td ref={el => OpcijaVerovatnoceRef2.current[m] = el} key={m} style={{ border: "1px solid black", padding: "6px 10px 6px 10px", width: "60px", height: "60px" }}>
-                                    {proracun === m && <Slika />}
-                                </td>
+                                <td ref={el => OpcijaVerovatnoceRef2.current[m] = el} key={m} style={{ border: "1px solid black", padding: "6px 10px 6px 10px", width: "60px", height: "60px" }}>{proracun === m && <Slika/>}</td>
                             ))}
                         </tr>
                         <tr style={{ textAlign: "center" }}>
                             <td>Умерене 3</td>
                             {tabela.treci.map(m => (
-                                <td ref={el => OpcijaVerovatnoceRef3.current[m] = el} key={m} style={{ border: "1px solid black", padding: "6px 10px 6px 10px", width: "60px", height: "60px" }}>
-                                    {proracun === m && <Slika />}
-                                </td>
+                                <td ref={el => OpcijaVerovatnoceRef3.current[m] = el} key={m} style={{ border: "1px solid black", padding: "6px 10px 6px 10px", width: "60px", height: "60px" }}>{proracun === m && <Slika/>}</td>
                             ))}
                         </tr>
                         <tr style={{ textAlign: "center" }}>
                             <td>Мале 2</td>
                             {tabela.cetvrti.map(m => (
-                                <td ref={el => OpcijaVerovatnoceRef4.current[m] = el} key={m} style={{ border: "1px solid black", padding: "6px 10px 6px 10px", width: "60px", height: "60px" }}>
-                                    {proracun === m && <Slika />}
-                                </td>
+                                <td ref={el => OpcijaVerovatnoceRef4.current[m] = el} key={m} style={{ border: "1px solid black", padding: "6px 10px 6px 10px", width: "60px", height: "60px" }}>{proracun === m && <Slika/>}</td>
                             ))}
                         </tr>
                         <tr style={{ textAlign: "center" }}>
                             <td>Минималне 1</td>
                             {tabela.peti.map(m => (
-                                <td ref={el => OpcijaVerovatnoceRef5.current[m] = el} key={m} style={{ border: "1px solid black", padding: "6px 10px 6px 10px", width: "60px", height: "60px" }}>
-                                    {proracun === m && <Slika />}
-                                </td>
+                                <td ref={el => OpcijaVerovatnoceRef5.current[m] = el} key={m} style={{ border: "1px solid black", padding: "6px 10px 6px 10px", width: "60px", height: "60px" }}>{proracun === m && <Slika/>}</td>
                             ))}
                         </tr>
                         <tr>
