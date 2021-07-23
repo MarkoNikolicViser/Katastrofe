@@ -1,23 +1,22 @@
 import React, { useState, useRef, useEffect, useContext } from 'react';
-import Slika from './Slika'
+import Slika from '../Slika'
 import { TContext } from '../context';
 
 
 
 const Legenda = () => {
-    const { verKolona, ekonomijaIdRed } = useContext(TContext)
+    const { verKolona, zivotIdRed } = useContext(TContext)
     const [verKolonaValue, setVerKolonaValue] = verKolona
-    const [ekonomijaIdRedValue, setekonomijaIdRedValue] = ekonomijaIdRed
+    const [zivotIdRedValue, setZivotIdRedValue] = zivotIdRed
     const [proracun, setProracun] = useState()
 
     const Proracun = () => {
-        const rez = verKolonaValue + (ekonomijaIdRedValue - 1) * 5
+        const rez=verKolonaValue+(zivotIdRedValue-1)*5
         setProracun(rez)
     }
     useEffect(() => {
         Proracun()
     }, [proracun]);
-
     const [prikazi, setPrikazi] = useState({
         prvi: false,
         drugi: false,
@@ -26,11 +25,11 @@ const Legenda = () => {
     })
 
     const Prikazi = () => {
-        if ((proracun >= 18 && proracun <=20) | (proracun >= 23 && proracun <= 25))
+        if ((proracun >= 18 && proracun <=20) || (proracun >= 23 && proracun <= 25))
             setPrikazi({ prvi: false, drugi: false, treci: false, cetvrti: true })
-        else if ((proracun > 11 && proracun <= 15) | (proracun == 17 | proracun == 22))
+        else if ((proracun > 11 && proracun <= 15) || proracun == 17 || proracun == 22)
             setPrikazi({ prvi: false, drugi: false, treci: true, cetvrti: false })
-        else if ((proracun > 6 && proracun <= 11) | (proracun == 16 | proracun == 21))
+        else if ((proracun > 6 && proracun <= 11) || proracun == 16 || proracun == 21)
             setPrikazi({ prvi: false, drugi: true, treci: false, cetvrti: false })
         else if ((proracun > 0 && proracun <= 6))
             setPrikazi({ prvi: true, drugi: false, treci: false, cetvrti: false })

@@ -1,6 +1,6 @@
 import React, { useState, useContext, useRef, useEffect } from 'react';
 import { TContext } from '../context'
-import Slika from './Slika'
+import Slika from '../Slika'
 
 const ProcenaVerovatnoceWord = () => {
 
@@ -18,12 +18,7 @@ const ProcenaVerovatnoceWord = () => {
     const OpcijaVerovatnoceRef4 = useRef([])
     const OpcijaVerovatnoceRef5 = useRef([])
 
-    const ikona1 = {
-        opasonost: 'zemljotres',
-        slika: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/73/Flat_tick_icon.svg/1200px-Flat_tick_icon.svg.png"
-    };
 
-    const tabelaRef = useRef()
 
     const [tabela, setTabela] = useState(
         {

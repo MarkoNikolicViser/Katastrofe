@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect, useContext } from 'react';
-import Slika from './Slika'
+import Slika from '../Slika'
 import { TContext } from '../context';
 
 

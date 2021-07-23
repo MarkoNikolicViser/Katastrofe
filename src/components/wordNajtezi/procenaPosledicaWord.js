@@ -1,23 +1,23 @@
 import React, { useState, useContext, useRef, useEffect } from 'react';
 import { TContext } from '../context'
-import Slika from './Slika'
+import Slika from '../Slika'
 
 
-const ProcenaPoKritInfraWord = () => {
+const ProcenaPosledica = () => {
 
 
-  const { infroInfo } = useContext(TContext)
+  const { zivotInfoN } = useContext(TContext)
+  const[zivotInfoNValue,setzivotInfoNValue]=zivotInfoN
   const [divSlika, setdivSlika] = useState({ prvi: true, drugi: false, treci: false, cetvrti: false, peti: false })
-  const[infroInfoValue,setInfroInfoValue]=infroInfo
 
 
   const [tabela, setTabela] = useState({
     heder: ["Категорија", "Величина последица", "Критеријум", "Одабрано"],
-    prvi: ["1", "Минимална", "< 0,5 %"],
-    drugi: ["2", "Мала", "0,5 - 1 %"],
-    treci: ["3", "Умерена", "1 - 3 %"],
-    cetvrti: ["4", "Озбиљна", "3 - 5 %"],
-    peti: ["5", "Катастрофална", "> 5 %"]
+    prvi: ["1", "Минимална", "< 5"],
+    drugi: ["2", "Мала", "5 - 20"],
+    treci: ["3", "Умерена", "21-50"],
+    cetvrti: ["4", "Озбиљна", "51-150"],
+    peti: ["5", "Катастрофална", "> 150"]
   })
   const VrednostPoslediceRef1 = useRef([])
   const VrednostPoslediceRef2 = useRef([])
@@ -26,36 +26,36 @@ const ProcenaPoKritInfraWord = () => {
   const VrednostPoslediceRef5 = useRef([])
 
   useEffect(() => {
-    if(infroInfoValue>0.1&&infroInfoValue<=1)
+    if(zivotInfoNValue<5)
     VrednostPoslediceRef1.current.map(m=>{
       m.style.backgroundColor='#d3d3d3'
       setdivSlika({ prvi: true, drugi: false, treci: false, cetvrti: false, peti: false })
     })
-    else if(infroInfoValue>1&&infroInfoValue<=3)
+    else if(zivotInfoNValue>=5&&zivotInfoNValue<=20)
     VrednostPoslediceRef2.current.map(m=>{
       m.style.backgroundColor='#d3d3d3'
       setdivSlika({ prvi: false, drugi: true, treci: false, cetvrti: false, peti: false })
     })
-    else if(infroInfoValue>3&&infroInfoValue<=7)
+    else if(zivotInfoNValue>20&&zivotInfoNValue<=50)
     VrednostPoslediceRef3.current.map(m=>{
       m.style.backgroundColor='#d3d3d3'
       setdivSlika({ prvi: false, drugi: false, treci: true, cetvrti: false, peti: false })
     })
-    else if(infroInfoValue>7&&infroInfoValue<=10)
+    else if(zivotInfoNValue>50&&zivotInfoNValue<=150)
     VrednostPoslediceRef4.current.map(m=>{
       m.style.backgroundColor='#d3d3d3'
       setdivSlika({ prvi: false, drugi: false, treci: false, cetvrti: true, peti: false })
     })
-    else if(infroInfoValue>10)
+    else if(zivotInfoNValue>150)
     VrednostPoslediceRef5.current.map(m=>{
       m.style.backgroundColor='#d3d3d3'
       setdivSlika({ prvi: false, drugi: false, treci: false, cetvrti: false, peti: true })
     })
-  }, [infroInfoValue]);
+  }, [zivotInfoNValue]);
 
   return (
     <>
-            {infroInfoValue &&
+            {zivotInfoNValue &&
                 <div style={{ fontFamily: "sans-serif" }}>
                     <h1 style={{ fontSize: "14.5px", textDecoration: "underline" }}>Процена вероватноће</h1>
                     <p style={{ fontSize: "14.5px" }}>Разматрајучћи опасност на основу доступних података и анализа, радна група за процену ризика се пределила да вероватноћу одреди на основу вероватноће појављивања земљотреса.</p>
@@ -115,4 +115,4 @@ const ProcenaPoKritInfraWord = () => {
         </>
   )
 }
-export default ProcenaPoKritInfraWord
+export default ProcenaPosledica

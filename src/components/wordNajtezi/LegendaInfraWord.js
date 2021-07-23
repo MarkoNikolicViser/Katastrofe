@@ -1,21 +1,17 @@
 import React, { useState, useRef, useEffect, useContext } from 'react';
-import Slika from './Slika'
+import Slika from '../Slika'
 import { TContext } from '../context';
 
 
 
 const Legenda = () => {
-    const { verKolona, ekonomijaIdRed, infraIdRed, zivotIdRed } = useContext(TContext)
-    const [verKolonaValue, setVerKolonaValue] = verKolona
-    const [ekonomijaIdRedValue, setEkonomijaIdRedValue] = ekonomijaIdRed
-    const [infraIdRedValue, setInfraIdRedValue] = infraIdRed;
-    const [zivotIdRedValue, setZivotIdRedValue] = zivotIdRed
+    const { verKolonaN, infraIdRedN } = useContext(TContext)
+    const [verKolonaNValue, setVerKolonaNValue] = verKolonaN
+    const [infraIdRedNValue, setinfraIdRedNValue] = infraIdRedN;
     const [proracun, setProracun] = useState()
 
     const Proracun = () => {
-        let zbirnaVrednost = (ekonomijaIdRedValue + infraIdRedValue + zivotIdRedValue) / 3
-        zbirnaVrednost=Math.round(zbirnaVrednost)
-        const rez = verKolonaValue + (zbirnaVrednost - 1) * 5
+        const rez = verKolonaNValue + (infraIdRedNValue - 1) * 5
         setProracun(rez)
     }
     useEffect(() => {
@@ -30,7 +26,7 @@ const Legenda = () => {
     })
 
     const Prikazi = () => {
-        if ((proracun >= 18 && proracun <= 20) | (proracun >= 23 && proracun <= 25))
+        if ((proracun >= 18 && proracun <=20) | (proracun >= 23 && proracun <= 25))
             setPrikazi({ prvi: false, drugi: false, treci: false, cetvrti: true })
         else if ((proracun > 11 && proracun <= 15) | (proracun == 17 | proracun == 22))
             setPrikazi({ prvi: false, drugi: false, treci: true, cetvrti: false })
@@ -48,11 +44,6 @@ const Legenda = () => {
 
     return (
         <div>
-            {/* <div id='prvi' style={{ border: "1px solid black", backgroundColor:"red", height:"30px", width:"30px"}}></div>
-            <label htmlFor="prvi">Test</label>
-            <div style={{ border: "1px solid black", backgroundColor:"orange", height:"30px", width:"30px"}}></div>
-            <div style={{ border: "1px solid black", backgroundColor:"yellow", height:"30px", width:"30px"}}></div>
-            <div style={{ border: "1px solid black", backgroundColor:"green", height:"30px", width:"30px"}}></div> */}
 
             <table style={{ fontFamily: "sans-serif", borderCollapse: "collapse", fontSize: "11px", width: "100%" }}>
                 <tbody>

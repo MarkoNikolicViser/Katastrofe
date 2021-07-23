@@ -1,17 +1,16 @@
 import React, { useState, useContext, useRef, useEffect } from 'react';
 import { TContext } from '../context'
-import Slika from './Slika'
+import Slika from '../Slika'
 
 
 const MatricaEkonimijaWord = () => {
 
 
 
-    const { verKolona, infraIdRed, } = useContext(TContext)
-    const [verKolonaValue, setVerKolonaValue] = verKolona
-    const[infraIdRedValue,setInfraIdRedValue]=infraIdRed;
+    const { verKolonaN, infraIdRedN, } = useContext(TContext)
+    const [verKolonaNValue, setVerKolonaNValue] = verKolonaN
+    const[infraIdRedNValue,setinfraIdRedNValue]=infraIdRedN;
     const [proracun, setProracun] = useState()
-
 
 
 
@@ -29,7 +28,7 @@ const MatricaEkonimijaWord = () => {
     const OpcijaVerovatnoceRef5 = useRef([])
 
     const Proracun = () => {
-        const rez = verKolonaValue + (infraIdRedValue - 1) * 5
+        const rez = verKolonaNValue + (infraIdRedNValue - 1) * 5
         setProracun(rez)
     }
     useEffect(() => {

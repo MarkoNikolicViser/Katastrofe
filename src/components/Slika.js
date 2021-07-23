@@ -1,5 +1,5 @@
-import React, { useState, useContext, useEffect, useRef } from 'react'
-import { TContext } from "../context"
+import React, { useContext } from 'react'
+import { TContext } from "./context"
 
 const Slika=()=>{
     const { opasnost } = useContext(TContext)

@@ -8,7 +8,9 @@ import IzborScenarija from './components/izborScenarija';
 import Kalkulator from './components/kalkulator'
 import ProcenaVerovatnoce from './components/procenaVerovatnoce'
 import ProcenaPosledica from './components/procenaPosledica'
-import { BrowserRouter as Router, Route, Switch, Fragment } from 'react-router-dom';
+import ProcenaVerovatnoceNajtezi from './components/procenaVerovatnoceNajtezi'
+import ProcenaPosledicaNajtezi from './components/procenaPosledicaNajtezi'
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Preview from './components/preview'
 import Save from './components/save'
 
@@ -36,8 +38,8 @@ function App() {
                   <div className="proba1">
                   <h1>Нежељени догађај са најтежим могућим последицама</h1>
                   <div>
-                    <ProcenaVerovatnoce />
-                    <ProcenaPosledica />
+                    <ProcenaVerovatnoceNajtezi />
+                    <ProcenaPosledicaNajtezi />
                     </div>
                   </div>
                 </div>

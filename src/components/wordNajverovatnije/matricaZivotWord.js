@@ -1,22 +1,13 @@
-import React, { useState, useContext, useRef, useEffect } from 'react';
-import { TContext } from '../context'
-import Slika from './Slika'
+import React, { useState, useRef, useEffect, useContext } from 'react';
+import Slika from '../Slika'
+import { TContext } from '../context';
 
+const Matrica = () => {
 
-const MatricaZbirnaWord = () => {
-
-
-
-    const { verKolona, ekonomijaIdRed, infraIdRed, zivotIdRed } = useContext(TContext)
-    const [verKolonaValue, setVerKolonaValue] = verKolona
-    const [ekonomijaIdRedValue, setEkonomijaIdRedValue] = ekonomijaIdRed
-    const [infraIdRedValue, setInfraIdRedValue] = infraIdRed;
-    const [zivotIdRedValue, setZivotIdRedValue] = zivotIdRed
-
-
-    const [proracun, setProracun] = useState()
-
-
+const{verKolona,zivotIdRed}=useContext(TContext)
+const[verKolonaValue,setVerKolonaValue]=verKolona
+const[zivotIdRedValue,setZivotIdRedValue]=zivotIdRed
+const[proracun,setProracun]=useState()
 
 
     const [tabela, setTabela] = useState({
@@ -32,18 +23,13 @@ const MatricaZbirnaWord = () => {
     const OpcijaVerovatnoceRef4 = useRef([])
     const OpcijaVerovatnoceRef5 = useRef([])
 
-    const Proracun = () => {
-        let zbirnaVrednost = (ekonomijaIdRedValue + infraIdRedValue + zivotIdRedValue) / 3
-        zbirnaVrednost=Math.round(zbirnaVrednost)
-        const rez = verKolonaValue + (zbirnaVrednost - 1) * 5
+    const Proracun=()=>{
+        const rez=verKolonaValue+(zivotIdRedValue-1)*5
         setProracun(rez)
     }
-    useEffect(() => {
-        Proracun()
-    }, [proracun]);
-    // useEffect(() => {
-    //     console.log(proracun)
-    // }, [proracun]);
+useEffect(() => {
+    Proracun()
+}, [proracun]);
     useEffect(() => {
         OpcijaVerovatnoceRef5.current[1].style.backgroundColor = "green"
         OpcijaVerovatnoceRef5.current[2].style.backgroundColor = "green"
@@ -81,47 +67,48 @@ const MatricaZbirnaWord = () => {
                 <table style={{ fontFamily: "sans-serif", borderCollapse: "collapse", fontSize: "11px", width: "350px", height: "100px" }}>
                     <tbody style={{ fontSize: "13px" }}>
                         <tr id="prva" style={{ textAlign: "center" }}>
-                            <td>Катастрофалне 5</td>
+                            <td>   
+                                <p> Катастрофалне 5</p></td>
                             {tabela.prvi.map(m => (
-                                <td ref={el => OpcijaVerovatnoceRef1.current[m] = el} key={m} style={{ border: "1px solid black", padding: "6px 10px 6px 10px", width: "60px", height: "60px" }}>
-                                    {proracun === m && <Slika />}
+                                <td ref={el => OpcijaVerovatnoceRef1.current[m] = el} key={m} style={{ border: "1px solid black", padding: "6px 10px 6px 10px",width:"60px",height:"60px" }}>
+                                   {proracun===m&&<Slika />}
                                 </td>
                             ))}
                         </tr>
                         <tr style={{ textAlign: "center" }}>
-                            <td>Озбиљне 4</td>
+                        <td>Озбиљне 4</td>
                             {tabela.drugi.map(m => (
-                                <td ref={el => OpcijaVerovatnoceRef2.current[m] = el} key={m} style={{ border: "1px solid black", padding: "6px 10px 6px 10px", width: "60px", height: "60px" }}>
-                                    {proracun === m && <Slika />}
+                                <td ref={el => OpcijaVerovatnoceRef2.current[m] = el} key={m} style={{ border: "1px solid black", padding: "6px 10px 6px 10px",width:"60px",height:"60px" }}>
+                                   {proracun===m&&<Slika />}
                                 </td>
                             ))}
                         </tr>
                         <tr style={{ textAlign: "center" }}>
-                            <td>Умерене 3</td>
+                        <td>Умерене 3</td>
                             {tabela.treci.map(m => (
-                                <td ref={el => OpcijaVerovatnoceRef3.current[m] = el} key={m} style={{ border: "1px solid black", padding: "6px 10px 6px 10px", width: "60px", height: "60px" }}>
-                                    {proracun === m && <Slika />}
+                                <td ref={el => OpcijaVerovatnoceRef3.current[m] = el} key={m} style={{ border: "1px solid black", padding: "6px 10px 6px 10px",width:"60px",height:"60px" }}>
+                                   {proracun===m&&<Slika />}
                                 </td>
                             ))}
                         </tr>
                         <tr style={{ textAlign: "center" }}>
-                            <td>Мале 2</td>
+                        <td>Мале 2</td>
                             {tabela.cetvrti.map(m => (
-                                <td ref={el => OpcijaVerovatnoceRef4.current[m] = el} key={m} style={{ border: "1px solid black", padding: "6px 10px 6px 10px", width: "60px", height: "60px" }}>
-                                    {proracun === m && <Slika />}
+                                <td ref={el => OpcijaVerovatnoceRef4.current[m] = el} key={m} style={{ border: "1px solid black", padding: "6px 10px 6px 10px",width:"60px",height:"60px" }}>
+                                    {proracun===m&&<Slika />}
                                 </td>
                             ))}
                         </tr>
                         <tr style={{ textAlign: "center" }}>
-                            <td>Минималне 1</td>
+                        <td>Минималне 1</td>
                             {tabela.peti.map(m => (
-                                <td ref={el => OpcijaVerovatnoceRef5.current[m] = el} key={m} style={{ border: "1px solid black", padding: "6px 10px 6px 10px", width: "60px", height: "60px" }}>
-                                    {proracun === m && <Slika />}
+                                <td ref={el => OpcijaVerovatnoceRef5.current[m] = el} key={m} style={{ border: "1px solid black", padding: "6px 10px 6px 10px",width:"60px",height:"60px" }}>
+                                   {proracun===m&&<Slika />}
                                 </td>
                             ))}
                         </tr>
                         <tr>
-                            <th></th>
+                            <th></th> 
                             <th>1</th>
                             <th>2</th>
                             <th>3</th>
@@ -134,5 +121,4 @@ const MatricaZbirnaWord = () => {
         </>
     )
 }
-
-export default MatricaZbirnaWord;
+export default Matrica

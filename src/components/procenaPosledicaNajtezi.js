@@ -5,20 +5,20 @@ import {TContext} from './context'
 
 const ProcenaPosledica=()=>{
 
-const{procPosledica,budzet,zivotInfo,ekonomijaInfo,infroInfo,zivotIdRed,ekonomijaIdRed,infraIdRed}=useContext(TContext)
-const[procPosledicaValue,setProcPosledicaValue]=useState(procPosledica)
+const{procPosledicaN,budzet,zivotInfoN,ekonomijaInfoN,infroInfoN,zivotIdRedN,ekonomijaIdRedN,infraIdRedN}=useContext(TContext)
+const[procPosledicaNValue,setprocPosledicaNValue]=useState(procPosledicaN)
 const[budzetValue,setBudzetValue]=budzet
 
 const[zivotNiz,setZivotNiz]=useState(["<5","5-20","21-50","51-150",">150"])
 const[ekonomijaNiz,setEkonomijaNiz]=useState(["Od 0.1 - 1%","Od 1.1 - 3%","3.1 - 7%","Od 7.1 - 10%","Ciji iznos prelazi 10%"])
 const[infroNiz,setInfroNiz]=useState(["< 0.5 %","0.5 - 1 %","1 - 3%","3 - 5% ","> 5 %"])
 
-const[zivotInfoValue,setZivotInfoValue]=zivotInfo
-const[ekonomijaInfoValue,setEkonomijaInfoValue]=ekonomijaInfo
-const[infroInfoValue,setInfroInfoValue]=infroInfo
-const[zivotIdRedValue,setZivotIdRedValue]=zivotIdRed
-const[ekonomijaIdRedValue,setEkonomijaIdRedValue]=ekonomijaIdRed
-const[infraIdRedValue,setInfraIdRedValue]=infraIdRed;
+const[zivotInfoNValue,setzivotInfoNValue]=zivotInfoN
+const[ekonomijaInfoNValue,setekonomijaInfoNValue]=ekonomijaInfoN
+const[infroInfoNValue,setinfroInfoNValue]=infroInfoN
+const[zivotIdRedNValue,setzivotIdRedNValue]=zivotIdRedN
+const[ekonomijaIdRedNValue,setekonomijaIdRedNValue]=ekonomijaIdRedN
+const[infraIdRedNValue,setinfraIdRedNValue]=infraIdRedN
 const[unosEkonomija,setUnosEkonomija]=useState()
 const[unosSteta,setUnosSteta]=useState()
 
@@ -35,44 +35,44 @@ const VrednostVerovatnoceRef3=useRef([])
 
 const ProracunProcenta=(e)=>{
 let broj=budzetValue-e.target.value;
-setEkonomijaInfoValue((broj/budzetValue)*100);
+setekonomijaInfoNValue((broj/budzetValue)*100);
 setUnosSteta(e.target.value)
 }
 const ProracunProcetaSteta=(e)=>{
 let broj=budzetValue-e.target.value;
-setInfroInfoValue((broj/budzetValue)*100);
+setinfroInfoNValue((broj/budzetValue)*100);
 setUnosStetaInfra(e.target.value)  
 }
 
 const OdabirPosledica=(e)=>{
-    const zivot=procPosledicaValue[0].zivot
-    const ekonomiju=procPosledicaValue[0].ekonomiju
-    const infra=procPosledicaValue[0].infra
-    setProcPosledicaValue([{zivot:zivot,ekonomiju:false,infra:infra}])
+    const zivot=procPosledicaNValue[0].zivot
+    const ekonomiju=procPosledicaNValue[0].ekonomiju
+    const infra=procPosledicaNValue[0].infra
+    setprocPosledicaNValue([{zivot:zivot,ekonomiju:false,infra:infra}])
 
-if(e.target.value==="zivot"&&procPosledicaValue[0].zivot===true)
-setProcPosledicaValue([{zivot:false,ekonomiju:ekonomiju,infra:infra}])
-else if(e.target.value==="zivot"&&procPosledicaValue[0].zivot===false)
-setProcPosledicaValue([{zivot:true,ekonomiju:ekonomiju,infra:infra}])
-else if(e.target.value==="ekonomija"&&procPosledicaValue[0].ekonomiju===true)
-setProcPosledicaValue([{zivot:zivot,ekonomiju:false,infra:infra}])
-else if(e.target.value==="ekonomija"&&procPosledicaValue[0].ekonomiju===false)
-setProcPosledicaValue([{zivot:zivot,ekonomiju:true,infra:infra}])
-else if(e.target.value==="infra"&&procPosledicaValue[0].infra===true)
-setProcPosledicaValue([{zivot:zivot,ekonomiju:ekonomiju,infra:false}])
-else if(e.target.value==="infra"&&procPosledicaValue[0].infra===false)
-setProcPosledicaValue([{zivot:zivot,ekonomiju:ekonomiju,infra:true}])
+if(e.target.value==="zivot"&&procPosledicaNValue[0].zivot===true)
+setprocPosledicaNValue([{zivot:false,ekonomiju:ekonomiju,infra:infra}])
+else if(e.target.value==="zivot"&&procPosledicaNValue[0].zivot===false)
+setprocPosledicaNValue([{zivot:true,ekonomiju:ekonomiju,infra:infra}])
+else if(e.target.value==="ekonomija"&&procPosledicaNValue[0].ekonomiju===true)
+setprocPosledicaNValue([{zivot:zivot,ekonomiju:false,infra:infra}])
+else if(e.target.value==="ekonomija"&&procPosledicaNValue[0].ekonomiju===false)
+setprocPosledicaNValue([{zivot:zivot,ekonomiju:true,infra:infra}])
+else if(e.target.value==="infra"&&procPosledicaNValue[0].infra===true)
+setprocPosledicaNValue([{zivot:zivot,ekonomiju:ekonomiju,infra:false}])
+else if(e.target.value==="infra"&&procPosledicaNValue[0].infra===false)
+setprocPosledicaNValue([{zivot:zivot,ekonomiju:ekonomiju,infra:true}])
 }
 
 const IzborZdravlje=(e)=>{
-    setZivotInfoValue(e.target.value)
+    setzivotInfoNValue(e.target.value)
     if(e.target.value<5&&e.target.value>0){
         VrednostVerovatnoceRef.current[0].style.backgroundColor="gray";
         VrednostVerovatnoceRef.current[1].style.backgroundColor="white";
         VrednostVerovatnoceRef.current[2].style.backgroundColor="white";
         VrednostVerovatnoceRef.current[3].style.backgroundColor="white";
         VrednostVerovatnoceRef.current[4].style.backgroundColor="white";
-        setZivotIdRedValue(1)   
+        setzivotIdRedNValue(1)   
     }
         else if(e.target.value>=5&&e.target.value<=20){
             VrednostVerovatnoceRef.current[0].style.backgroundColor="white";
@@ -80,7 +80,7 @@ const IzborZdravlje=(e)=>{
             VrednostVerovatnoceRef.current[2].style.backgroundColor="white";
             VrednostVerovatnoceRef.current[3].style.backgroundColor="white";
             VrednostVerovatnoceRef.current[4].style.backgroundColor="white";
-            setZivotIdRedValue(2)   
+            setzivotIdRedNValue(2)   
 
         }
             else if(e.target.value>20&&e.target.value<=50){
@@ -89,7 +89,7 @@ const IzborZdravlje=(e)=>{
                 VrednostVerovatnoceRef.current[2].style.backgroundColor="gray";
                 VrednostVerovatnoceRef.current[3].style.backgroundColor="white";
                 VrednostVerovatnoceRef.current[4].style.backgroundColor="white";
-                setZivotIdRedValue(3)   
+                setzivotIdRedNValue(3)   
             }
                 else if(e.target.value>50&&e.target.value<=150){
                     VrednostVerovatnoceRef.current[0].style.backgroundColor="white";
@@ -97,7 +97,7 @@ const IzborZdravlje=(e)=>{
                     VrednostVerovatnoceRef.current[2].style.backgroundColor="white";
                     VrednostVerovatnoceRef.current[3].style.backgroundColor="gray";
                     VrednostVerovatnoceRef.current[4].style.backgroundColor="white";
-                    setZivotIdRedValue(4)
+                    setzivotIdRedNValue(4)
                 }
                     else if(e.target.value>150){
                         VrednostVerovatnoceRef.current[0].style.backgroundColor="white";
@@ -105,7 +105,7 @@ const IzborZdravlje=(e)=>{
                         VrednostVerovatnoceRef.current[2].style.backgroundColor="white";
                         VrednostVerovatnoceRef.current[3].style.backgroundColor="white";
                         VrednostVerovatnoceRef.current[4].style.backgroundColor="gray";
-                        setZivotIdRedValue(5)
+                        setzivotIdRedNValue(5)
                     }
                         else if(e.target.value===0||e.target.value=='')
                         {
@@ -117,51 +117,51 @@ const IzborZdravlje=(e)=>{
                         }
 }
 const IzborEkonomijaProcenat=(e)=>{
-    setEkonomijaInfoValue(e.target.value)
+    setekonomijaInfoNValue(e.target.value)
     setUnosEkonomija(e.target.value)
 }
 useEffect(() => {
-    if(ekonomijaInfoValue>0&&ekonomijaInfoValue<1){
+    if(ekonomijaInfoNValue>0&&ekonomijaInfoNValue<1){
         VrednostVerovatnoceRef2.current[0].style.backgroundColor="gray";
         VrednostVerovatnoceRef2.current[1].style.backgroundColor="white";
         VrednostVerovatnoceRef2.current[2].style.backgroundColor="white";
         VrednostVerovatnoceRef2.current[3].style.backgroundColor="white";
         VrednostVerovatnoceRef2.current[4].style.backgroundColor="white";
-        setEkonomijaIdRedValue(1)
+        setekonomijaIdRedNValue(1)
         }
-            else if(ekonomijaInfoValue>=1&&ekonomijaInfoValue<=3){
+            else if(ekonomijaInfoNValue>=1&&ekonomijaInfoNValue<=3){
                 VrednostVerovatnoceRef2.current[0].style.backgroundColor="white";
                 VrednostVerovatnoceRef2.current[1].style.backgroundColor="gray";
                 VrednostVerovatnoceRef2.current[2].style.backgroundColor="white";
                 VrednostVerovatnoceRef2.current[3].style.backgroundColor="white";
                 VrednostVerovatnoceRef2.current[4].style.backgroundColor="white"; 
-                setEkonomijaIdRedValue(2)
+                setekonomijaIdRedNValue(2)
             }
-                else if(ekonomijaInfoValue>3&&ekonomijaInfoValue<=7){
+                else if(ekonomijaInfoNValue>3&&ekonomijaInfoNValue<=7){
                     VrednostVerovatnoceRef2.current[0].style.backgroundColor="white";
                     VrednostVerovatnoceRef2.current[1].style.backgroundColor="white";
                     VrednostVerovatnoceRef2.current[2].style.backgroundColor="gray";
                     VrednostVerovatnoceRef2.current[3].style.backgroundColor="white";
                     VrednostVerovatnoceRef2.current[4].style.backgroundColor="white"; 
-                    setEkonomijaIdRedValue(3)
+                    setekonomijaIdRedNValue(3)
                 }
-                else if(ekonomijaInfoValue>7&&ekonomijaInfoValue<=10){
+                else if(ekonomijaInfoNValue>7&&ekonomijaInfoNValue<=10){
                     VrednostVerovatnoceRef2.current[0].style.backgroundColor="white";
                     VrednostVerovatnoceRef2.current[1].style.backgroundColor="white";
                     VrednostVerovatnoceRef2.current[2].style.backgroundColor="white";
                     VrednostVerovatnoceRef2.current[3].style.backgroundColor="gray";
                     VrednostVerovatnoceRef2.current[4].style.backgroundColor="white"; 
-                    setEkonomijaIdRedValue(4)
+                    setekonomijaIdRedNValue(4)
                 }
-                else if(ekonomijaInfoValue>10){
+                else if(ekonomijaInfoNValue>10){
                     VrednostVerovatnoceRef2.current[0].style.backgroundColor="white";
                     VrednostVerovatnoceRef2.current[1].style.backgroundColor="white";
                     VrednostVerovatnoceRef2.current[2].style.backgroundColor="white";
                     VrednostVerovatnoceRef2.current[3].style.backgroundColor="white";
                     VrednostVerovatnoceRef2.current[4].style.backgroundColor="gray"; 
-                    setEkonomijaIdRedValue(5)
+                    setekonomijaIdRedNValue(5)
                 }
-                    else if(ekonomijaInfoValue===0||ekonomijaInfoValue=='')
+                    else if(ekonomijaInfoNValue===0||ekonomijaInfoNValue=='')
                     {
                         VrednostVerovatnoceRef2.current[0].style.backgroundColor="white";
                         VrednostVerovatnoceRef2.current[1].style.backgroundColor="white";
@@ -169,53 +169,53 @@ useEffect(() => {
                         VrednostVerovatnoceRef2.current[3].style.backgroundColor="white";
                         VrednostVerovatnoceRef2.current[4].style.backgroundColor="white";
                     }
-}, [ekonomijaInfoValue]);
+}, [ekonomijaInfoNValue]);
 const IzborInfroProcenat=(e)=>{
 setUnosProcInfra(e.target.value)
-setInfroInfoValue(e.target.value)
+setinfroInfoNValue(e.target.value)
 }
 useEffect(() => {
-    if(infroInfoValue<0.5&&infroInfoValue>0){
+    if(infroInfoNValue<0.5&&infroInfoNValue>0){
         VrednostVerovatnoceRef3.current[0].style.backgroundColor="gray";
         VrednostVerovatnoceRef3.current[1].style.backgroundColor="white";
         VrednostVerovatnoceRef3.current[2].style.backgroundColor="white";
         VrednostVerovatnoceRef3.current[3].style.backgroundColor="white";
         VrednostVerovatnoceRef3.current[4].style.backgroundColor="white";
-        setInfraIdRedValue(1)
+        setinfraIdRedNValue(1)
         }
-        else if(infroInfoValue>=0.5&&infroInfoValue<1){
+        else if(infroInfoNValue>=0.5&&infroInfoNValue<1){
             VrednostVerovatnoceRef3.current[0].style.backgroundColor="white";
             VrednostVerovatnoceRef3.current[1].style.backgroundColor="gray";
             VrednostVerovatnoceRef3.current[2].style.backgroundColor="white";
             VrednostVerovatnoceRef3.current[3].style.backgroundColor="white";
             VrednostVerovatnoceRef3.current[4].style.backgroundColor="white"; 
-            setInfraIdRedValue(2)
+            setinfraIdRedNValue(2)
         }
-            else if(infroInfoValue>=1&&infroInfoValue<3){
+            else if(infroInfoNValue>=1&&infroInfoNValue<3){
                 VrednostVerovatnoceRef3.current[0].style.backgroundColor="white";
                 VrednostVerovatnoceRef3.current[1].style.backgroundColor="white";
                 VrednostVerovatnoceRef3.current[2].style.backgroundColor="gray";
                 VrednostVerovatnoceRef3.current[3].style.backgroundColor="white";
                 VrednostVerovatnoceRef3.current[4].style.backgroundColor="white";
-                setInfraIdRedValue(3)
+                setinfraIdRedNValue(3)
             }
-            else if(infroInfoValue>=3&&infroInfoValue<=5){
+            else if(infroInfoNValue>=3&&infroInfoNValue<=5){
                 VrednostVerovatnoceRef3.current[0].style.backgroundColor="white";
                 VrednostVerovatnoceRef3.current[1].style.backgroundColor="white";
                 VrednostVerovatnoceRef3.current[2].style.backgroundColor="white";
                 VrednostVerovatnoceRef3.current[3].style.backgroundColor="gray";
                 VrednostVerovatnoceRef3.current[4].style.backgroundColor="white"; 
-                setInfraIdRedValue(4)
+                setinfraIdRedNValue(4)
             }
-            else if(infroInfoValue>5){
+            else if(infroInfoNValue>5){
                 VrednostVerovatnoceRef3.current[0].style.backgroundColor="white";
                 VrednostVerovatnoceRef3.current[1].style.backgroundColor="white";
                 VrednostVerovatnoceRef3.current[2].style.backgroundColor="white";
                 VrednostVerovatnoceRef3.current[3].style.backgroundColor="white";
                 VrednostVerovatnoceRef3.current[4].style.backgroundColor="gray"; 
-                setInfraIdRedValue(5)
+                setinfraIdRedNValue(5)
             }
-                else if(infroInfoValue===0||infroInfoValue=='')
+                else if(infroInfoNValue===0||infroInfoNValue=='')
                 {
                     VrednostVerovatnoceRef3.current[0].style.backgroundColor="white";
                     VrednostVerovatnoceRef3.current[1].style.backgroundColor="white";
@@ -223,24 +223,24 @@ useEffect(() => {
                     VrednostVerovatnoceRef3.current[3].style.backgroundColor="white";
                     VrednostVerovatnoceRef3.current[4].style.backgroundColor="white";
                 }
-}, [infroInfoValue]);
+}, [infroInfoNValue]);
 useEffect(() => {
-if(procPosledicaValue[0].zivot===true)
+if(procPosledicaNValue[0].zivot===true)
 ZivotRef.current.style.backgroundColor="gray"
 else{
     ZivotRef.current.style.backgroundColor="white"
 }
-if(procPosledicaValue[0].ekonomiju===true)
+if(procPosledicaNValue[0].ekonomiju===true)
 EkonomijaRef.current.style.backgroundColor="gray"
 else{
     EkonomijaRef.current.style.backgroundColor="white"
 }
-if(procPosledicaValue[0].infra===true)
+if(procPosledicaNValue[0].infra===true)
 InfraRef.current.style.backgroundColor="gray"
 else{
     InfraRef.current.style.backgroundColor="white"
 }
-}, [procPosledicaValue]);
+}, [procPosledicaNValue]);
     return(
         <div className="posledice">
             <h3>Изабери утицај на штићене вредности</h3>
@@ -251,7 +251,7 @@ else{
             </div>
             <div className="posledice-nizovi">
     {/* ///////////////////////////////////////////////////////////// */}
-           {procPosledicaValue[0].zivot&&
+           {procPosledicaNValue[0].zivot&&
             <div className="procene-niz">
                 <label htmlFor="zdravlje">Унети бр људи</label>
                 <div className="inputi-posledice">
@@ -269,13 +269,13 @@ else{
             </div>
             }
      {/* ///////////////////////////////////////////////////////////// */}
-                {procPosledicaValue[0].ekonomiju&&
+                {procPosledicaNValue[0].ekonomiju&&
             <div className="procene-niz"> 
             <label htmlFor="ekonomija">Унети проценат или износ штете</label>
             <div className="inputi-posledice">
                 {!unosSteta&& <input onWheel={(e) => e.target.blur()} onChange={IzborEkonomijaProcenat} type="number" placeholder="procenat" name="ekonomija" id="" />}
                 {!unosEkonomija&&<input onWheel={(e) => e.target.blur()} onChange={ProracunProcenta} type="number" placeholder="iznos stete" name="ekonomija" id="" />}
-                {unosSteta&&<h4>{ekonomijaInfoValue} %</h4> }
+                {unosSteta&&<h4>{ekonomijaInfoNValue} %</h4> }
                 </div>
                 <h2>Критеријум</h2>
                 {ekonomijaNiz.map((m,index)=>{
@@ -290,13 +290,13 @@ else{
             }
       {/* ///////////////////////////////////////////////////////////// */}
 
-              {procPosledicaValue[0].infra&&  
+              {procPosledicaNValue[0].infra&&  
             <div className="procene-niz"> 
             <label htmlFor="infro">Унети проценат или износ штете</label>
             <div className="inputi-posledice">
                 {!unosStetaInfra&&<input onWheel={(e) => e.target.blur()} onChange={IzborInfroProcenat} type="number" placeholder="procenat" name="infro" id="" />}
                 {!unosProcInfra&&<input onWheel={(e) => e.target.blur()} onChange={ProracunProcetaSteta} type="number" placeholder="iznos stete" name="infro" id="" />}
-                {unosStetaInfra&&<h4>{infroInfoValue} %</h4> }
+                {unosStetaInfra&&<h4>{infroInfoNValue} %</h4> }
 
            </div>
                 <h2>Критеријум</h2>

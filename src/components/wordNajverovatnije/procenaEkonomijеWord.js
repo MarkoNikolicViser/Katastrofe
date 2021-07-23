@@ -1,6 +1,6 @@
 import React, { useState, useContext, useRef, useEffect } from 'react';
 import { TContext } from '../context'
-import Slika from './Slika'
+import Slika from '../Slika'
 
 
 const ProcenaEkonomijeWord = () => {

@@ -1,28 +1,47 @@
 import React, { useState, useRef, useEffect, useContext } from 'react';
 import { TContext } from './context';
-import ProcenaVerovatnoceWord from './word/procenaVerovatnoceWord'
-import ProcenaPosledica from './word/procenaPosledicaWord';
-import ProcenaEkonomijeWord from './word/procenaEkonomijеWord';
+import ProcenaVerovatnoceWord from './wordNajverovatnije/procenaVerovatnoceWord'
+import ProcenaPosledica from './wordNajverovatnije/procenaPosledicaWord';
+import ProcenaEkonomijeWord from './wordNajverovatnije/procenaEkonomijеWord';
 import { Link } from 'react-router-dom'
-import ProcenaPoKritInfraWord from './word/procenaPoKritInfraWord';
-import MatricaZivot from './word/matricaZivotWord';
-import LegendaZivot from './word/LegendaWordZivot';
-import MatricaEkonomija from './word/matricaEkonomijaWord'
-import LegendaEkonomija from './word/LegendaWordEkonomija'
-import MatricaInfra from './word/matricaInfraWord'
-import LegendaInfra from './word/LegendaInfraWord'
-import MatricaZbirna from './word/matricaZbirnaWord'
-import LegendaZbirna from './word/LegendaZbirnaWord'
-import ZbirnaTablicaWord from './word/zbirnaTablicaWord';
+import ProcenaPoKritInfraWord from './wordNajverovatnije/procenaPoKritInfraWord';
+import MatricaZivot from './wordNajverovatnije/matricaZivotWord';
+import LegendaZivot from './wordNajverovatnije/LegendaWordZivot';
+import MatricaEkonomija from './wordNajverovatnije/matricaEkonomijaWord'
+import LegendaEkonomija from './wordNajverovatnije/LegendaWordEkonomija'
+import MatricaInfra from './wordNajverovatnije/matricaInfraWord'
+import LegendaInfra from './wordNajverovatnije/LegendaInfraWord'
+import MatricaZbirna from './wordNajverovatnije/matricaZbirnaWord'
+import LegendaZbirna from './wordNajverovatnije/LegendaZbirnaWord'
+import ZbirnaTablicaWord from './wordNajverovatnije/zbirnaTablicaWord';
+
+///
+import ProcenaPoKritInfraWordN from './wordNajtezi/procenaPoKritInfraWord';
+import MatricaZivotN from './wordNajtezi/matricaZivotWord';
+import LegendaZivotN from './wordNajtezi/LegendaWordZivot';
+import MatricaEkonomijaN from './wordNajtezi/matricaEkonomijaWord'
+import LegendaEkonomijaN from './wordNajtezi/LegendaWordEkonomija'
+import MatricaInfraN from './wordNajtezi/matricaInfraWord'
+import LegendaInfraN from './wordNajtezi/LegendaInfraWord'
+import MatricaZbirnaN from './wordNajtezi/matricaZbirnaWord'
+import LegendaZbirnaN from './wordNajtezi/LegendaZbirnaWord'
+import ZbirnaTablicaWordN from './wordNajtezi/zbirnaTablicaWord';
+import ProcenaPosledicaN from './wordNajtezi/procenaPosledicaWord';
+import ProcenaEkonomijeWordN from './wordNajtezi/procenaEkonomijеWord';
+import ProcenaVerovatnoceWordN from './wordNajtezi/procenaVerovatnoceWord'
+
 
 
 const Preview = () => {
-    const { ekonomijaIdRed, zivotIdRed, infraIdRed } = useContext(TContext)
+    const { ekonomijaIdRed, zivotIdRed, infraIdRed, ekonomijaIdRedN,zivotIdRedN,infraIdRedN} = useContext(TContext)
 
     const [ekonomijaIdRedValue, setEkonomijaIdRedValue] = ekonomijaIdRed
     const [zivotIdRedValue, setZivotIdRedValue] = zivotIdRed
     const [infraIdRedValue, setInfraIdRedValue] = infraIdRed;
 
+    const [ekonomijaIdRedNValue, setEkonomijaIdRedNValue] = ekonomijaIdRedN
+    const [zivotIdRedNValue, setZivotIdRedNValue] = zivotIdRedN
+    const [infraIdRedNValue, setInfraIdRedNValue] = infraIdRedN;
 
 
     function exportHTML() {
@@ -40,7 +59,11 @@ const Preview = () => {
         fileDownload.click();
         document.body.removeChild(fileDownload);
     }
-
+useEffect(() => {
+    console.log(zivotIdRedValue)
+    console.log(ekonomijaIdRedValue)
+    console.log(infraIdRedValue)
+}, []);
 
     return (
         <div className="orient">
@@ -59,13 +82,13 @@ const Preview = () => {
                                     </td>
                                     <td><LegendaZivot /></td>
                                 </>):null}
-                                {ekonomijaIdRedValue ?( <>
+                                {ekonomijaIdRedValue ?(<>
                                     <td style={{ border: "1px solid black" }}><MatricaEkonomija /></td>
                                     <td><LegendaEkonomija /></td>
                                 </>):null}
                             </tr>
                             <tr>
-                                {infraIdRedValue ? (<>
+                                {infraIdRedValue ?(<>
                                     <td style={{ border: "1px solid black" }}><MatricaInfra /></td>
                                     <td><LegendaInfra /></td>
                                 </>):null}
@@ -75,6 +98,37 @@ const Preview = () => {
                         </tbody>
                     </table>
                     <ZbirnaTablicaWord />
+                    {/* /// */}
+                    <ProcenaVerovatnoceWordN />
+                    <ProcenaPosledicaN />
+                    <ProcenaEkonomijeWordN />
+                    <ProcenaPoKritInfraWordN />
+                    <table style={{ fontFamily: "sans-serif", borderCollapse: "collapse", fontSize: "11px", width: "100%" }}>
+                        <tbody>
+                            <tr>
+                                {zivotIdRedNValue ?( <>
+                                    <td style={{ border: "1px solid black" }}>
+                                        <MatricaZivotN />
+                                    </td>
+                                    <td><LegendaZivotN /></td>
+                                </>):null}
+                                {ekonomijaIdRedNValue ?( <>
+                                    <td style={{ border: "1px solid black" }}><MatricaEkonomijaN /></td>
+                                    <td><LegendaEkonomijaN /></td>
+                                </>):null}
+                            </tr>
+                            <tr>
+                                {infraIdRedNValue ? (<>
+                                    <td style={{ border: "1px solid black" }}><MatricaInfraN /></td>
+                                    <td><LegendaInfraN /></td>
+                                </>):null}
+                                <td style={{ border: "1px solid black" }}><MatricaZbirnaN /></td>
+                                <td><LegendaZbirnaN /></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <ZbirnaTablicaWordN />
+                    {/* /// */}
                 </div>
                 <Link to="/">
                     <button>Nazad</button>

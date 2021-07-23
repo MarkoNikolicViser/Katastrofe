@@ -1,17 +1,17 @@
 import React, { useState, useRef, useEffect, useContext } from 'react';
-import Slika from './Slika'
+import Slika from '../Slika'
 import { TContext } from '../context';
 
 
 
 const Legenda = () => {
-    const { verKolona, infraIdRed } = useContext(TContext)
+    const { verKolona, ekonomijaIdRed } = useContext(TContext)
     const [verKolonaValue, setVerKolonaValue] = verKolona
-    const [infraIdRedValue, setInfraIdRedValue] = infraIdRed;
+    const [ekonomijaIdRedValue, setekonomijaIdRedValue] = ekonomijaIdRed
     const [proracun, setProracun] = useState()
 
     const Proracun = () => {
-        const rez = verKolonaValue + (infraIdRedValue - 1) * 5
+        const rez = verKolonaValue + (ekonomijaIdRedValue - 1) * 5
         setProracun(rez)
     }
     useEffect(() => {
@@ -44,6 +44,11 @@ const Legenda = () => {
 
     return (
         <div>
+            {/* <div id='prvi' style={{ border: "1px solid black", backgroundColor:"red", height:"30px", width:"30px"}}></div>
+            <label htmlFor="prvi">Test</label>
+            <div style={{ border: "1px solid black", backgroundColor:"orange", height:"30px", width:"30px"}}></div>
+            <div style={{ border: "1px solid black", backgroundColor:"yellow", height:"30px", width:"30px"}}></div>
+            <div style={{ border: "1px solid black", backgroundColor:"green", height:"30px", width:"30px"}}></div> */}
 
             <table style={{ fontFamily: "sans-serif", borderCollapse: "collapse", fontSize: "11px", width: "100%" }}>
                 <tbody>
