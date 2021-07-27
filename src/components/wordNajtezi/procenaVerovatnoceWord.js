@@ -18,9 +18,6 @@ const ProcenaVerovatnoceWord = () => {
     const OpcijaVerovatnoceRef4 = useRef([])
     const OpcijaVerovatnoceRef5 = useRef([])
 
-    useEffect(() => {
-        console.log(verKolonaNValue)
-    }, []);
 
     const [tabela, setTabela] = useState(
         {

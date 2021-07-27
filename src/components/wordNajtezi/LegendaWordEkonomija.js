@@ -24,9 +24,7 @@ const Legenda = () => {
         treci: false,
         cetvrti: false,
     })
-useEffect(() => {
-    console.log(verKolonaNValue)
-}, []);
+
     const Prikazi = () => {
         if ((proracun >= 18 && proracun <=20) | (proracun >= 23 && proracun <= 25))
             setPrikazi({ prvi: false, drugi: false, treci: false, cetvrti: true })

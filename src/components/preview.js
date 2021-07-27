@@ -59,11 +59,7 @@ const Preview = () => {
         fileDownload.click();
         document.body.removeChild(fileDownload);
     }
-useEffect(() => {
-    console.log(zivotIdRedValue)
-    console.log(ekonomijaIdRedValue)
-    console.log(infraIdRedValue)
-}, []);
+
 
     return (
         <div className="orient">
@@ -73,9 +69,9 @@ useEffect(() => {
                     <ProcenaPosledica />
                     <ProcenaEkonomijeWord />
                     <ProcenaPoKritInfraWord />
-                    <table style={{ fontFamily: "sans-serif", borderCollapse: "collapse", fontSize: "11px", width: "100%" }}>
+                    <table style={{ fontFamily: "sans-serif", borderCollapse: "collapse", fontSize: "11px", width: "50%" }}>
                         <tbody>
-                            <tr>
+                            {/* <tr>
                                 {zivotIdRedValue ?( <>
                                     <td style={{ border: "1px solid black" }}>
                                         <MatricaZivot />
@@ -86,14 +82,14 @@ useEffect(() => {
                                     <td style={{ border: "1px solid black" }}><MatricaEkonomija /></td>
                                     <td><LegendaEkonomija /></td>
                                 </>):null}
-                            </tr>
+                            </tr> */}
                             <tr>
                                 {infraIdRedValue ?(<>
-                                    <td style={{ border: "1px solid black" }}><MatricaInfra /></td>
-                                    <td><LegendaInfra /></td>
+                                    <td style={{ borderLeft: "1px solid black", borderTop: "1px solid black",borderBottom: "1px solid black", width:"15%"}}><MatricaInfra /></td>
+                                    <td style={{ borderRight: "1px solid black", borderTop: "1px solid black",borderBottom: "1px solid black", width:"10%"}}><LegendaInfra /></td>
                                 </>):null}
-                                <td style={{ border: "1px solid black" }}><MatricaZbirna /></td>
-                                <td><LegendaZbirna /></td>
+                                <td style={{ borderLeft: "1px solid black", borderTop: "1px solid black",borderBottom: "1px solid black", width:"15%"}}><MatricaZbirna /></td>
+                                <td style={{ borderRight: "1px solid black", borderTop: "1px solid black",borderBottom: "1px solid black", width:"10%"}}><LegendaZbirna /></td>
                             </tr>
                         </tbody>
                     </table>

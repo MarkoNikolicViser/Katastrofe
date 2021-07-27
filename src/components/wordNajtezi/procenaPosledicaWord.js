@@ -57,8 +57,10 @@ const ProcenaPosledica = () => {
     <>
             {zivotInfoNValue &&
                 <div style={{ fontFamily: "sans-serif" }}>
-                    <h1 style={{ fontSize: "14.5px", textDecoration: "underline" }}>Процена вероватноће</h1>
-                    <p style={{ fontSize: "14.5px" }}>Разматрајучћи опасност на основу доступних података и анализа, радна група за процену ризика се пределила да вероватноћу одреди на основу вероватноће појављивања земљотреса.</p>
+                    <h1 style={{ fontSize: "14.5px", textDecoration: "underline" }}>Процена последица по штићене вредности</h1>
+                    <p style={{ fontSize: "14.5px" }}>Последице престављају ефекат штетног догађаја по живот и здравље људи, економију/екологију и критичну инфраструкуру, а манифестују се кроз величину губитка (штету).</p>
+                    <h1 style={{ fontSize: "13.5px", textDecoration: "underline" }}>Последице по живот и здравље људи</h1>
+                    <p style={{ fontSize: "13.5px" }}>Последице престављају ефекат штетног догађаја по живот и здравље људи, а изражавају се према критеријума датим у Табели.</p>
                    <table style={{ fontFamily: "sans-serif", borderCollapse: "collapse", fontSize: "11px", width: "100%" }}>
                         <thead style={{ fontSize: "13px" }}>
                             <tr>

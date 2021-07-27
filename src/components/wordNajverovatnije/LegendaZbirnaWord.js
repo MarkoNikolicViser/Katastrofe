@@ -14,7 +14,7 @@ const Legenda = () => {
 
     const Proracun = () => {
         let zbirnaVrednost = (ekonomijaIdRedValue + infraIdRedValue + zivotIdRedValue) / 3
-        zbirnaVrednost=Math.round(zbirnaVrednost)
+        zbirnaVrednost = Math.round(zbirnaVrednost)
         const rez = verKolonaValue + (zbirnaVrednost - 1) * 5
         setProracun(rez)
     }
@@ -54,31 +54,41 @@ const Legenda = () => {
             <div style={{ border: "1px solid black", backgroundColor:"yellow", height:"30px", width:"30px"}}></div>
             <div style={{ border: "1px solid black", backgroundColor:"green", height:"30px", width:"30px"}}></div> */}
 
-            <table style={{ fontFamily: "sans-serif", borderCollapse: "collapse", fontSize: "11px", width: "100%" }}>
-                <tbody>
+            <table style={{ fontFamily: "sans-serif", borderCollapse: "collapse", fontSize: "11px", width: "70px",verticalAlign: "top"  }}>
+                <tbody style={{ fontSize: "8px" }}>
                     <tr>
                         <td style={{ border: "1px solid black", backgroundColor: "red", height: "30px", width: "30px" }}>
                             {prikazi.cetvrti && <Slika />}
                         </td>
-                        <td>Веома висок(црвена)</td>
+                        <td>
+                            <p style={{width:"10px"}}>Веома висок (црвена)</p>
+                            </td>
                     </tr>
                     <tr>
                         <td style={{ border: "1px solid black", backgroundColor: "orange", height: "30px", width: "30px" }}>
                             {prikazi.treci && <Slika />}
                         </td>
-                        <td>Висок(наранџаста)</td>
+                        <td>
+                        <p style={{width:"10px"}}>Висок (наранџаста)</p>
+
+                        </td>
                     </tr>
                     <tr>
                         <td style={{ border: "1px solid black", backgroundColor: "yellow", height: "30px", width: "30px" }}>
                             {prikazi.drugi && <Slika />}
                         </td>
-                        <td>Умерени(жута)</td>
+                        <td>
+                        <p style={{width:"10px"}}>Умерени (жута)</p>
+
+                         </td>
                     </tr>
                     <tr>
                         <td style={{ border: "1px solid black", backgroundColor: "green", height: "30px", width: "30px" }}>
                             {prikazi.prvi && <Slika />}
                         </td>
-                        <td>Низак(зелена)</td>
+                        <td>
+                        <p style={{width:"10px"}}>Низак (зелена)</p>
+                         </td>
                     </tr>
                 </tbody>
             </table>

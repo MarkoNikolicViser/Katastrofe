@@ -41,9 +41,7 @@ const MatricaZbirnaWord = () => {
     useEffect(() => {
         Proracun()
     }, [proracun]);
-    // useEffect(() => {
-    //     console.log(proracun)
-    // }, [proracun]);
+
     useEffect(() => {
         OpcijaVerovatnoceRef5.current[1].style.backgroundColor = "green"
         OpcijaVerovatnoceRef5.current[2].style.backgroundColor = "green"
