@@ -72,29 +72,34 @@ const Preview = () => {
                     <table style={{ fontFamily: "sans-serif", borderCollapse: "collapse", fontSize: "11px", width: "50%" }}>
                         <tbody>
                             <tr>
-                            <td style={{width:"100%", height:"20px"}}>Матрица 1. Ризик по живот и здравље људи</td >
-                            <td></td >
-<td></td>
-<td  style={{textAlign:"left"}}>Матрица 1. Ризик по живот и здравље људи</td >
-
+                                <td style={{ width: "100%", height: "20px", borderLeft: "1px solid black", borderTop: "1px solid black" }}>Матрица 1. Ризик по живот и здравље људи</td >
+                                <td style={{ width: "100%", height: "20px", borderTop: "1px solid black", borderRight:"1px black solid" }}></td>
+                                <td style={{ width: "100%", height: "20px", borderTop: "1px solid black" }}>Матрица 2. Ризик по економију/екологију</td >
+                                <td style={{ width: "100%", height: "20px", borderTop: "1px solid black", borderRight:"1px black solid" }}></td>
                             </tr>
                             <tr>
                                 {zivotIdRedValue ? (<>
-                                    <td style={{ borderLeft: "1px solid black", borderTop: "1px solid black", borderBottom: "1px solid black", width: "15%", verticalAlign: "top" }}><MatricaZivot /></td>
-                                    <td style={{ borderRight: "1px solid black", borderTop: "1px solid black", borderBottom: "1px solid black", width: "10%", verticalAlign: "top" }}><LegendaZivot /></td>
+                                    <td style={{ borderLeft: "1px solid black", borderBottom: "1px solid black", width: "15%", verticalAlign: "top" }}><MatricaZivot /></td>
+                                    <td style={{ borderRight: "1px solid black", borderBottom: "1px solid black", width: "10%", verticalAlign: "top" }}><LegendaZivot /></td>
                                 </>) : null}
-                                {ekonomijaIdRedValue ? (<>  
-                                    <td style={{ borderLeft: "1px solid black", borderTop: "1px solid black", borderBottom: "1px solid black", width: "15%", verticalAlign: "top" }}><MatricaEkonomija /></td>
-                                    <td style={{ borderRight: "1px solid black", borderTop: "1px solid black", borderBottom: "1px solid black", width: "10%", verticalAlign: "top" }}><LegendaEkonomija /></td>
+                                {ekonomijaIdRedValue ? (<>
+                                    <td style={{ borderLeft: "1px solid black", borderBottom: "1px solid black", width: "15%", verticalAlign: "top" }}><MatricaEkonomija /></td>
+                                    <td style={{ borderRight: "1px solid black", borderBottom: "1px solid black", width: "10%", verticalAlign: "top" }}><LegendaEkonomija /></td>
                                 </>) : null}
                             </tr>
                             <tr>
+                                <td style={{ width: "100%", height: "20px", borderLeft: "1px solid black", borderTop: "1px solid black" }}>Матрица 3. Критична инфраструктура</td >
+                                <td style={{ width: "100%", height: "20px", borderTop: "1px solid black", borderRight:"1px black solid" }}></td>
+                                <td style={{ width: "100%", height: "20px", borderTop: "1px solid black" }}>Матрица 4. Укупан ризик</td >
+                                <td style={{ width: "100%", height: "20px", borderTop: "1px solid black", borderRight:"1px black solid" }}></td>
+                            </tr>
+                            <tr>
                                 {infraIdRedValue ? (<>
-                                    <td style={{ borderLeft: "1px solid black", borderTop: "1px solid black", borderBottom: "1px solid black", width: "15%", verticalAlign: "top" }}><MatricaInfra /></td>
-                                    <td style={{ borderRight: "1px solid black", borderTop: "1px solid black", borderBottom: "1px solid black", width: "10%", verticalAlign: "top" }}><LegendaInfra /></td>
+                                    <td style={{ borderLeft: "1px solid black", borderBottom: "1px solid black", width: "15%", verticalAlign: "top" }}><MatricaInfra /></td>
+                                    <td style={{ borderRight: "1px solid black", borderBottom: "1px solid black", width: "10%", verticalAlign: "top" }}><LegendaInfra /></td>
                                 </>) : null}
-                                <td style={{ borderLeft: "1px solid black", borderTop: "1px solid black", borderBottom: "1px solid black", width: "15%", verticalAlign: "top" }}><MatricaZbirna /></td>
-                                <td style={{ borderRight: "1px solid black", borderTop: "1px solid black", borderBottom: "1px solid black", width: "10%", verticalAlign: "top" }}><LegendaZbirna /></td>
+                                <td style={{ borderLeft: "1px solid black", borderBottom: "1px solid black", width: "15%", verticalAlign: "top" }}><MatricaZbirna /></td>
+                                <td style={{ borderRight: "1px solid black", borderBottom: "1px solid black", width: "10%", verticalAlign: "top" }}><LegendaZbirna /></td>
                             </tr>
                         </tbody>
                     </table>
