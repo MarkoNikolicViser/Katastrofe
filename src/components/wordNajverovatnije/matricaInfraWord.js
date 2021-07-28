@@ -67,126 +67,104 @@ const MatricaEkonimijaWord = () => {
 
     return (
         <>
-            <div style={{ fontFamily: "sans-serif" }}>
-
+        <div style={{ fontFamily: "sans-serif" }}>
             <table style={{ fontFamily: "sans-serif", borderCollapse: "collapse", fontSize: "11px", width: "250px", height: "100px" }}>
-                    <tbody style={{ fontSize: "13px" }}>
-                        <tr id="prva" style={{ textAlign: "center" }}>
-                            <td style={{ textAlign: "left", fontSize:"9px",width:"10px"  }}>Катастрофалне</td>
-                            <td>5</td>
-                            {tabela.prvi.map(m => (
-                                <td ref={el => OpcijaVerovatnoceRef1.current[m] = el} key={m} style={{ border: "1px solid black", width: "30px", height: "30px" }}>
-                                    {proracun === m && <Slika />}
-                                </td>
-                            ))}
-                        </tr>
-                        <tr style={{ textAlign: "center" }}>
-                            <td style={{ textAlign: "left", fontSize:"9px"  }}>Озбиљне</td>
-                            <td>4</td>
-                            {tabela.drugi.map(m => (
-                                <td ref={el => OpcijaVerovatnoceRef2.current[m] = el} key={m} style={{ border: "1px solid black", width: "30px", height: "30px" }}>
-                                    {proracun === m && <Slika />}
-                                </td>
-                            ))}
-                        </tr>
-                        <tr style={{ textAlign: "center" }}>
-                            <td style={{ textAlign: "left", fontSize:"9px"  }}>Умерене</td>
-                            <td>3</td>
-                            {tabela.treci.map(m => (
-                                <td ref={el => OpcijaVerovatnoceRef3.current[m] = el} key={m} style={{ border: "1px solid black", width: "30px", height: "30px" }}>
-                                    {proracun === m && <Slika />}
-                                </td>
-                            ))}
-                        </tr>
-                        <tr style={{ textAlign: "center" }}>
-                            <td style={{ textAlign: "left", fontSize:"9px"  }}>Мале</td>
-                            <td>2</td>
-                            {tabela.cetvrti.map(m => (
-                                <td ref={el => OpcijaVerovatnoceRef4.current[m] = el} key={m} style={{ border: "1px solid black", width: "30px", height: "30px" }}>
-                                    {proracun === m && <Slika />}
-                                </td>
-                            ))}
-                        </tr>
-                        <tr style={{ textAlign: "center" }}>
-                            <td style={{ textAlign: "left", fontSize:"9px"  }}>Минималне</td>
-                            <td>1</td>
-                            {tabela.peti.map(m => (
-                                <td ref={el => OpcijaVerovatnoceRef5.current[m] = el} key={m} style={{ border: "1px solid black", width: "30px", height: "30px" }}>
-                                    {proracun === m && <Slika />}
-                                </td>
-                            ))}
-                        </tr>
-                        <tr>
-                            <th></th>
-                            <th></th>
-                            <th>1</th>
-                            <th>2</th>
-                            <th>3</th>
-                            <th>4</th>
-                            <th>5</th>
-                        </tr>
-                        <tr>
-                            <td></td>
-                            <td></td>
-                            <td></td>
+                <tbody style={{ fontSize: "13px" }}>
+                    <tr id="prva" style={{ textAlign: "center" }}>
+                        <td style={{ textAlign: "left", fontSize: "9px", width: "10px" }}>Катастрофалне</td>
+                        <td></td>
+                        <td>5</td>
+                        {tabela.prvi.map(m => (
+                            <td ref={el => OpcijaVerovatnoceRef1.current[m] = el} key={m} style={{ border: "1px solid black", width: "30px", height: "30px" }}>
+                                {proracun === m && <Slika />}
+                            </td>
+                        ))}
+                    </tr>
+                    <tr style={{ textAlign: "center" }}>
+                        <td style={{ textAlign: "left", fontSize: "9px" }}>Озбиљне</td>
+                        <td rowSpan="3">
+                            <img src="https://www.almaks.rs/get-image/posledice.png" alt="" />
+                        </td>
+                        <td>4</td>
+                        {tabela.drugi.map(m => (
+                            <td ref={el => OpcijaVerovatnoceRef2.current[m] = el} key={m} style={{ border: "1px solid black", width: "30px", height: "30px" }}>
+                                {proracun === m && <Slika />}
+                            </td>
+                        ))}
+                    </tr>
+                    <tr style={{ textAlign: "center" }}>
+                        <td style={{ textAlign: "left", fontSize: "9px" }}>Умерене</td>
+                        <td>3</td>
+                        {tabela.treci.map(m => (
+                            <td ref={el => OpcijaVerovatnoceRef3.current[m] = el} key={m} style={{ border: "1px solid black", width: "30px", height: "30px" }}>
+                                {proracun === m && <Slika />}
+                            </td>
+                        ))}
+                    </tr>
+                    <tr style={{ textAlign: "center" }}>
+                        <td style={{ textAlign: "left", fontSize: "9px" }}>Мале</td>
+                        <td>2</td>
+                        {tabela.cetvrti.map(m => (
+                            <td ref={el => OpcijaVerovatnoceRef4.current[m] = el} key={m} style={{ border: "1px solid black", width: "30px", height: "30px" }}>
+                                {proracun === m && <Slika />}
+                            </td>
+                        ))}
+                    </tr>
+                    <tr style={{ textAlign: "center" }}>
+                        <td style={{ textAlign: "left", fontSize: "9px" }}>Минималне</td>
+                        <td></td>
+                        <td>1</td>
+                        {tabela.peti.map(m => (
+                            <td ref={el => OpcijaVerovatnoceRef5.current[m] = el} key={m} style={{ border: "1px solid black", width: "30px", height: "30px" }}>
+                                {proracun === m && <Slika />}
+                            </td>
+                        ))}
+                    </tr>
+                    <tr>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th>1</th>
+                        <th>2</th>
+                        <th>3</th>
+                        <th>4</th>
+                        <th>5</th>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td colSpan="5">Вероватноћa</td>
 
-                            <td>Веро</td>
-                            <td>ватно</td>
-                            <td>ћa</td>
-                        </tr>
-                        <tr style={{ fontSize: "8px" }}>
-                            <th></th>
-                            <th></th>
-                            <th style={{ verticalAlign: "top" }}>
-                                <p style={{ margin: "-4px" }}>З</p>
-                                <p style={{ margin: "-4px" }}>а</p>
-                                <p style={{ margin: "-4px" }}>н</p>
-                                <p style={{ margin: "-4px" }}>е</p>
-                                <p style={{ margin: "-4px" }}>м</p>
-                                <p style={{ margin: "-4px" }}>а</p>
-                                <p style={{ margin: "-4px" }}>р</p>
-                                <p style={{ margin: "-4px" }}>љ</p>
-                                <p style={{ margin: "-4px" }}>и</p>
-                                <p style={{ margin: "-4px" }}>в</p>
-                                <p style={{ margin: "-4px" }}>а</p>
-                            </th>
-                            <th style={{ verticalAlign: "top" }}>
-                                <p style={{ margin: "-4px" }}>М</p>
-                                <p style={{ margin: "-4px" }}>а</p>
-                                <p style={{ margin: "-4px" }}>л</p>
-                                <p style={{ margin: "-4px" }}>а</p>
-                            </th>
-                            <th style={{ verticalAlign: "top" }}>
-                                <p style={{ margin: "-4px" }}>С</p>
-                                <p style={{ margin: "-4px" }}>р</p>
-                                <p style={{ margin: "-4px" }}>е</p>
-                                <p style={{ margin: "-4px" }}>д</p>
-                                <p style={{ margin: "-4px" }}>њ</p>
-                                <p style={{ margin: "-4px" }}>а</p>
-                            </th>
-                            <th style={{ verticalAlign: "top" }}>
-                                <p style={{ margin: "-4px" }}>В</p>
-                                <p style={{ margin: "-4px" }}>е</p>
-                                <p style={{ margin: "-4px" }}>л</p>
-                                <p style={{ margin: "-4px" }}>и</p>
-                                <p style={{ margin: "-4px" }}>к</p>
-                                <p style={{ margin: "-4px" }}>а</p>
-                            </th>
-                            <th style={{ verticalAlign: "top" }}>
-                                <p style={{ margin: "-4px" }}>И</p>
-                                <p style={{ margin: "-4px" }}>з</p>
-                                <p style={{ margin: "-4px" }}>р</p>
-                                <p style={{ margin: "-4px" }}>а</p>
-                                <p style={{ margin: "-4px" }}>з</p>
-                                <p style={{ margin: "-4px" }}>и</p>
-                                <p style={{ margin: "-4px" }}>т</p>
-                                <p style={{ margin: "-4px" }}>о</p>
-                            </th>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-        </>
+                    </tr>
+                    <tr style={{ fontSize: "9px" }}>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th style={{ verticalAlign: "top" }}>
+                            <img src="https://www.almaks.rs/get-image/zanemarljiva.png" alt="" />
+                        </th>
+                        <th style={{ verticalAlign: "top" }}>
+                            <img src="https://www.almaks.rs/get-image/mala.png" alt="" />
+                        </th>
+                        <th style={{ verticalAlign: "top" }}>
+                            <img src="https://www.almaks.rs/get-image/srednja.png" alt="" />
+
+                        </th>
+                        <th style={{ verticalAlign: "top" }}>
+                            <img src="https://www.almaks.rs/get-image/velika.png" alt="" />
+
+                        </th>
+                        <th style={{ verticalAlign: "top" }}>
+                            <img src="https://www.almaks.rs/get-image/izrazito.png" alt="" />
+
+                        </th>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </>
     )
 }
 

@@ -48,12 +48,6 @@ const Legenda = () => {
 
     return (
         <div>
-            {/* <div id='prvi' style={{ border: "1px solid black", backgroundColor:"red", height:"30px", width:"30px"}}></div>
-            <label htmlFor="prvi">Test</label>
-            <div style={{ border: "1px solid black", backgroundColor:"orange", height:"30px", width:"30px"}}></div>
-            <div style={{ border: "1px solid black", backgroundColor:"yellow", height:"30px", width:"30px"}}></div>
-            <div style={{ border: "1px solid black", backgroundColor:"green", height:"30px", width:"30px"}}></div> */}
-
             <table style={{ fontFamily: "sans-serif", borderCollapse: "collapse", fontSize: "11px", width: "70px",verticalAlign: "top"  }}>
                 <tbody style={{ fontSize: "8px" }}>
                     <tr>

@@ -40,7 +40,7 @@ const IzborOpasnosti = () => {
                 <option value="topli">Екстремне временске појаве: Топли талас</option>
                 <option value="susa">Екстремне временске појаве: Суша</option>
                 </optgroup>
-                <option value="voda">Недостатак воде за пиће</option>
+                <option value="vode">Недостатак воде за пиће</option>
                 <option value="epidemije">Епидемије и пандемије</option>
                 <option value="biljne">Биљне болести</option>
                 <option value="zivotinja">Болести животиња</option>

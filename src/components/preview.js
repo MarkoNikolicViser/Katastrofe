@@ -33,7 +33,7 @@ import ProcenaVerovatnoceWordN from './wordNajtezi/procenaVerovatnoceWord'
 
 
 const Preview = () => {
-    const { ekonomijaIdRed, zivotIdRed, infraIdRed, ekonomijaIdRedN,zivotIdRedN,infraIdRedN} = useContext(TContext)
+    const { ekonomijaIdRed, zivotIdRed, infraIdRed, ekonomijaIdRedN, zivotIdRedN, infraIdRedN } = useContext(TContext)
 
     const [ekonomijaIdRedValue, setEkonomijaIdRedValue] = ekonomijaIdRed
     const [zivotIdRedValue, setZivotIdRedValue] = zivotIdRed
@@ -71,25 +71,30 @@ const Preview = () => {
                     <ProcenaPoKritInfraWord />
                     <table style={{ fontFamily: "sans-serif", borderCollapse: "collapse", fontSize: "11px", width: "50%" }}>
                         <tbody>
-                            {/* <tr>
-                                {zivotIdRedValue ?( <>
-                                    <td style={{ border: "1px solid black" }}>
-                                        <MatricaZivot />
-                                    </td>
-                                    <td><LegendaZivot /></td>
-                                </>):null}
-                                {ekonomijaIdRedValue ?(<>
-                                    <td style={{ border: "1px solid black" }}><MatricaEkonomija /></td>
-                                    <td><LegendaEkonomija /></td>
-                                </>):null}
-                            </tr> */}
                             <tr>
-                                {infraIdRedValue ?(<>
-                                    <td style={{ borderLeft: "1px solid black", borderTop: "1px solid black",borderBottom: "1px solid black", width:"15%"}}><MatricaInfra /></td>
-                                    <td style={{ borderRight: "1px solid black", borderTop: "1px solid black",borderBottom: "1px solid black", width:"10%"}}><LegendaInfra /></td>
-                                </>):null}
-                                <td style={{ borderLeft: "1px solid black", borderTop: "1px solid black",borderBottom: "1px solid black", width:"15%"}}><MatricaZbirna /></td>
-                                <td style={{ borderRight: "1px solid black", borderTop: "1px solid black",borderBottom: "1px solid black", width:"10%"}}><LegendaZbirna /></td>
+                            <td style={{width:"100%", height:"20px"}}>Матрица 1. Ризик по живот и здравље људи</td >
+                            <td></td >
+<td></td>
+<td  style={{textAlign:"left"}}>Матрица 1. Ризик по живот и здравље људи</td >
+
+                            </tr>
+                            <tr>
+                                {zivotIdRedValue ? (<>
+                                    <td style={{ borderLeft: "1px solid black", borderTop: "1px solid black", borderBottom: "1px solid black", width: "15%", verticalAlign: "top" }}><MatricaZivot /></td>
+                                    <td style={{ borderRight: "1px solid black", borderTop: "1px solid black", borderBottom: "1px solid black", width: "10%", verticalAlign: "top" }}><LegendaZivot /></td>
+                                </>) : null}
+                                {ekonomijaIdRedValue ? (<>  
+                                    <td style={{ borderLeft: "1px solid black", borderTop: "1px solid black", borderBottom: "1px solid black", width: "15%", verticalAlign: "top" }}><MatricaEkonomija /></td>
+                                    <td style={{ borderRight: "1px solid black", borderTop: "1px solid black", borderBottom: "1px solid black", width: "10%", verticalAlign: "top" }}><LegendaEkonomija /></td>
+                                </>) : null}
+                            </tr>
+                            <tr>
+                                {infraIdRedValue ? (<>
+                                    <td style={{ borderLeft: "1px solid black", borderTop: "1px solid black", borderBottom: "1px solid black", width: "15%", verticalAlign: "top" }}><MatricaInfra /></td>
+                                    <td style={{ borderRight: "1px solid black", borderTop: "1px solid black", borderBottom: "1px solid black", width: "10%", verticalAlign: "top" }}><LegendaInfra /></td>
+                                </>) : null}
+                                <td style={{ borderLeft: "1px solid black", borderTop: "1px solid black", borderBottom: "1px solid black", width: "15%", verticalAlign: "top" }}><MatricaZbirna /></td>
+                                <td style={{ borderRight: "1px solid black", borderTop: "1px solid black", borderBottom: "1px solid black", width: "10%", verticalAlign: "top" }}><LegendaZbirna /></td>
                             </tr>
                         </tbody>
                     </table>
@@ -101,23 +106,23 @@ const Preview = () => {
                     <ProcenaPoKritInfraWordN />
                     <table style={{ fontFamily: "sans-serif", borderCollapse: "collapse", fontSize: "11px", width: "100%" }}>
                         <tbody>
-                            <tr>
-                                {zivotIdRedNValue ?( <>
+                            <tr style={{ verticalAlign: "top" }}>
+                                {zivotIdRedNValue ? (<>
                                     <td style={{ border: "1px solid black" }}>
                                         <MatricaZivotN />
                                     </td>
                                     <td><LegendaZivotN /></td>
-                                </>):null}
-                                {ekonomijaIdRedNValue ?( <>
+                                </>) : null}
+                                {ekonomijaIdRedNValue ? (<>
                                     <td style={{ border: "1px solid black" }}><MatricaEkonomijaN /></td>
                                     <td><LegendaEkonomijaN /></td>
-                                </>):null}
+                                </>) : null}
                             </tr>
-                            <tr>
+                            <tr style={{ verticalAlign: "top" }}>
                                 {infraIdRedNValue ? (<>
                                     <td style={{ border: "1px solid black" }}><MatricaInfraN /></td>
                                     <td><LegendaInfraN /></td>
-                                </>):null}
+                                </>) : null}
                                 <td style={{ border: "1px solid black" }}><MatricaZbirnaN /></td>
                                 <td><LegendaZbirnaN /></td>
                             </tr>

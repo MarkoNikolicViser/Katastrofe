@@ -44,9 +44,8 @@ const Legenda = () => {
 
     return (
         <div>
-
-            <table style={{ fontFamily: "sans-serif", borderCollapse: "collapse", fontSize: "11px", width: "70px" }}>
-                <tbody  style={{ fontSize: "8px" }}>
+            <table style={{ fontFamily: "sans-serif", borderCollapse: "collapse", fontSize: "11px", width: "70px",verticalAlign: "top"  }}>
+                <tbody style={{ fontSize: "8px" }}>
                     <tr>
                         <td style={{ border: "1px solid black", backgroundColor: "red", height: "30px", width: "30px" }}>
                             {prikazi.cetvrti && <Slika />}
