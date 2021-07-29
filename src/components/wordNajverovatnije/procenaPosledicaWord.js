@@ -53,12 +53,21 @@ const ProcenaPosledica = () => {
     })
   }, [zivotInfoValue]);
 
+  useEffect(() => {
+    if(zivotInfoValue){
+    VrednostPoslediceRef1.current[0].style.width="10%"
+    VrednostPoslediceRef1.current[1].style.width="30%"
+    VrednostPoslediceRef1.current[2].style.width="30%"
+  }
+  }, []);
   return (
     <>
             {zivotInfoValue &&
                 <div style={{ fontFamily: "sans-serif" }}>
-                    <h1 style={{ fontSize: "14.5px", textDecoration: "underline" }}>Процена вероватноће</h1>
-                    <p style={{ fontSize: "14.5px" }}>Разматрајучћи опасност на основу доступних података и анализа, радна група за процену ризика се пределила да вероватноћу одреди на основу вероватноће појављивања земљотреса.</p>
+                    <h1 style={{ fontSize: "14.5px", textDecoration: "underline" }}>Процена последице по штићене вреддности</h1>
+                    <p style={{ fontSize: "14.5px" }}>Последице представљају ефекат штетног догађаја по живот и здравље људи, економију/екологију и критичну инфраструктуру, а манифестује се кроз величину губитка (штету).</p>
+                    <h1 style={{ fontSize: "12.5px", textDecoration: "underline" }}>Последица по живот и здравље људи</h1>
+                    <p style={{ fontSize: "12.5px" }}>Последице представљају ефекат штетног догађаја по живот и здравље људи, економију/екологију и критичну инфраструктуру, а манифестује се кроз величину губитка (штету).</p>
                    <table style={{ fontFamily: "sans-serif", borderCollapse: "collapse", fontSize: "11px", width: "100%" }}>
                         <thead style={{ fontSize: "13px" }}>
                             <tr>

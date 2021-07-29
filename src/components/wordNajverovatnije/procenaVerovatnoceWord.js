@@ -4,12 +4,14 @@ import Slika from '../Slika'
 
 const ProcenaVerovatnoceWord = () => {
 
-    const { procVerovatnoce, odabranaVerovatnoca, odabranaVrednostVer, verKolona } = useContext(TContext)
+    const { procVerovatnoce, odabranaVerovatnoca, odabranaVrednostVer, verKolona, opasnost,opasnostTabela } = useContext(TContext)
     const [procVerovatnoceValue, setProcVerovatnoceValue] = useState(procVerovatnoce);
     const [odabranaVerovatnocaValue, setodabranaVerovatnocaValue] = odabranaVerovatnoca
     const [odabranaVrednostVerValue, setOdabranaVrednostVerValue] = odabranaVrednostVer
+    const [opasnostValue, setOpasnostValue] = opasnost;
+    const [opasnostTabelaValue,setOpasnostTabelaValue]=opasnostTabela
 
-    const[verKolonaValue,setVerKolonaValue]=verKolona
+    const [verKolonaValue, setVerKolonaValue] = verKolona
 
     const VrednostVerovatnoceRef = useRef([])
     const OpcijaVerovatnoceRef1 = useRef([])
@@ -18,8 +20,43 @@ const ProcenaVerovatnoceWord = () => {
     const OpcijaVerovatnoceRef4 = useRef([])
     const OpcijaVerovatnoceRef5 = useRef([])
 
-
-
+const PromenaOpasnosti=()=>{
+    if(opasnostValue==="zemljotres")
+    setOpasnostTabelaValue("земљотреса")
+    else if(opasnostValue==="odroni")
+    setOpasnostTabelaValue("одрона, клизишта и ерозија")
+    else if(opasnostValue==="poplave")
+    setOpasnostTabelaValue("поплава")
+    else if(opasnostValue==="grad")
+    setOpasnostTabelaValue("екстремне временске појаве града")
+    else if(opasnostValue==="olujni")
+    setOpasnostTabelaValue("екстремне временске појаве олујног ветра")
+    else if(opasnostValue==="snezne")
+    setOpasnostTabelaValue("екстремне временске појаве снежне мећаве, наноса и поледица, хладни талас")
+    else if(opasnostValue==="topli")
+    setOpasnostTabelaValue("топлог таласа")
+    else if(opasnostValue==="susa")
+    setOpasnostTabelaValue("суше")
+    else if(opasnostValue==="vode")
+    setOpasnostTabelaValue("недостатка воде за пиће")
+    else if(opasnostValue==="epidemije")
+    setOpasnostTabelaValue("епидемије и пандемије")
+    else if(opasnostValue==="biljne")
+    setOpasnostTabelaValue("биљних болести")
+    else if(opasnostValue==="zivotinja")
+    setOpasnostTabelaValue("болести животиња")
+    else if(opasnostValue==="pozari")
+    setOpasnostTabelaValue("пожара и експлозија")
+    else if(opasnostValue==="tehnicke")
+    setOpasnostTabelaValue("техничко/технолошке несреће")
+    else if(opasnostValue==="nuklearni")
+    setOpasnostTabelaValue("нуклеарног и радиолошког акцидента")
+    else if(opasnostValue==="terorsticki")
+    setOpasnostTabelaValue("опасности од терористичког напада")
+}
+useEffect(() => {
+    PromenaOpasnosti()
+}, [opasnostValue]);
     const [tabela, setTabela] = useState(
         {
             heder: ["Kатегорија", "(а)Вероватноћа", "(б)Учсеталост", "(ц)Стручна процена", "Одобрено"],
@@ -85,15 +122,18 @@ const ProcenaVerovatnoceWord = () => {
                 setVerKolonaValue(5)
             }
         })
-
     }, [procVerovatnoceValue, odabranaVrednostVerValue]);
 
+    useEffect(() => {
+        if(opasnostValue)
+        OpcijaVerovatnoceRef1.current[0].style.width="40px"
+      }, []);
     return (
         <>
             {odabranaVerovatnocaValue &&
                 <div style={{ fontFamily: "sans-serif" }}>
                     <h1 style={{ fontSize: "14.5px", textDecoration: "underline" }}>Процена вероватноће</h1>
-                    <p style={{ fontSize: "14.5px" }}>Разматрајучћи опасност на основу доступних података и анализа, радна група за процену ризика се пределила да вероватноћу одреди на основу вероватноће појављивања земљотреса.</p>
+                    <p style={{ fontSize: "14.5px" }}>Разматрајучћи опасност на основу доступних података и анализа, радна група за процену ризика се пределила да вероватноћу одреди на основу {odabranaVerovatnocaValue === "verovatnoca" && "вероватноће"}{odabranaVerovatnocaValue === "ucestanost" && "учестаности"}{odabranaVerovatnocaValue === "strucna" && "стручне процене"} појављивања {opasnostTabelaValue}.</p>
                     <table style={{ fontFamily: "sans-serif", borderCollapse: "collapse", fontSize: "11px", width: "100%" }}>
                         <thead style={{ fontSize: "13px" }}>
 
@@ -108,7 +148,7 @@ const ProcenaVerovatnoceWord = () => {
                                 {tabela.prvi.map((m, index) => (
                                     <td id={m} ref={el => OpcijaVerovatnoceRef1.current[index] = el} key={index} style={{ border: "1px solid black", padding: "6px 10px 6px 10px" }}>{m}</td>
                                 ))}
-                                <td style={{ border: "1px solid black"}}>
+                                <td style={{ border: "1px solid black" }}>
                                     {divSlika.prvi && <Slika />}
                                 </td>
                             </tr>
@@ -116,7 +156,7 @@ const ProcenaVerovatnoceWord = () => {
                                 {tabela.drugi.map((m, index) => (
                                     <td id={m} ref={el => OpcijaVerovatnoceRef2.current[index] = el} key={index} style={{ border: "1px solid black", padding: "6px 10px 6px 10px" }}>{m}</td>
                                 ))}
-                                <td style={{ border: "1px solid black"}}>
+                                <td style={{ border: "1px solid black" }}>
                                     {divSlika.drugi && <Slika />}
                                 </td>
                             </tr>
@@ -124,7 +164,7 @@ const ProcenaVerovatnoceWord = () => {
                                 {tabela.treci.map((m, index) => (
                                     <td id={m} ref={el => OpcijaVerovatnoceRef3.current[index] = el} key={index} style={{ border: "1px solid black", padding: "6px 10px 6px 10px" }}>{m}</td>
                                 ))}
-                                <td style={{ border: "1px solid black"}}>
+                                <td style={{ border: "1px solid black" }}>
                                     {divSlika.treci && <Slika />}
                                 </td>
                             </tr>
@@ -132,7 +172,7 @@ const ProcenaVerovatnoceWord = () => {
                                 {tabela.cetvrti.map((m, index) => (
                                     <td id={m} ref={el => OpcijaVerovatnoceRef4.current[index] = el} key={index} style={{ border: "1px solid black", padding: "6px 10px 6px 10px" }}>{m}</td>
                                 ))}
-                                <td style={{ border: "1px solid black"}}>
+                                <td style={{ border: "1px solid black" }}>
                                     {divSlika.cetvrti && <Slika />}
                                 </td>
                             </tr>
@@ -140,7 +180,7 @@ const ProcenaVerovatnoceWord = () => {
                                 {tabela.peti.map((m, index) => (
                                     <td id={m} ref={el => OpcijaVerovatnoceRef5.current[index] = el} key={index} style={{ border: "1px solid black", padding: "6px 10px 6px 10px" }}>{m}</td>
                                 ))}
-                                <td style={{ border: "1px solid black"}}>
+                                <td style={{ border: "1px solid black" }}>
                                     {divSlika.peti && <Slika />}
                                 </td>
                             </tr>

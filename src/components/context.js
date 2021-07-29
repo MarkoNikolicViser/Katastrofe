@@ -16,7 +16,7 @@ export const TProvider = (props) => {
     const [procVerovatnoce, setProcVerovatnoce] = useState({
         verovatnoca: false,
         ucestalost: false,
-        strucna: true
+        strucna: false
     })
     const [procPosledica, setProcPosledica] = useState({
         zivot: true,
@@ -32,6 +32,8 @@ export const TProvider = (props) => {
     const [zivotIdRed, setZivotIdRed] = useState(0)
     const [ekonomijaIdRed, setEkonomijaIdRed] = useState(0)
     const [infraIdRed, setInfraIdRed] = useState(0)
+    const [opasnostTabela,setOpasnostTabela]=useState("")
+
     //state za najtezim mogucim posledicama////////////////////////
     const [procPosledicaN, setProcPosledicaN] = useState({
         zivot: true,
@@ -73,6 +75,7 @@ export const TProvider = (props) => {
             zivotIdRed: [zivotIdRed, setZivotIdRed],
             ekonomijaIdRed: [ekonomijaIdRed, setEkonomijaIdRed],
             infraIdRed: [infraIdRed, setInfraIdRed],
+            opasnostTabela:[opasnostTabela,setOpasnostTabela],
             //-------------------importovanje state-a za najeze posledice---------------------------
             procPosledicaN: [procPosledicaN, setProcPosledicaN],
             zivotInfoN: [zivotInfoN, setZivotInfoN],

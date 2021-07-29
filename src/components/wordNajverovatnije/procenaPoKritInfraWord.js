@@ -52,6 +52,13 @@ const ProcenaPoKritInfraWord = () => {
       setdivSlika({ prvi: false, drugi: false, treci: false, cetvrti: false, peti: true })
     })
   }, [infroInfoValue]);
+  useEffect(() => {
+    if(infroInfoValue){
+    VrednostPoslediceRef1.current[0].style.width="10%"
+    VrednostPoslediceRef1.current[1].style.width="30%"
+    VrednostPoslediceRef1.current[2].style.width="30%"
+  }
+  }, []);
 
   return (
     <>
