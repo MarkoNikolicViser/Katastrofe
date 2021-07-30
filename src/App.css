@@ -168,3 +168,16 @@ height: 2.5rem;
   justify-content: center;
   padding-bottom: 3rem;
 }
+.naslov-opasnosti{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.plus{
+  transform: rotate(45deg);
+  font-size: 9rem;
+  color: rgb(206, 29, 29);
+}
+.plus:hover{
+  cursor: pointer;
+}

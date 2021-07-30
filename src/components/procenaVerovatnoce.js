@@ -15,7 +15,7 @@ const StrucnaRef=useRef(null)
 const VrednostVerovatnoceRef=useRef([])
 
 const[verovatnocaNiz,setVerovatnocaNiz]=useState(["< 1 %","1 - 5 %","6 - 50 %","51 - 98 %","> 98 %"])
-const[ucestanostNiz,setUncestanostNiz]=useState(["1 догађај у 100 година и ређе","1 догађај у 20 до 100 година","1 догађај у 2 до 20 година","1 догађај у 1 до 2 године","1 догађај годишње и чешће"])
+const[ucestanostNiz,setUncestanostNiz]=useState(["1 догађај у 100 година и ређе","1 догађај у 20 до 100 година ","1 догађај у 2 до 20 година","1 догађај у 1 до 2 године","1 догађај годишње и чешће"])
 const[strucnaProcena,setStrucnaProcena]=useState(["Занемарљива","Мала","Средња","Велика","Изразито велика"])
 
 const PromenaVerovatnoce=(e)=>{
@@ -54,15 +54,34 @@ const OdabirVredostiVerovatnoce=(e)=>{
             setOdabranaVrednostVerValue(e.target.id)
         }
         
-        useEffect(() => {
-            if(procVerovatnoceValue.ucestalost)
-            UcestalostRef.current.style.backgroundColor="grey";
-           else if(procVerovatnoceValue.verovatnoca)
-           VerovatnocaRef.current.style.backgroundColor="grey";
-           else if(procVerovatnoceValue.strucna)
-           StrucnaRef.current.style.value.backgroundColor="grey";
-        }, []);
-
+        // useEffect(() => {
+        //     if(procVerovatnoceValue.ucestalost)
+        //     UcestalostRef.current.style.backgroundColor="grey";
+        //    else if(procVerovatnoceValue.verovatnoca)
+        //    VerovatnocaRef.current.style.backgroundColor="grey";
+        //    else if(procVerovatnoceValue.strucna)
+        //    StrucnaRef.current.style.value.backgroundColor="grey";
+        // }, []);
+// useEffect(() => {
+//     if(procVerovatnoceValue.verovatnoca){
+//         for(let i=1;i<5;i++){
+//         StrucnaRef.current[i].style.backgroundColor="white";
+//         VerovatnocaRef.current.style[i].backgroundColor="gray";
+//         UcestalostRef.current.style[i].backgroundColor="white"; 
+//     }}
+//     else if(procVerovatnoceValue.ucestalost){
+//         for(let i=1;i<5;i++){
+//         StrucnaRef.current[i].style.backgroundColor="white";
+//         VerovatnocaRef.current[i].style.backgroundColor="white";
+//         UcestalostRef.current[i].style.backgroundColor="gray";
+//     }}
+//     else if(procVerovatnoceValue.strucna){
+//         for(let i=1;i<5;i++){
+//         StrucnaRef.current[i].style.backgroundColor="gray";
+//         VerovatnocaRef.current[i].style.backgroundColor="white";
+//         UcestalostRef.current[i].style.backgroundColor="white";}
+//     }
+// }, [procVerovatnoceValue]);
     return(
         <div className="verovatnoce">
             <h3>Изабери вероватноће</h3>

@@ -20,43 +20,7 @@ const ProcenaVerovatnoceWord = () => {
     const OpcijaVerovatnoceRef4 = useRef([])
     const OpcijaVerovatnoceRef5 = useRef([])
 
-const PromenaOpasnosti=()=>{
-    if(opasnostValue==="zemljotres")
-    setOpasnostTabelaValue("земљотреса")
-    else if(opasnostValue==="odroni")
-    setOpasnostTabelaValue("одрона, клизишта и ерозија")
-    else if(opasnostValue==="poplave")
-    setOpasnostTabelaValue("поплава")
-    else if(opasnostValue==="grad")
-    setOpasnostTabelaValue("екстремне временске појаве града")
-    else if(opasnostValue==="olujni")
-    setOpasnostTabelaValue("екстремне временске појаве олујног ветра")
-    else if(opasnostValue==="snezne")
-    setOpasnostTabelaValue("екстремне временске појаве снежне мећаве, наноса и поледица, хладни талас")
-    else if(opasnostValue==="topli")
-    setOpasnostTabelaValue("топлог таласа")
-    else if(opasnostValue==="susa")
-    setOpasnostTabelaValue("суше")
-    else if(opasnostValue==="vode")
-    setOpasnostTabelaValue("недостатка воде за пиће")
-    else if(opasnostValue==="epidemije")
-    setOpasnostTabelaValue("епидемије и пандемије")
-    else if(opasnostValue==="biljne")
-    setOpasnostTabelaValue("биљних болести")
-    else if(opasnostValue==="zivotinja")
-    setOpasnostTabelaValue("болести животиња")
-    else if(opasnostValue==="pozari")
-    setOpasnostTabelaValue("пожара и експлозија")
-    else if(opasnostValue==="tehnicke")
-    setOpasnostTabelaValue("техничко/технолошке несреће")
-    else if(opasnostValue==="nuklearni")
-    setOpasnostTabelaValue("нуклеарног и радиолошког акцидента")
-    else if(opasnostValue==="terorsticki")
-    setOpasnostTabelaValue("опасности од терористичког напада")
-}
-useEffect(() => {
-    PromenaOpasnosti()
-}, [opasnostValue]);
+
     const [tabela, setTabela] = useState(
         {
             heder: ["Kатегорија", "(а)Вероватноћа", "(б)Учсеталост", "(ц)Стручна процена", "Одобрено"],

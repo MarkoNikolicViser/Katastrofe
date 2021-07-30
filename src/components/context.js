@@ -9,9 +9,11 @@ export const TProvider = (props) => {
     const [unosLogin, setUnosLogin] = useState("")
     const [unosPw, setUnosPw] = useState("")
     const [procena, setProcena] = useState("drustvo")
-    const [opasnost, setOpasnost] = useState("")
+    const [opasnost, setOpasnost] = useState()
     const [scenario, setScenario] = useState("najverovatniji")
-    const [budzet, setBudzet] = useState(0)
+    const [budzet, setBudzet] = useState("")
+    const[procenat,setProcenat]=useState("")
+
     const [procBudzet, setProcBudzet] = useState()
     const [procVerovatnoce, setProcVerovatnoce] = useState({
         verovatnoca: false,
@@ -25,14 +27,14 @@ export const TProvider = (props) => {
     })
     const [odabranaVerovatnoca, setOdabranaVerovatnoca] = useState()
     const [odabranaVrednostVer, setOdabranaVrednostVer] = useState()
-    const [zivotInfo, setZivotInfo] = useState()
-    const [ekonomijaInfo, setEkonomijaInfo] = useState()
-    const [infroInfo, setInfroInfo] = useState()
+    const [zivotInfo, setZivotInfo] = useState("")
+    const [ekonomijaInfo, setEkonomijaInfo] = useState("")
+    const [infroInfo, setInfroInfo] = useState("")
     const [verKolona, setVerKolona] = useState()
     const [zivotIdRed, setZivotIdRed] = useState(0)
     const [ekonomijaIdRed, setEkonomijaIdRed] = useState(0)
     const [infraIdRed, setInfraIdRed] = useState(0)
-    const [opasnostTabela,setOpasnostTabela]=useState("")
+    const [opasnostTabela,setOpasnostTabela]=useState()
 
     //state za najtezim mogucim posledicama////////////////////////
     const [procPosledicaN, setProcPosledicaN] = useState({
@@ -63,6 +65,7 @@ export const TProvider = (props) => {
             opasnost: [opasnost, setOpasnost],
             scenario: [scenario, setScenario],
             budzet: [budzet, setBudzet],
+            procenat:[procenat,setProcenat],
             procBudzet: [procBudzet, setProcBudzet],
             procVerovatnoce: [procVerovatnoce, setProcVerovatnoce],
             procPosledica: [procPosledica, setProcPosledica],

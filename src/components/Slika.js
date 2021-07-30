@@ -8,7 +8,7 @@ const Slika=()=>{
 
     const odabranaOpasnost=opasnostValue+'.png'
 
-    const link="https://www.almaks.rs/get-image/"+odabranaOpasnost
+    const link="https://biblioteka.almaks.rs/get-image/"+odabranaOpasnost
 
     return(
         <>

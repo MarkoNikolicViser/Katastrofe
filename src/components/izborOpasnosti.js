@@ -3,31 +3,55 @@ import { TContext } from "./context"
 
 const IzborOpasnosti = () => {
 
-    const { opasnost } = useContext(TContext)
+    const { opasnost,opasnostTabela } = useContext(TContext)
     const [opasnostValue, setOpasnostValue] = opasnost;
     const EkstremneRef = useRef(null);
     const [ekstremne, setEkstremne] = useState(false)
+    const [opasnostTabelaValue,setOpasnostTabelaValue]=opasnostTabela
+
 
     const Izbor = (e) => {
         setOpasnostValue(e.target.value);
-        // if (e.target.value === "ekstremne-vremenske-prilike")
-        //     setEkstremne(true)
-        // else {
-        //     setEkstremne(false);
-        // }
+        if(e.target.value==="zemljotres")
+        setOpasnostTabelaValue("земљотреса")
+        else if(e.target.value==="odroni")
+        setOpasnostTabelaValue("одрона, клизишта и ерозија")
+        else if(e.target.value==="poplave")
+        setOpasnostTabelaValue("поплава")
+        else if(e.target.value==="grad")
+        setOpasnostTabelaValue("екстремне временске појаве града")
+        else if(e.target.value==="olujni")
+        setOpasnostTabelaValue("екстремне временске појаве олујног ветра")
+        else if(e.target.value==="snezne")
+        setOpasnostTabelaValue("екстремне временске појаве снежне мећаве, наноса и поледица, хладни талас")
+        else if(e.target.value==="topli")
+        setOpasnostTabelaValue("топлог таласа")
+        else if(e.target.value==="susa")
+        setOpasnostTabelaValue("суше")
+        else if(e.target.value==="vode")
+        setOpasnostTabelaValue("недостатка воде за пиће")
+        else if(e.target.value==="epidemije")
+        setOpasnostTabelaValue("епидемије и пандемије")
+        else if(e.target.value==="biljne")
+        setOpasnostTabelaValue("биљних болести")
+        else if(e.target.value==="zivotinja")
+        setOpasnostTabelaValue("болести животиња")
+        else if(e.target.value==="pozari")
+        setOpasnostTabelaValue("пожара и експлозија")
+        else if(e.target.value==="tehnicke")
+        setOpasnostTabelaValue("техничко/технолошке несреће")
+        else if(e.target.value==="nuklearni")
+        setOpasnostTabelaValue("нуклеарног и радиолошког акцидента")
+        else if(e.target.value==="terorsticki")
+        setOpasnostTabelaValue("опасности од терористичког напада")
     }
-    // useEffect(() => {
-    //     if (ekstremne === true)
-    //         EkstremneRef.current.style.display = "block";
-    //     else {
-    //         EkstremneRef.current.style.display = "none";
-    //     }
-    // }, [ekstremne])
+
 
     return (
-        <div className="izbor-opasnosti">
+        <>
+        {!opasnostValue&&<div className="izbor-opasnosti">
             <label htmlFor="izbor">Опасност:</label>
-            <select onChange={Izbor} defaultValue={'DEFAULT'} name="izbor" id="">
+            <select onChange={Izbor} defaultValue={'DEFAULT'}  name="izbor" id="">
                 <option value="DEFAULT" disabled>Изабери</option>
                 <option value="zemljotres">Земљотрес</option>
                 <option value="odroni">Одрони, клизишта и ерозије</option>
@@ -49,16 +73,16 @@ const IzborOpasnosti = () => {
                 <option value="nuklearni">Нуклеарни и радиолошки акциденти</option>
                 <option value="terorsticki">Oд терористичког напада</option>
             </select>
-
-            {/* <select ref={EkstremneRef} name="" id="">
-                    <option value="velika-kolicina-padavina">Velika Kolicina Padavina</option>
-                    <option value="grad">Grad</option>
-                    <option value="olujni-vetar">Olujni Vetar</option>
-                    <option value="snezne-mecave">Snezne Mecave</option>
-                    <option value="topli-talas">Topli talas</option>
-                    <option value="susa">Susa</option>
-                </select> */}
+        </div>}
+        <div>
+        {opasnostValue&&
+        <div className="naslov-opasnosti">
+        <h1>Опасност од појављивања {opasnostTabelaValue}</h1>
+        <h1 className="plus" onClick={()=>setOpasnostValue()}>+</h1>
         </div>
+        }
+        </div>
+        </>
     )
 }
 export default IzborOpasnosti;
