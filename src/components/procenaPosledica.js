@@ -288,7 +288,7 @@ else{
             <div className="procene-niz"> 
             <label htmlFor="infro">Унети проценат или износ штете</label>
             <div className="inputi-posledice">
-                {!unosStetaInfra&&<input onWheel={(e) => e.target.blur()} onChange={(e)=>{setUnosProcInfra(e.target.value);setInfroInfoValue(e.target.value)}} type="number" placeholder="procenat" name="infro" id="" />}
+                {!unosStetaInfra&&<input onWheel={(e) => e.target.blur()} value={infroInfoValue} onChange={(e)=>{setUnosProcInfra(e.target.value);setInfroInfoValue(e.target.value)}} type="number" placeholder="procenat" name="infro" id="" />}
                 {!unosProcInfra&&<input onWheel={(e) => e.target.blur()} onChange={ProracunProcetaSteta} type="number" placeholder="iznos stete" name="infro" id="" />}
                 {unosStetaInfra&&<h4>{infroInfoValue} %</h4> }
 

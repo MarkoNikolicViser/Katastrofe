@@ -83,7 +83,7 @@ const MatricaEkonimijaWord = () => {
                     <tr style={{ textAlign: "center" }}>
                         <td style={{ textAlign: "left", fontSize: "9px" }}>Озбиљне</td>
                         <td rowSpan="3">
-                            <img src="https://www.almaks.rs/get-image/posledice.png" alt="" />
+                            <img src="https://biblioteka.almaks.rs/get-image/posledice.png" alt="" />
                         </td>
                         <td>4</td>
                         {tabela.drugi.map(m => (
@@ -143,22 +143,21 @@ const MatricaEkonimijaWord = () => {
                         <th></th>
                         <th></th>
                         <th style={{ verticalAlign: "top" }}>
-                            <img src="https://www.almaks.rs/get-image/zanemarljiva.png" alt="" />
+                            <img src="https://biblioteka.almaks.rs/get-image/zanemarljiva.png" alt="" />
                         </th>
                         <th style={{ verticalAlign: "top" }}>
-                            <img src="https://www.almaks.rs/get-image/mala.png" alt="" />
+                            <img src="https://biblioteka.almaks.rs/get-image/mala.png" alt="" />
                         </th>
                         <th style={{ verticalAlign: "top" }}>
-                            <img src="https://www.almaks.rs/get-image/srednja.png" alt="" />
+                            <img src="https://biblioteka.almaks.rs/get-image/srednja.png" alt="" />
 
                         </th>
                         <th style={{ verticalAlign: "top" }}>
-                            <img src="https://www.almaks.rs/get-image/velika.png" alt="" />
+                            <img src="https://biblioteka.almaks.rs/get-image/velika.png" alt="" />
 
                         </th>
                         <th style={{ verticalAlign: "top" }}>
-                            <img src="https://www.almaks.rs/get-image/izrazito.png" alt="" />
-
+                            <img src="https://biblioteka.almaks.rs/get-image/izrazito.png" alt="" />
                         </th>
                     </tr>
                 </tbody>
