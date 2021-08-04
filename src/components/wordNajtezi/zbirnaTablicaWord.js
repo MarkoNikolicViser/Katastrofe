@@ -62,14 +62,14 @@ const ZbirnaTablicaWord = () => {
                         <td style={{ backgroundColor: "red", border: "1px solid black" }}></td>
                         <td style={{ border: "1px solid black", padding: "6px 10px 6px 10px" }}>Веома висок</td>
                         <td style={{ border: "1px solid black", padding: "6px 10px 6px 10px" }}>НЕПРИХВАТЉИВ</td>
-                        <td style={{textAlign:"center"}}>Веома висок и висок ниво ризика, захтевају третман</td>
+                        <td rowSpan="2" style={{textAlign:"center",borderBottom:'1px solid black'}}>Веома висок и висок ниво ризика, захтевају третман ризика ради смaњења на ниво прихватљивости</td>
                         <td style={{ border: "1px solid black", textAlign:"center"  }}>{prikazi.cetvrti && <Slika />}</td>
                     </tr>
                     <tr style={{height:"30px"}}>
                         <td style={{ backgroundColor: "orange", border: "1px solid black" }}></td>
                         <td style={{ border: "1px solid black", padding: "6px 10px 6px 10px" }}>Висок</td>
                         <td style={{ border: "1px solid black", padding: "6px 10px 6px 10px" }}>НЕПРИХВАТЉИВ</td>
-                        <td style={{borderBottom:"1px solid black", textAlign:"center",paddingTop:"-10px"  }}>ризика ради смaњења на ниво прихватљивости</td>
+                        {/* <td style={{borderBottom:"1px solid black", textAlign:"center",paddingTop:"-10px"  }}>ризика ради смaњења на ниво прихватљивости</td> */}
                         <td style={{ border: "1px solid black", textAlign:"center"  }}>{prikazi.treci && <Slika />}</td>
                     </tr>
                     <tr style={{height:"30px"}}>

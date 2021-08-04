@@ -65,19 +65,22 @@ const ProcenaEkonomijeWord = () => {
       {ekonomijaInfoValue &&
         <div style={{ fontFamily: "sans-serif" }}>
           <h3 style={{ fontSize: "14.5px", textDecoration: "underline" }}>Последице по економију/екологију</h3>
-          <p style={{ fontSize: "14.5px" }}>Последице по економију/екологију добијају се упоређивањем штете са збиром вредности основних средства и обрнутог капитала у складу са наведеним категоријама.</p>
+          <p style={{ fontSize: "14.5px",textAlign:"justify" }}>Последице по економију/екологију добијају се упоређивањем штете са збиром вредности основних средства и обрнутог капитала у складу са наведеним категоријама.</p>
           <table style={{ fontFamily: "sans-serif", borderCollapse: "collapse", fontSize: "11px", width: "100%" }}>
             <thead style={{ fontSize: "13px" }}>
+             <tr>
+              <th colSpan="4" style={{border:"1px solid black", padding: "6px 10px 6px 10px"}}>Последице по економију/екологију</th>
+             </tr>
               <tr>
                 {tabela.heder.map((m, index) => (
-                  <th key={index} style={{ border: "1px solid black", padding: "6px 10px 6px 10px" }}>{m}</th>
+                  <th key={index} style={{ border: "1px solid black", height:"20px"  }}>{m}</th>
                 ))}
               </tr>
             </thead>
             <tbody style={{ fontSize: "13px" }}>
               <tr style={{ textAlign: "center" }}>
                 {tabela.prvi.map((m, index) => (
-                  <td ref={el => VrednostPoslediceRef1.current[index] = el} id={m} key={index} style={{ border: "1px solid black", padding: "6px 10px 6px 10px" }}>{m}</td>
+                  <td ref={el => VrednostPoslediceRef1.current[index] = el} id={m} key={index} style={{ border: "1px solid black", height:"20px"  }}>{m}</td>
                 ))}
                 <td style={{ border: "1px solid black" }}>
                   {divSlika.prvi && <Slika />}
@@ -85,7 +88,7 @@ const ProcenaEkonomijeWord = () => {
               </tr>
               <tr style={{ textAlign: "center" }}>
                 {tabela.drugi.map((m, index) => (
-                  <td id={m} ref={el => VrednostPoslediceRef2.current[index] = el} key={index} style={{ border: "1px solid black", padding: "6px 10px 6px 10px" }}>{m}</td>
+                  <td id={m} ref={el => VrednostPoslediceRef2.current[index] = el} key={index} style={{ border: "1px solid black", height:"20px"  }}>{m}</td>
                 ))}
                 <td style={{ border: "1px solid black" }}>
                   {divSlika.drugi && <Slika />}
@@ -93,7 +96,7 @@ const ProcenaEkonomijeWord = () => {
               </tr>
               <tr style={{ textAlign: "center" }}>
                 {tabela.treci.map((m, index) => (
-                  <td id={m} ref={el => VrednostPoslediceRef3.current[index] = el} key={index} style={{ border: "1px solid black", padding: "6px 10px 6px 10px" }}>{m}</td>
+                  <td id={m} ref={el => VrednostPoslediceRef3.current[index] = el} key={index} style={{ border: "1px solid black", height:"20px" }}>{m}</td>
                 ))}
                 <td style={{ border: "1px solid black" }}>
                   {divSlika.treci && <Slika />}
@@ -101,7 +104,7 @@ const ProcenaEkonomijeWord = () => {
               </tr>
               <tr style={{ textAlign: "center" }}>
                 {tabela.cetvrti.map((m, index) => (
-                  <td id={m} ref={el => VrednostPoslediceRef4.current[index] = el} key={index} style={{ border: "1px solid black", padding: "6px 10px 6px 10px" }}>{m}</td>
+                  <td id={m} ref={el => VrednostPoslediceRef4.current[index] = el} key={index} style={{ border: "1px solid black", height:"20px"  }}>{m}</td>
                 ))}
                 <td style={{ border: "1px solid black" }}>
                   {divSlika.cetvrti && <Slika />}
@@ -109,7 +112,7 @@ const ProcenaEkonomijeWord = () => {
               </tr>
               <tr style={{ textAlign: "center" }}>
                 {tabela.peti.map((m, index) => (
-                  <td id={m} ref={el => VrednostPoslediceRef5.current[index] = el} key={index} style={{ border: "1px solid black", padding: "6px 10px 6px 10px" }}>{m}</td>
+                  <td id={m} ref={el => VrednostPoslediceRef5.current[index] = el} key={index} style={{ border: "1px solid black", height:"20px"  }}>{m}</td>
                 ))}
                 <td style={{ border: "1px solid black" }}>
                   {divSlika.peti && <Slika />}

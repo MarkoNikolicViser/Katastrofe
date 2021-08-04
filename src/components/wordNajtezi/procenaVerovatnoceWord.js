@@ -106,7 +106,7 @@ const ProcenaVerovatnoceWord = () => {
                         <tbody style={{ fontSize: "13px" }}>
                             <tr style={{ textAlign: "center" }}>
                                 {tabela.prvi.map((m, index) => (
-                                    <td id={m} ref={el => OpcijaVerovatnoceRef1.current[index] = el} key={index} style={{ border: "1px solid black", padding: "6px 10px 6px 10px" }}>{m}</td>
+                                    <td id={m} ref={el => OpcijaVerovatnoceRef1.current[index] = el} key={index} style={{ border: "1px solid black", padding: "6px 10px 6px 10px"}}>{m}</td>
                                 ))}
                                 <td style={{ border: "1px solid black"}}>
                                     {divSlika.prvi && <Slika />}

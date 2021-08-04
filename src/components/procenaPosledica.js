@@ -5,7 +5,7 @@ import {TContext} from './context'
 
 const ProcenaPosledica=()=>{
 
-const{procPosledica,budzet,zivotInfo,ekonomijaInfo,infroInfo,zivotIdRed,ekonomijaIdRed,infraIdRed}=useContext(TContext)
+const{procPosledica,budzet,zivotInfo,ekonomijaInfo,infroInfo,zivotIdRed,ekonomijaIdRed,infraIdRed,unosEkonomija,unosSteta,unosProcInfra,unosStetaInfra}=useContext(TContext)
 const[procPosledicaValue,setProcPosledicaValue]=useState(procPosledica)
 const[budzetValue,setBudzetValue]=budzet
 
@@ -19,11 +19,11 @@ const[infroInfoValue,setInfroInfoValue]=infroInfo
 const[zivotIdRedValue,setZivotIdRedValue]=zivotIdRed
 const[ekonomijaIdRedValue,setEkonomijaIdRedValue]=ekonomijaIdRed
 const[infraIdRedValue,setInfraIdRedValue]=infraIdRed;
-const[unosEkonomija,setUnosEkonomija]=useState()
-const[unosSteta,setUnosSteta]=useState()
+const[unosEkonomijaValue,setUnosEkonomijaValue]=unosEkonomija
+const[unosStetaValue,setUnosStetaValue]=unosSteta
 
-const[unosProcInfra,setUnosProcInfra]=useState()
-const[unosStetaInfra,setUnosStetaInfra]=useState()
+const[unosProcInfraValue,setUnosProcInfraValue]=unosProcInfra
+const[unosStetaInfraValue,setUnosStetaInfraValue]=unosStetaInfra
 
 
 const ZivotRef=useRef(null)
@@ -36,12 +36,12 @@ const VrednostVerovatnoceRef3=useRef([])
 const ProracunProcenta=(e)=>{
 let broj=budzetValue-e.target.value;
 setEkonomijaInfoValue((broj/budzetValue)*100);
-setUnosSteta(e.target.value)
+setUnosStetaValue(e.target.value)
 }
 const ProracunProcetaSteta=(e)=>{
 let broj=budzetValue-e.target.value;
 setInfroInfoValue((broj/budzetValue)*100);
-setUnosStetaInfra(e.target.value)  
+setUnosStetaInfraValue(e.target.value)  
 }
 
 const OdabirPosledica=(e)=>{
@@ -118,7 +118,15 @@ useEffect(() => {
 
 
 useEffect(() => {
-    if(ekonomijaInfoValue>0&&ekonomijaInfoValue<1){
+    if(unosEkonomijaValue==''&&unosStetaValue=='')
+    {
+        VrednostVerovatnoceRef2.current[0].style.backgroundColor="white";
+        VrednostVerovatnoceRef2.current[1].style.backgroundColor="white";
+        VrednostVerovatnoceRef2.current[2].style.backgroundColor="white";
+        VrednostVerovatnoceRef2.current[3].style.backgroundColor="white";
+        VrednostVerovatnoceRef2.current[4].style.backgroundColor="white";
+    }
+   else if(ekonomijaInfoValue>0&&ekonomijaInfoValue<1){
         VrednostVerovatnoceRef2.current[0].style.backgroundColor="gray";
         VrednostVerovatnoceRef2.current[1].style.backgroundColor="white";
         VrednostVerovatnoceRef2.current[2].style.backgroundColor="white";
@@ -166,10 +174,18 @@ useEffect(() => {
                         VrednostVerovatnoceRef2.current[3].style.backgroundColor="white";
                         VrednostVerovatnoceRef2.current[4].style.backgroundColor="white";
                     }
-}, [ekonomijaInfoValue]);
+}, [ekonomijaInfoValue,unosEkonomijaValue,unosStetaValue]);
 
 useEffect(() => {
-    if(infroInfoValue<0.5&&infroInfoValue>0){
+    if(unosProcInfraValue==''&&unosStetaInfraValue=='')
+    {
+        VrednostVerovatnoceRef3.current[0].style.backgroundColor="white";
+        VrednostVerovatnoceRef3.current[1].style.backgroundColor="white";
+        VrednostVerovatnoceRef3.current[2].style.backgroundColor="white";
+        VrednostVerovatnoceRef3.current[3].style.backgroundColor="white";
+        VrednostVerovatnoceRef3.current[4].style.backgroundColor="white";
+    }
+   else if(infroInfoValue<0.5&&infroInfoValue>0){
         VrednostVerovatnoceRef3.current[0].style.backgroundColor="gray";
         VrednostVerovatnoceRef3.current[1].style.backgroundColor="white";
         VrednostVerovatnoceRef3.current[2].style.backgroundColor="white";
@@ -217,7 +233,7 @@ useEffect(() => {
                     VrednostVerovatnoceRef3.current[3].style.backgroundColor="white";
                     VrednostVerovatnoceRef3.current[4].style.backgroundColor="white";
                 }
-}, [infroInfoValue]);
+}, [infroInfoValue,unosProcInfraValue,unosStetaInfraValue]);
 useEffect(() => {
 if(procPosledicaValue[0].zivot===true)
 ZivotRef.current.style.backgroundColor="gray"
@@ -235,6 +251,8 @@ else{
     InfraRef.current.style.backgroundColor="white"
 }
 }, [procPosledicaValue]);
+
+
     return(
         <div className="posledice">
             <h3>Изабери утицај на штићене вредности</h3>
@@ -267,9 +285,9 @@ else{
             <div className="procene-niz"> 
             <label htmlFor="ekonomija">Унети проценат или износ штете</label>
             <div className="inputi-posledice">
-                {!unosSteta&& <input onWheel={(e) => e.target.blur()} value={ekonomijaInfoValue} onChange={(e)=>{setEkonomijaInfoValue(e.target.value);setUnosEkonomija(e.target.value)}} type="number" placeholder="procenat" name="ekonomija" id="" />}
-                {!unosEkonomija&&<input onWheel={(e) => e.target.blur()} onChange={ProracunProcenta} type="number" placeholder="iznos stete" name="ekonomija" id="" />}
-                {unosSteta&&<h4>{ekonomijaInfoValue} %</h4> }
+                {!unosStetaValue&& <input onWheel={(e) => e.target.blur()} value={unosEkonomijaValue} onChange={(e)=>{setEkonomijaInfoValue(e.target.value);setUnosEkonomijaValue(e.target.value)}} type="number" placeholder="procenat" name="ekonomija" id="" />}
+                {!unosEkonomijaValue&&<input onWheel={(e) => e.target.blur()} value={unosStetaValue} onChange={ProracunProcenta} type="number" placeholder="iznos stete" name="ekonomija" id="" />}
+                {unosStetaValue&&<h4>{ekonomijaInfoValue} %</h4> }
                 </div>
                 <h2>Критеријум</h2>
                 {ekonomijaNiz.map((m,index)=>{
@@ -288,9 +306,9 @@ else{
             <div className="procene-niz"> 
             <label htmlFor="infro">Унети проценат или износ штете</label>
             <div className="inputi-posledice">
-                {!unosStetaInfra&&<input onWheel={(e) => e.target.blur()} value={infroInfoValue} onChange={(e)=>{setUnosProcInfra(e.target.value);setInfroInfoValue(e.target.value)}} type="number" placeholder="procenat" name="infro" id="" />}
-                {!unosProcInfra&&<input onWheel={(e) => e.target.blur()} onChange={ProracunProcetaSteta} type="number" placeholder="iznos stete" name="infro" id="" />}
-                {unosStetaInfra&&<h4>{infroInfoValue} %</h4> }
+                {!unosStetaInfraValue&&<input onWheel={(e) => e.target.blur()} value={unosProcInfraValue} onChange={(e)=>{setUnosProcInfraValue(e.target.value);setInfroInfoValue(e.target.value)}} type="number" placeholder="procenat" name="infro" id="" />}
+                {!unosProcInfraValue&&<input onWheel={(e) => e.target.blur()} value={unosStetaInfraValue} onChange={ProracunProcetaSteta} type="number" placeholder="iznos stete" name="infro" id="" />}
+                {unosStetaInfraValue&&<h4>{infroInfoValue} %</h4> }
 
            </div>
                 <h2>Критеријум</h2>

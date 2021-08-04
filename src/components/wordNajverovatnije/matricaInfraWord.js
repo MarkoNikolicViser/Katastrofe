@@ -71,8 +71,8 @@ const MatricaEkonimijaWord = () => {
             <table style={{ fontFamily: "sans-serif", borderCollapse: "collapse", fontSize: "11px", width: "250px", height: "100px" }}>
                 <tbody style={{ fontSize: "13px" }}>
                     <tr id="prva" style={{ textAlign: "center" }}>
-                        <td style={{ textAlign: "left", fontSize: "9px", width: "10px" }}>Катастрофалне</td>
-                        <td></td>
+                        <td style={{ textAlign: "left", fontSize: "9px", width: "5px" }}>Катастрофалне</td>
+                        <td style={{width:"3px"}}></td>
                         <td>5</td>
                         {tabela.prvi.map(m => (
                             <td ref={el => OpcijaVerovatnoceRef1.current[m] = el} key={m} style={{ border: "1px solid black", width: "30px", height: "30px" }}>

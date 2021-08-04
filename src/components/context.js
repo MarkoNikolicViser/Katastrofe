@@ -12,7 +12,7 @@ export const TProvider = (props) => {
     const [opasnost, setOpasnost] = useState()
     const [scenario, setScenario] = useState("najverovatniji")
     const [budzet, setBudzet] = useState("")
-    const[procenat,setProcenat]=useState("")
+    const [procenat, setProcenat] = useState("")
 
     const [procBudzet, setProcBudzet] = useState()
     const [procVerovatnoce, setProcVerovatnoce] = useState({
@@ -27,15 +27,19 @@ export const TProvider = (props) => {
     })
     const [odabranaVerovatnoca, setOdabranaVerovatnoca] = useState()
     const [odabranaVrednostVer, setOdabranaVrednostVer] = useState()
-    const [zivotInfo, setZivotInfo] = useState("")
-    const [ekonomijaInfo, setEkonomijaInfo] = useState("")
-    const [infroInfo, setInfroInfo] = useState("")
-    const [verKolona, setVerKolona] = useState()
+    const [zivotInfo, setZivotInfo] = useState('')
+    const [ekonomijaInfo, setEkonomijaInfo] = useState('')
+    const [infroInfo, setInfroInfo] = useState('')
+    const [verKolona, setVerKolona] = useState('')
     const [zivotIdRed, setZivotIdRed] = useState(0)
     const [ekonomijaIdRed, setEkonomijaIdRed] = useState(0)
     const [infraIdRed, setInfraIdRed] = useState(0)
-    const [opasnostTabela,setOpasnostTabela]=useState()
-    const [verovatnocaIndex,setVerovatnocaIndex]=useState()
+    const [opasnostTabela, setOpasnostTabela] = useState()
+    const [verovatnocaIndex, setVerovatnocaIndex] = useState()
+    const [unosEkonomija, setUnosEkonomija] = useState('')
+    const [unosSteta, setUnosSteta] = useState('')
+    const [unosProcInfra, setUnosProcInfra] = useState('')
+    const [unosStetaInfra, setUnosStetaInfra] = useState('')
     //state za najtezim mogucim posledicama////////////////////////
     const [procPosledicaN, setProcPosledicaN] = useState({
         zivot: true,
@@ -65,7 +69,7 @@ export const TProvider = (props) => {
             opasnost: [opasnost, setOpasnost],
             scenario: [scenario, setScenario],
             budzet: [budzet, setBudzet],
-            procenat:[procenat,setProcenat],
+            procenat: [procenat, setProcenat],
             procBudzet: [procBudzet, setProcBudzet],
             procVerovatnoce: [procVerovatnoce, setProcVerovatnoce],
             procPosledica: [procPosledica, setProcPosledica],
@@ -78,8 +82,12 @@ export const TProvider = (props) => {
             zivotIdRed: [zivotIdRed, setZivotIdRed],
             ekonomijaIdRed: [ekonomijaIdRed, setEkonomijaIdRed],
             infraIdRed: [infraIdRed, setInfraIdRed],
-            opasnostTabela:[opasnostTabela,setOpasnostTabela],
-            verovatnocaIndex:[verovatnocaIndex,setVerovatnocaIndex],
+            opasnostTabela: [opasnostTabela, setOpasnostTabela],
+            verovatnocaIndex: [verovatnocaIndex, setVerovatnocaIndex],
+            unosEkonomija: [unosEkonomija, setUnosEkonomija],
+            unosSteta: [unosSteta, setUnosSteta],
+            unosProcInfra:[unosProcInfra,setUnosProcInfra],
+            unosStetaInfra:[unosStetaInfra,setUnosStetaInfra],
             //-------------------importovanje state-a za najeze posledice---------------------------
             procPosledicaN: [procPosledicaN, setProcPosledicaN],
             zivotInfoN: [zivotInfoN, setZivotInfoN],
@@ -91,9 +99,9 @@ export const TProvider = (props) => {
             procVerovatnoceN: [procVerovatnoceN, setProcVerovatnoceN],
             odabranaVerovatnocaN: [odabranaVerovatnocaN, setOdabranaVerovatnocaN],
             odabranaVrednostVerN: [odabranaVrednostVerN, setOdabranaVrednostVerN],
-            verKolonaN: [verKolonaN,setVerKolonaN]
+            verKolonaN: [verKolonaN, setVerKolonaN]
 
-        }}>     
+        }}>
             {props.children}
         </TContext.Provider>
     )

@@ -45,10 +45,16 @@ const Procenaverovatnoce = () => {
     useEffect(() => {
         if (procVerovatnoceValue.verovatnoca === true)
             VerovatnocaRef.current.style.backgroundColor = "gray";
-        if (procVerovatnoceValue.ucestalost === true)
+       else if (procVerovatnoceValue.ucestalost === true)
             UcestalostRef.current.style.backgroundColor = "gray";
-        if (procVerovatnoceValue.strucna === true)
+       else if (procVerovatnoceValue.strucna === true)
             StrucnaRef.current.style.backgroundColor = "gray";
+            else{
+                VerovatnocaRef.current.style.backgroundColor = "white";
+                UcestalostRef.current.style.backgroundColor = "white";
+                StrucnaRef.current.style.backgroundColor = "white";
+
+            }
     }, [procVerovatnoceValue]);
 
 
