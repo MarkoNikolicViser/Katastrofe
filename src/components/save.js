@@ -1,6 +1,7 @@
 import React, { useContext } from 'react';
 import { Link } from 'react-router-dom'
 import { TContext } from './context'
+import Axios from 'axios'
 
 
 
@@ -21,6 +22,15 @@ const Save = () => {
 
 
     const Cuvanje = () => {
+        // Axios.post("http://192.168.1.201:3005/api/register",{
+        //     mail:'test7',
+        //     sifra:'test2',
+        //     pravo:1,
+            
+        // });
+        // const data=await (await fetch('http://192.168.1.201:3005/api/getall/user')).json()
+        // console.log(data)
+ 
         setOpasnostValue()
         setBudzetValue("")
         setProcenatValue("")

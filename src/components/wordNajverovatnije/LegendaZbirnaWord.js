@@ -13,7 +13,17 @@ const Legenda = () => {
     const [proracun, setProracun] = useState()
 
     const Proracun = () => {
-        let zbirnaVrednost = (ekonomijaIdRedValue + infraIdRedValue + zivotIdRedValue) / 3
+        let deljenaVrednost=0;
+
+        if(ekonomijaIdRedValue>0)
+        deljenaVrednost=deljenaVrednost+1;
+
+        if(infraIdRedValue>0)
+        deljenaVrednost=deljenaVrednost+1;
+
+        if(zivotIdRedValue>0)
+        deljenaVrednost=deljenaVrednost+1;
+        let zbirnaVrednost = (ekonomijaIdRedValue + infraIdRedValue + zivotIdRedValue) / deljenaVrednost
         zbirnaVrednost = Math.round(zbirnaVrednost)
         const rez = verKolonaValue + (zbirnaVrednost - 1) * 5
         setProracun(rez)
@@ -48,41 +58,40 @@ const Legenda = () => {
 
     return (
         <div>
-            <table style={{ fontFamily: "sans-serif", borderCollapse: "collapse", fontSize: "11px", width: "70px",verticalAlign: "top"  }}>
-                <tbody style={{ fontSize: "8px" }}>
+            <table style={{ fontFamily: "sans-serif", borderCollapse: "collapse", fontSize: "11px", width: "30px",verticalAlign: "top"  }}>
+                <tbody style={{ fontSize: "5px" }}>
                     <tr>
-                        <td style={{ border: "1px solid black", backgroundColor: "red", height: "30px", width: "30px" }}>
+                        <td style={{ backgroundColor: "red", height: "25px", width: "20px", textAlign:"center" }}>
                             {prikazi.cetvrti && <Slika />}
                         </td>
-                        <td>
-                            <p style={{width:"10px"}}>Веома висок (црвена)</p>
-                            </td>
+                        {/* <td>
+                            <p style={{width:"10px", height:"10px"}}>Веома висок (црвена)</p>
+                            </td> */}
                     </tr>
                     <tr>
-                        <td style={{ border: "1px solid black", backgroundColor: "orange", height: "30px", width: "30px" }}>
+                        <td style={{ backgroundColor: "orange", height: "25px", width: "20px" }}>
                             {prikazi.treci && <Slika />}
                         </td>
-                        <td>
-                        <p style={{width:"10px"}}>Висок (наранџаста)</p>
+                        {/* <td>
+                        <p style={{width:"10px", height:"10px"}}>Висок (наранџаста)</p>
 
-                        </td>
+                        </td> */}
                     </tr>
                     <tr>
-                        <td style={{ border: "1px solid black", backgroundColor: "yellow", height: "30px", width: "30px" }}>
+                        <td style={{ backgroundColor: "yellow", height: "25px", width: "20px" }}>
                             {prikazi.drugi && <Slika />}
                         </td>
-                        <td>
-                        <p style={{width:"10px"}}>Умерени (жута)</p>
-
-                         </td>
+                        {/* <td>
+                        <p style={{width:"10px", height:"10px"}}>Умерени (жута)</p>
+                         </td> */}
                     </tr>
                     <tr>
-                        <td style={{ border: "1px solid black", backgroundColor: "green", height: "30px", width: "30px" }}>
+                        <td style={{ backgroundColor: "green", height: "25px", width: "20px" }}>
                             {prikazi.prvi && <Slika />}
                         </td>
-                        <td>
-                        <p style={{width:"10px"}}>Низак (зелена)</p>
-                         </td>
+                        {/* <td>
+                        <p style={{width:"10px", height:"10px"}}>Низак (зелена)</p>
+                         </td> */}
                     </tr>
                 </tbody>
             </table>

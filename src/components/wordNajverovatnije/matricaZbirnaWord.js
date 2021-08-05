@@ -33,7 +33,18 @@ const MatricaZbirnaWord = () => {
     const OpcijaVerovatnoceRef5 = useRef([])
 
     const Proracun = () => {
-        let zbirnaVrednost = (ekonomijaIdRedValue + infraIdRedValue + zivotIdRedValue) / 3
+        let deljenaVrednost=0;
+
+        if(ekonomijaIdRedValue>0)
+        deljenaVrednost=deljenaVrednost+1;
+
+        if(infraIdRedValue>0)
+        deljenaVrednost=deljenaVrednost+1;
+
+        if(zivotIdRedValue>0)
+        deljenaVrednost=deljenaVrednost+1;
+
+        let zbirnaVrednost = (ekonomijaIdRedValue + infraIdRedValue + zivotIdRedValue) / deljenaVrednost
         zbirnaVrednost = Math.round(zbirnaVrednost)
         const rez = verKolonaValue + (zbirnaVrednost - 1) * 5
         setProracun(rez)

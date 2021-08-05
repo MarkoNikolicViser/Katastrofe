@@ -88,7 +88,7 @@ export const TProvider = (props) => {
             unosSteta: [unosSteta, setUnosSteta],
             unosProcInfra:[unosProcInfra,setUnosProcInfra],
             unosStetaInfra:[unosStetaInfra,setUnosStetaInfra],
-            //-------------------importovanje state-a za najeze posledice---------------------------
+            //-------------------importovanje state-a za najteze posledice---------------------------
             procPosledicaN: [procPosledicaN, setProcPosledicaN],
             zivotInfoN: [zivotInfoN, setZivotInfoN],
             ekonomijaInfoN: [ekonomijaInfoN, setEkonomijaInfoN],
