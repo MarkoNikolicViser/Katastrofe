@@ -234,6 +234,7 @@ useEffect(() => {
                     VrednostVerovatnoceRef3.current[4].style.backgroundColor="white";
                 }
 }, [infroInfoValue,unosProcInfraValue,unosStetaInfraValue]);
+
 useEffect(() => {
 if(procPosledicaValue[0].zivot===true)
 ZivotRef.current.style.backgroundColor="gray"
