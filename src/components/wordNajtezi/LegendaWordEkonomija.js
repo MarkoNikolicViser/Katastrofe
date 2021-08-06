@@ -6,12 +6,12 @@ import { TContext } from '../context';
 
 const Legenda = () => {
     const { verKolonaN, ekonomijaIdRedN } = useContext(TContext)
-    const [verKolonaNValue, setVerKolonaNValue] = verKolonaN
-    const [ekonomijaIdRedNValue, setekonomijaIdRedNValue] = ekonomijaIdRedN
+    const [verKolonaValue, setVerKolonaValueN] = verKolonaN
+    const [ekonomijaIdRedValue, setekonomijaIdRedValue] = ekonomijaIdRedN
     const [proracun, setProracun] = useState()
 
     const Proracun = () => {
-        const rez = verKolonaNValue + (ekonomijaIdRedNValue - 1) * 5
+        const rez = verKolonaValue + (ekonomijaIdRedValue - 1) * 5
         setProracun(rez)
     }
     useEffect(() => {
@@ -44,37 +44,40 @@ const Legenda = () => {
 
     return (
         <div>
-            {/* <div id='prvi' style={{ border: "1px solid black", backgroundColor:"red", height:"30px", width:"30px"}}></div>
-            <label htmlFor="prvi">Test</label>
-            <div style={{ border: "1px solid black", backgroundColor:"orange", height:"30px", width:"30px"}}></div>
-            <div style={{ border: "1px solid black", backgroundColor:"yellow", height:"30px", width:"30px"}}></div>
-            <div style={{ border: "1px solid black", backgroundColor:"green", height:"30px", width:"30px"}}></div> */}
-
-            <table style={{ fontFamily: "sans-serif", borderCollapse: "collapse", fontSize: "11px", width: "100%" }}>
-                <tbody>
+              <table style={{ fontFamily: "sans-serif", borderCollapse: "collapse", fontSize: "11px", width: "30px",verticalAlign: "top"  }}>
+                <tbody style={{ fontSize: "8px" }}>
                     <tr>
-                        <td style={{ border: "1px solid black", backgroundColor: "red", height: "30px", width: "30px" }}>
+                        <td style={{ backgroundColor: "red", height: "25px", width: "20px", textAlign:"center" }}>
                             {prikazi.cetvrti && <Slika />}
                         </td>
-                        <td>Веома висок(црвена)</td>
+                        <td style={{width:"10px", height:"10px"}}>
+                            Веома висок (црвена)
+                            </td>
                     </tr>
                     <tr>
-                        <td style={{ border: "1px solid black", backgroundColor: "orange", height: "30px", width: "30px" }}>
+                        <td style={{ backgroundColor: "orange", height: "25px", width: "20px" }}>
                             {prikazi.treci && <Slika />}
                         </td>
-                        <td>Висок(наранџаста)</td>
+                        <td style={{width:"10px", height:"10px"}}>
+                       Висок (наранџаста)
+
+                        </td>
                     </tr>
                     <tr>
-                        <td style={{ border: "1px solid black", backgroundColor: "yellow", height: "30px", width: "30px" }}>
+                        <td style={{ backgroundColor: "yellow", height: "25px", width: "20px" }}>
                             {prikazi.drugi && <Slika />}
                         </td>
-                        <td>Умерени(жута)</td>
+                        <td style={{width:"10px", height:"10px"}}>
+                       Умерени (жута)
+                         </td>
                     </tr>
                     <tr>
-                        <td style={{ border: "1px solid black", backgroundColor: "green", height: "30px", width: "30px" }}>
+                        <td style={{ backgroundColor: "green", height: "25px", width: "20px" }}>
                             {prikazi.prvi && <Slika />}
                         </td>
-                        <td>Низак(зелена)</td>
+                        <td style={{width:"10px", height:"10px"}}>
+                        Низак (зелена)
+                         </td>
                     </tr>
                 </tbody>
             </table>

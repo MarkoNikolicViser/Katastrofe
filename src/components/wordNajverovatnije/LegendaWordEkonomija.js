@@ -44,40 +44,39 @@ const Legenda = () => {
 
     return (
         <div>
-            <table style={{ fontFamily: "sans-serif", borderCollapse: "collapse", fontSize: "11px", width: "70px",verticalAlign: "top"  }}>
+          <table style={{ fontFamily: "sans-serif", borderCollapse: "collapse", fontSize: "11px", width: "30px",verticalAlign: "top"  }}>
                 <tbody style={{ fontSize: "8px" }}>
                     <tr>
-                        <td style={{ border: "1px solid black", backgroundColor: "red", height: "30px", width: "30px" }}>
+                        <td style={{ backgroundColor: "red", height: "25px", width: "20px", textAlign:"center" }}>
                             {prikazi.cetvrti && <Slika />}
                         </td>
-                        <td>
-                            <p style={{width:"10px"}}>Веома висок (црвена)</p>
+                        <td style={{width:"10px", height:"10px"}}>
+                            Веома висок (црвена)
                             </td>
                     </tr>
                     <tr>
-                        <td style={{ border: "1px solid black", backgroundColor: "orange", height: "30px", width: "30px" }}>
+                        <td style={{ backgroundColor: "orange", height: "25px", width: "20px" }}>
                             {prikazi.treci && <Slika />}
                         </td>
-                        <td>
-                        <p style={{width:"10px"}}>Висок (наранџаста)</p>
+                        <td style={{width:"10px", height:"10px"}}>
+                       Висок (наранџаста)
 
                         </td>
                     </tr>
                     <tr>
-                        <td style={{ border: "1px solid black", backgroundColor: "yellow", height: "30px", width: "30px" }}>
+                        <td style={{ backgroundColor: "yellow", height: "25px", width: "20px" }}>
                             {prikazi.drugi && <Slika />}
                         </td>
-                        <td>
-                        <p style={{width:"10px"}}>Умерени (жута)</p>
-
+                        <td style={{width:"10px", height:"10px"}}>
+                       Умерени (жута)
                          </td>
                     </tr>
                     <tr>
-                        <td style={{ border: "1px solid black", backgroundColor: "green", height: "30px", width: "30px" }}>
+                        <td style={{ backgroundColor: "green", height: "25px", width: "20px" }}>
                             {prikazi.prvi && <Slika />}
                         </td>
-                        <td>
-                        <p style={{width:"10px"}}>Низак (зелена)</p>
+                        <td style={{width:"10px", height:"10px"}}>
+                        Низак (зелена)
                          </td>
                     </tr>
                 </tbody>

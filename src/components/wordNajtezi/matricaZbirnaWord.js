@@ -8,10 +8,10 @@ const MatricaZbirnaWord = () => {
 
 
     const { verKolonaN, ekonomijaIdRedN, infraIdRedN, zivotIdRedN } = useContext(TContext)
-    const [verKolonaNValue, setVerKolonaNValue] = verKolonaN
-    const [ekonomijaIdRedNValue, setekonomijaIdRedNValue] = ekonomijaIdRedN
-    const [infraIdRedNValue, setinfraIdRedNValue] = infraIdRedN;
-    const [zivotIdRedNValue, setzivotIdRedNValue] = zivotIdRedN
+    const [verKolonaValue, setVerKolonaValue] = verKolonaN
+    const [ekonomijaIdRedValue, setEkonomijaIdRedValue] = ekonomijaIdRedN
+    const [infraIdRedValue, setInfraIdRedValue] = infraIdRedN
+    const [zivotIdRedValue, setZivotIdRedValue] = zivotIdRedN
 
 
     const [proracun, setProracun] = useState()
@@ -33,9 +33,20 @@ const MatricaZbirnaWord = () => {
     const OpcijaVerovatnoceRef5 = useRef([])
 
     const Proracun = () => {
-        let zbirnaVrednost = (ekonomijaIdRedNValue + infraIdRedNValue + zivotIdRedNValue) / 3
-        zbirnaVrednost=Math.round(zbirnaVrednost)
-        const rez = verKolonaNValue + (zbirnaVrednost - 1) * 5
+        let deljenaVrednost=0;
+
+        if(ekonomijaIdRedValue>0)
+        deljenaVrednost=deljenaVrednost+1;
+
+        if(infraIdRedValue>0)
+        deljenaVrednost=deljenaVrednost+1;
+
+        if(zivotIdRedValue>0)
+        deljenaVrednost=deljenaVrednost+1;
+
+        let zbirnaVrednost = (ekonomijaIdRedValue + infraIdRedValue + zivotIdRedValue) / deljenaVrednost
+        zbirnaVrednost = Math.round(zbirnaVrednost)
+        const rez = verKolonaValue + (zbirnaVrednost - 1) * 5
         setProracun(rez)
     }
     useEffect(() => {
@@ -75,56 +86,98 @@ const MatricaZbirnaWord = () => {
     return (
         <>
             <div style={{ fontFamily: "sans-serif" }}>
-
-                <table style={{ fontFamily: "sans-serif", borderCollapse: "collapse", fontSize: "11px", width: "350px", height: "100px" }}>
+                <table style={{ fontFamily: "sans-serif", borderCollapse: "collapse", fontSize: "11px", width: "250px", height: "100px" }}>
                     <tbody style={{ fontSize: "13px" }}>
                         <tr id="prva" style={{ textAlign: "center" }}>
-                            <td>Катастрофалне 5</td>
+                            <td style={{ textAlign: "left", fontSize: "9px", width: "10px" }}>Катастрофалне</td>
+                            <td style={{width:"3px"}}></td>
+                            <td>5</td>
                             {tabela.prvi.map(m => (
-                                <td ref={el => OpcijaVerovatnoceRef1.current[m] = el} key={m} style={{ border: "1px solid black", padding: "6px 10px 6px 10px", width: "60px", height: "60px" }}>
+                                <td ref={el => OpcijaVerovatnoceRef1.current[m] = el} key={m} style={{ border: "1px solid black", width: "30px", height: "30px" }}>
                                     {proracun === m && <Slika />}
                                 </td>
                             ))}
                         </tr>
                         <tr style={{ textAlign: "center" }}>
-                            <td>Озбиљне 4</td>
+                            <td style={{ textAlign: "left", fontSize: "9px" }}>Озбиљне</td>
+                            <td rowSpan="3">
+                                <img src="https://biblioteka.almaks.rs/get-image/posledice.png" alt="" />
+                            </td>
+                            <td>4</td>
                             {tabela.drugi.map(m => (
-                                <td ref={el => OpcijaVerovatnoceRef2.current[m] = el} key={m} style={{ border: "1px solid black", padding: "6px 10px 6px 10px", width: "60px", height: "60px" }}>
+                                <td ref={el => OpcijaVerovatnoceRef2.current[m] = el} key={m} style={{ border: "1px solid black", width: "30px", height: "30px" }}>
                                     {proracun === m && <Slika />}
                                 </td>
                             ))}
                         </tr>
                         <tr style={{ textAlign: "center" }}>
-                            <td>Умерене 3</td>
+                            <td style={{ textAlign: "left", fontSize: "9px" }}>Умерене</td>
+                            <td>3</td>
                             {tabela.treci.map(m => (
-                                <td ref={el => OpcijaVerovatnoceRef3.current[m] = el} key={m} style={{ border: "1px solid black", padding: "6px 10px 6px 10px", width: "60px", height: "60px" }}>
+                                <td ref={el => OpcijaVerovatnoceRef3.current[m] = el} key={m} style={{ border: "1px solid black", width: "30px", height: "30px" }}>
                                     {proracun === m && <Slika />}
                                 </td>
                             ))}
                         </tr>
                         <tr style={{ textAlign: "center" }}>
-                            <td>Мале 2</td>
+                            <td style={{ textAlign: "left", fontSize: "9px" }}>Мале</td>
+                            <td>2</td>
                             {tabela.cetvrti.map(m => (
-                                <td ref={el => OpcijaVerovatnoceRef4.current[m] = el} key={m} style={{ border: "1px solid black", padding: "6px 10px 6px 10px", width: "60px", height: "60px" }}>
+                                <td ref={el => OpcijaVerovatnoceRef4.current[m] = el} key={m} style={{ border: "1px solid black", width: "30px", height: "30px" }}>
                                     {proracun === m && <Slika />}
                                 </td>
                             ))}
                         </tr>
                         <tr style={{ textAlign: "center" }}>
-                            <td>Минималне 1</td>
+                            <td style={{ textAlign: "left", fontSize: "9px" }}>Минималне</td>
+                            <td></td>
+                            <td>1</td>
                             {tabela.peti.map(m => (
-                                <td ref={el => OpcijaVerovatnoceRef5.current[m] = el} key={m} style={{ border: "1px solid black", padding: "6px 10px 6px 10px", width: "60px", height: "60px" }}>
+                                <td ref={el => OpcijaVerovatnoceRef5.current[m] = el} key={m} style={{ border: "1px solid black", width: "30px", height: "30px" }}>
                                     {proracun === m && <Slika />}
                                 </td>
                             ))}
                         </tr>
                         <tr>
                             <th></th>
+                            <th></th>
+                            <th></th>
                             <th>1</th>
                             <th>2</th>
                             <th>3</th>
                             <th>4</th>
                             <th>5</th>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td colSpan="5">Вероватноћa</td>
+
+                        </tr>
+                        <tr style={{ fontSize: "9px" }}>
+                            <th></th>
+                            <th></th>
+                            <th></th>
+                            <th style={{ verticalAlign: "top" }}>
+                                <img src="https://biblioteka.almaks.rs/get-image/zanemarljiva.png" alt="" />
+                            </th>
+                            <th style={{ verticalAlign: "top" }}>
+                                <img src="https://biblioteka.almaks.rs/get-image/mala.png" alt="" />
+                            </th>
+                            <th style={{ verticalAlign: "top" }}>
+                                <img src="https://biblioteka.almaks.rs/get-image/srednja.png" alt="" />
+
+                            </th>
+                            <th style={{ verticalAlign: "top" }}>
+                                <img src="https://biblioteka.almaks.rs/get-image/velika.png" alt="" />
+
+                            </th>
+                            <th style={{ verticalAlign: "top" }}>
+                                <img src="https://biblioteka.almaks.rs/get-image/izrazito.png" alt="" />
+
+                            </th>
                         </tr>
                     </tbody>
                 </table>

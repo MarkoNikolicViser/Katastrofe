@@ -41,25 +41,32 @@ export const TProvider = (props) => {
     const [unosProcInfra, setUnosProcInfra] = useState('')
     const [unosStetaInfra, setUnosStetaInfra] = useState('')
     //state za najtezim mogucim posledicama////////////////////////
+
+    const [procVerovatnoceN, setProcVerovatnoceN] = useState({
+        verovatnoca: false,
+        ucestalost: false,
+        strucna: false
+    })
     const [procPosledicaN, setProcPosledicaN] = useState({
         zivot: true,
         ekonomiju: true,
         infra: true
     })
-    const [zivotInfoN, setZivotInfoN] = useState()
-    const [ekonomijaInfoN, setEkonomijaInfoN] = useState()
-    const [infroInfoN, setInfroInfoN] = useState()
+    const [odabranaVerovatnocaN, setOdabranaVerovatnocaN] = useState()
+    const [odabranaVrednostVerN, setOdabranaVrednostVerN] = useState()
+    const [zivotInfoN, setZivotInfoN] = useState('')
+    const [ekonomijaInfoN, setEkonomijaInfoN] = useState('')
+    const [infroInfoN, setInfroInfoN] = useState('')
+    const [verKolonaN, setVerKolonaN] = useState('')
     const [zivotIdRedN, setZivotIdRedN] = useState(0)
     const [ekonomijaIdRedN, setEkonomijaIdRedN] = useState(0)
     const [infraIdRedN, setInfraIdRedN] = useState(0)
-    const [procVerovatnoceN, setProcVerovatnoceN] = useState({
-        verovatnoca: false,
-        ucestalost: false,
-        strucna: true
-    })
-    const [odabranaVerovatnocaN, setOdabranaVerovatnocaN] = useState()
-    const [odabranaVrednostVerN, setOdabranaVrednostVerN] = useState()
-    const [verKolonaN, setVerKolonaN] = useState()
+    const [opasnostTabelaN, setOpasnostTabelaN] = useState()
+    const [verovatnocaIndexN, setVerovatnocaIndexN] = useState()
+    const [unosEkonomijaN, setUnosEkonomijaN] = useState('')
+    const [unosStetaN, setUnosStetaN] = useState('')
+    const [unosProcInfraN, setUnosProcInfraN] = useState('')
+    const [unosStetaInfraN, setUnosStetaInfraN] = useState('')
 
     ///////////////////////////////////////////////////////////////
 
@@ -99,7 +106,13 @@ export const TProvider = (props) => {
             procVerovatnoceN: [procVerovatnoceN, setProcVerovatnoceN],
             odabranaVerovatnocaN: [odabranaVerovatnocaN, setOdabranaVerovatnocaN],
             odabranaVrednostVerN: [odabranaVrednostVerN, setOdabranaVrednostVerN],
-            verKolonaN: [verKolonaN, setVerKolonaN]
+            verKolonaN: [verKolonaN, setVerKolonaN],
+            unosStetaN: [unosStetaN, setUnosStetaN],
+            unosStetaInfraN:[unosStetaInfraN,setUnosStetaInfraN],
+            unosEkonomijaN: [unosEkonomijaN, setUnosEkonomijaN],
+            opasnostTabelaN: [opasnostTabelaN, setOpasnostTabelaN],
+            verovatnocaIndexN: [verovatnocaIndexN, setVerovatnocaIndexN],
+            unosProcInfraN:[unosProcInfraN,setUnosProcInfraN],
 
         }}>
             {props.children}

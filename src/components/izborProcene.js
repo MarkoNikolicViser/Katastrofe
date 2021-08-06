@@ -30,7 +30,7 @@ useEffect(() => {
             <button onClick={Procena} ref={DrustvoRef} value="drustvo">Привредно друштво</button>
             <button onClick={Procena} ref={OpstinaRef} value="opstina">Општина</button>
         </div>
-        <input type="text" placeholder="Назив пројекта" name="" id="" />
+        {/* <input type="text" placeholder="Назив пројекта" name="" id="" /> */}
         </div>
     )
 }

@@ -33,16 +33,18 @@ import ProcenaVerovatnoceWordN from './wordNajtezi/procenaVerovatnoceWord'
 
 
 const Preview = () => {
-    const { ekonomijaIdRed, zivotIdRed, infraIdRed, ekonomijaIdRedN, zivotIdRedN, infraIdRedN, verovatnocaIndex } = useContext(TContext)
+    const { ekonomijaIdRed, zivotIdRed, infraIdRed,verovatnocaIndex, ekonomijaIdRedN, zivotIdRedN, infraIdRedN,verovatnocaIndexN } = useContext(TContext)
 
     const [ekonomijaIdRedValue, setEkonomijaIdRedValue] = ekonomijaIdRed
     const [zivotIdRedValue, setZivotIdRedValue] = zivotIdRed
     const [infraIdRedValue, setInfraIdRedValue] = infraIdRed;
-
-    const [ekonomijaIdRedNValue, setEkonomijaIdRedNValue] = ekonomijaIdRedN
-    const [zivotIdRedNValue, setZivotIdRedNValue] = zivotIdRedN
-    const [infraIdRedNValue, setInfraIdRedNValue] = infraIdRedN;
     const [verovatnocaIndexValue, setVerovatnocaIndexValue] = verovatnocaIndex
+
+
+    const [ekonomijaIdRedValueN, setEkonomijaIdRedValueN] = ekonomijaIdRedN
+    const [zivotIdRedValueN, setZivotIdRedValueN] = zivotIdRedN
+    const [infraIdRedValueN, setInfraIdRedValueN] = infraIdRedN;
+    const [verovatnocaIndexValueN, setVerovatnocaIndexValueN] = verovatnocaIndexN
 
     function exportHTML() {
         var header = "<html xmlns:o='urn:schemas-microsoft-com:office:office' " +
@@ -113,31 +115,46 @@ const Preview = () => {
                     <ProcenaPosledicaN />
                     <ProcenaEkonomijeWordN />
                     <ProcenaPoKritInfraWordN />
-                    {/* <table style={{ fontFamily: "sans-serif", borderCollapse: "collapse", fontSize: "11px", width: "100%" }}>
+                    <table style={{ fontFamily: "sans-serif", borderCollapse: "collapse", fontSize: "11px", width: "50%" }}>
                         <tbody>
-                            <tr style={{ verticalAlign: "top" }}>
-                                {zivotIdRedNValue ? (<>
-                                    <td style={{ border: "1px solid black" }}>
-                                        <MatricaZivotN />
-                                    </td>
-                                    <td><LegendaZivotN /></td>
+                            <tr>
+                            {verovatnocaIndexValueN ? ( <td style={{ fontSize: "14.5px", textDecoration: "underline",fontWeight:"600", paddingTop:"30px", paddingBottom:"10px" }}>Ниво и прихваљивост ризика</td>) : null}
+                            </tr>
+                            <tr>
+                                {zivotIdRedValueN ? (<td style={{ width: "100%", height: "20px", borderLeft: "1px solid black", borderTop: "1px solid black" }}>Матрица 1. Ризик по живот и здравље људи</td>) : null}
+                                {zivotIdRedValueN ? (<td style={{ width: "100%", height: "20px", borderTop: "1px solid black", borderRight: "1px black solid" }}></td>) : null}
+
+                                {ekonomijaIdRedValueN ? (<td style={{ width: "100%", height: "20px", borderTop: "1px solid black", borderLeft: "1px solid black" }}>Матрица 2. Ризик по економију/екологију</td>) : null}
+                                {ekonomijaIdRedValueN ? (<td style={{ width: "100%", height: "20px", borderTop: "1px solid black", borderRight: "1px black solid" }}></td>) : null}
+                            </tr>
+                            <tr>
+                                {zivotIdRedValueN ? (<>
+                                    <td style={{ borderLeft: "1px solid black", borderBottom: "1px solid black", verticalAlign: "top" }}><MatricaZivotN /></td>
+                                    <td style={{ borderRight: "1px solid black", borderBottom: "1px solid black", verticalAlign: "top" }}><LegendaZivotN /></td>
                                 </>) : null}
-                                {ekonomijaIdRedNValue ? (<>
-                                    <td style={{ border: "1px solid black" }}><MatricaEkonomijaN /></td>
-                                    <td><LegendaEkonomijaN /></td>
+                                {ekonomijaIdRedValueN ? (<>
+                                    <td style={{ borderLeft: "1px solid black", borderBottom: "1px solid black", verticalAlign: "top" }}><MatricaEkonomijaN /></td>
+                                    <td style={{ borderRight: "1px solid black", borderBottom: "1px solid black", verticalAlign: "top" }}><LegendaEkonomijaN /></td>
                                 </>) : null}
                             </tr>
-                            <tr style={{ verticalAlign: "top" }}>
-                                {infraIdRedNValue ? (<>
-                                    <td style={{ border: "1px solid black" }}><MatricaInfraN /></td>
-                                    <td><LegendaInfraN /></td>
+                            <tr>
+                                {infraIdRedValueN ? (<td style={{ width: "100%", height: "20px", borderLeft: "1px solid black", borderTop: "1px solid black" }}>Матрица 3. Критична инфраструктура</td>) : null}
+                                {infraIdRedValueN ? (<td style={{ width: "100%", height: "20px", borderTop: "1px solid black", borderRight: "1px black solid" }}></td>) : null}
+
+                                {verovatnocaIndexValueN ? (<td style={{ width: "100%", height: "20px", borderTop: "1px solid black", borderLeft: "1px solid black" }}>Матрица 4. Укупан ризик</td >) : null}
+                                {verovatnocaIndexValueN ? (<td style={{ width: "100%", height: "20px", borderTop: "1px solid black", borderRight: "1px black solid" }}></td>) : null}
+                            </tr>
+                            <tr>
+                                {infraIdRedValueN ? (<>
+                                    <td style={{ borderLeft: "1px solid black", borderBottom: "1px solid black", verticalAlign: "top" }}><MatricaInfraN /></td>
+                                    <td style={{ borderRight: "1px solid black", borderBottom: "1px solid black", verticalAlign: "top" }}><LegendaInfraN /></td>
                                 </>) : null}
-                                <td style={{ border: "1px solid black" }}><MatricaZbirnaN /></td>
-                                <td><LegendaZbirnaN /></td>
+                                {verovatnocaIndexValueN ? (<><td style={{ borderLeft: "1px solid black", borderBottom: "1px solid black", verticalAlign: "top" }}><MatricaZbirna /></td>
+                                    <td style={{ borderRight: "1px solid black", borderBottom: "1px solid black", verticalAlign: "top" }}><LegendaZbirnaN /></td></>) : null}
                             </tr>
                         </tbody>
-                    </table> */}
-                    {/* <ZbirnaTablicaWordN /> */}
+                    </table>
+                    {verovatnocaIndexValueN ? ( <ZbirnaTablicaWordN />) : null}
                     {/* /// */}
                 </div>
                 <Link to="/">
