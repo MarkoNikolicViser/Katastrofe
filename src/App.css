@@ -188,7 +188,8 @@ justify-content: center;
   justify-content: center;
   flex-direction: column;
   height: auto;
-  padding-bottom: 15%;
+  padding-bottom: 20%;
+  overflow: hidden;
 }
 .save{
   display: flex;
@@ -219,7 +220,8 @@ justify-content: center;
     font-size: 42.5%;
   }
   button{
-    width: 10rem;
+    width: 9rem;
+    height: 4rem;
     font-size: 1.2rem;
   }
   ::placeholder{
