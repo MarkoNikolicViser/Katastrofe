@@ -273,7 +273,7 @@ else{
                 <h2>Критеријум</h2>
                 {zivotNiz.map((m,index)=>{
                     return [
-                    <div key={index}>
+                    <div className="numerisanje-butona" key={index}>
                         <label htmlFor={m}>{index+1}</label>
                     <button ref={el => VrednostVerovatnoceRef.current[index] = el} value={index} name={m}>{m}</button>
                     </div>
@@ -293,7 +293,7 @@ else{
                 <h2>Критеријум</h2>
                 {ekonomijaNiz.map((m,index)=>{
                     return [
-                    <div key={index}>
+                    <div className="numerisanje-butona" key={index}>
                         <label htmlFor={m}>{index+1}</label>
                     <button ref={el => VrednostVerovatnoceRef2.current[index] = el} value={index} name={m}>{m}</button>
                     </div>
@@ -315,7 +315,7 @@ else{
                 <h2>Критеријум</h2>
                 {infroNiz.map((m,index)=>{
                     return [
-                    <div key={index}>
+                    <div className="numerisanje-butona" key={index}>
                         <label htmlFor={m}>{index+1}</label>
                     <button ref={el => VrednostVerovatnoceRef3.current[index] = el} value={index} name={m}>{m}</button>
                     </div>

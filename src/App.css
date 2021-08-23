@@ -3,8 +3,8 @@ html{
   height: auto;
 }
 .home{
-  background-color: #2884b8;
-  background-image: linear-gradient(315deg, #2884b8 0%, #d1bad2 74%);
+  background: rgb(238,174,202);
+  background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%);
 }
 *{
   box-sizing: border-box;
@@ -25,6 +25,10 @@ button{
   border: none;
   border-radius: 0.5rem;
   margin-right: 1rem;
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+  padding: 1rem;
+  overflow: hidden;
 }
 .izbor-opasnosti{
   margin-top: 3rem;
@@ -34,9 +38,14 @@ button{
   align-items: center;
   justify-content: center;
 }
+.izbor-opasnosti select{
+  width: 50%;
+}
 label{
-  font-size: 2rem;
-  padding-right: 1rem;
+  padding-bottom: 1rem;
+  font-size: 1.2rem;
+  padding-right: 3rem;
+  white-space: nowrap;
 }
 .procena h1{
 text-align: center;
@@ -91,18 +100,19 @@ width: 20rem;
 }
 .verovatnoce{
   width: 100%;
-  height: 40vh;
+  height: auto;
+  padding-bottom: 10%;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 .procene-niz{
   align-items: center;
-  margin-top: 2rem;
   display: flex;
   flex-direction: column;
   height: 30vh;
   justify-content: space-between;
+  width: 33%;
 }
 .procene-nizovi{
   width: 50%;
@@ -111,7 +121,7 @@ width: 20rem;
 }
 .posledice{
   width: 100%;
-  height: 55vh;
+  height: auto;
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -131,8 +141,16 @@ width: 20rem;
   justify-content: space-evenly;
 }
 .inputi-posledice input{
-width: 10rem;
+  margin-bottom: 1rem;
+width: 8rem;
 height: 2.5rem;
+display: flex;
+align-items: center;
+justify-content: center;
+}
+.inputi-posledice{
+  display: flex;
+  align-items: baseline;
 }
  input[type=number]::-webkit-inner-spin-button, 
  input[type=number]::-webkit-outer-spin-button { 
@@ -142,7 +160,7 @@ height: 2.5rem;
 
 .tabela-opcije div{
   width: 100%;
-  height: 16.5%;
+  height: auto;
   border: 1px black solid;
 }
 .orient{
@@ -169,6 +187,8 @@ height: 2.5rem;
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  height: auto;
+  padding-bottom: 15%;
 }
 .save{
   display: flex;
@@ -189,4 +209,40 @@ height: 2.5rem;
 }
 .plus:hover{
   cursor: pointer;
+}
+.numerisanje-butona{
+  display: flex;
+  align-items: baseline;
+}
+@media screen and (max-width: 1024px){
+  html{
+    font-size: 42.5%;
+  }
+  button{
+    width: 10rem;
+    font-size: 1.2rem;
+  }
+  ::placeholder{
+    font-size: 1.2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: baseline;
+  }
+  .proba{
+    flex-direction: column;
+    padding-bottom: 0rem;
+  }
+  .proba1{
+    width: 90%;
+    padding-bottom: 10%;
+  }
+  label{
+    white-space: nowrap;
+    font-size: 1.1rem;
+    padding: 1rem;
+  }
+  .inputi-posledice input{
+    width: 6.5rem;
+  }
 }

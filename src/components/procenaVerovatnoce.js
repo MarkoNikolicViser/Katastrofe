@@ -81,7 +81,7 @@ const Procenaverovatnoce = () => {
             <h3>Изабери вероватноће</h3>
             <div className="izborVerovatnoce">
                 <button onClick={PromenaVerovatnoce} ref={VerovatnocaRef} value="verovatnoca">Вероватноћа</button>
-                <button onClick={PromenaVerovatnoce} ref={UcestalostRef} value="ucestalost">Учсеталост</button>
+                <button onClick={PromenaVerovatnoce} ref={UcestalostRef} value="ucestalost">Учесеталост</button>
                 <button onClick={PromenaVerovatnoce} ref={StrucnaRef} value="strucna">Стручна процена</button>
             </div>
             <div className="procene-nizovi">
@@ -91,7 +91,7 @@ const Procenaverovatnoce = () => {
                         {
                             verovatnocaNiz.map((m, index) => {
                                 return [
-                                    <div key={index}>
+                                    <div className="numerisanje-butona" key={index}>
                                         <label htmlFor={m}>{index + 1}</label>
                                         <button id={m} onClick={OdabirVredostiVerovatnoce} ref={el => VrednostVerovatnoceRef.current[index] = el} value={index} name={m}>{m}</button>
                                     </div>
@@ -106,7 +106,7 @@ const Procenaverovatnoce = () => {
                         {
                             ucestanostNiz.map((m, index) => {
                                 return [
-                                    <div key={index}>
+                                    <div className="numerisanje-butona"  key={index}>
                                         <label htmlFor={m}>{index + 1}</label>
                                         <button id={m} onClick={OdabirVredostiVerovatnoce} ref={el => VrednostVerovatnoceRef.current[index] = el} value={index} name={m}>{m}</button>
                                     </div>
@@ -121,7 +121,7 @@ const Procenaverovatnoce = () => {
                         {
                             strucnaProcena.map((m, index) => {
                                 return [
-                                    <div key={index}>
+                                    <div className="numerisanje-butona"  key={index}>
                                         <label htmlFor={m}>{index + 1}</label>
                                         <button id={m} value={index} onClick={OdabirVredostiVerovatnoce} ref={el => VrednostVerovatnoceRef.current[index] = el} name={m}>{m}</button>
                                     </div>
