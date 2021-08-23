@@ -26,22 +26,22 @@ const ProcenaPoKritInfraWord = () => {
   const VrednostPoslediceRef5 = useRef([])
 
   useEffect(() => {
-    if(infroInfoValue>0.1&&infroInfoValue<=1)
+    if(infroInfoValue>0&&infroInfoValue<0.5)
     VrednostPoslediceRef1.current.map(m=>{
       m.style.backgroundColor='#d3d3d3'
       setdivSlika({ prvi: true, drugi: false, treci: false, cetvrti: false, peti: false })
     })
-    else if(infroInfoValue>1&&infroInfoValue<=3)
+    else if(infroInfoValue>=0.5&&infroInfoValue<1)
     VrednostPoslediceRef2.current.map(m=>{
       m.style.backgroundColor='#d3d3d3'
       setdivSlika({ prvi: false, drugi: true, treci: false, cetvrti: false, peti: false })
     })
-    else if(infroInfoValue>3&&infroInfoValue<=7)
+    else if(infroInfoValue>=1&&infroInfoValue<3)
     VrednostPoslediceRef3.current.map(m=>{
       m.style.backgroundColor='#d3d3d3'
       setdivSlika({ prvi: false, drugi: false, treci: true, cetvrti: false, peti: false })
     })
-    else if(infroInfoValue>7&&infroInfoValue<=10)
+    else if(infroInfoValue>=3&&infroInfoValue<5)
     VrednostPoslediceRef4.current.map(m=>{
       m.style.backgroundColor='#d3d3d3'
       setdivSlika({ prvi: false, drugi: false, treci: false, cetvrti: true, peti: false })

@@ -3,13 +3,13 @@ import { TContext } from '../context'
 import Slika from '../Slika'
 
 
-const MatricaEkonimijaWord = () => {
+const MatricaInfraWord = () => {
 
 
 
     const { verKolona, infraIdRed, } = useContext(TContext)
     const [verKolonaValue, setVerKolonaValue] = verKolona
-    const[infraIdRedValue,setInfraIdRedValue]=infraIdRed;
+    const [infraIdRedValue, setInfraIdRedValue] = infraIdRed;
     const [proracun, setProracun] = useState()
 
 
@@ -67,105 +67,105 @@ const MatricaEkonimijaWord = () => {
 
     return (
         <>
-        <div style={{ fontFamily: "sans-serif" }}>
-            <table style={{ fontFamily: "sans-serif", borderCollapse: "collapse", fontSize: "11px", width: "250px", height: "100px" }}>
-                <tbody style={{ fontSize: "13px" }}>
-                    <tr id="prva" style={{ textAlign: "center" }}>
-                        <td style={{ textAlign: "left", fontSize: "9px", width: "5px" }}>Катастрофалне</td>
-                        <td style={{width:"3px"}}></td>
-                        <td>5</td>
-                        {tabela.prvi.map(m => (
-                            <td ref={el => OpcijaVerovatnoceRef1.current[m] = el} key={m} style={{ border: "1px solid black", width: "30px", height: "30px" }}>
-                                {proracun === m && <Slika />}
+            <div style={{ fontFamily: "sans-serif" }}>
+                <table style={{ fontFamily: "sans-serif", borderCollapse: "collapse", fontSize: "11px", width: "250px", height: "100px" }}>
+                    <tbody style={{ fontSize: "13px" }}>
+                        <tr id="prva" style={{ textAlign: "center" }}>
+                            <td style={{ textAlign: "left", fontSize: "9px", width: "5px" }}>Катастрофалне</td>
+                            <td style={{ width: "3px" }}></td>
+                            <td>5</td>
+                            {tabela.prvi.map(m => (
+                                <td ref={el => OpcijaVerovatnoceRef1.current[m] = el} key={m} style={{ border: "1px solid black", width: "30px", height: "30px" }}>
+                                    {proracun === m && <Slika />}
+                                </td>
+                            ))}
+                        </tr>
+                        <tr style={{ textAlign: "center" }}>
+                            <td style={{ textAlign: "left", fontSize: "9px" }}>Озбиљне</td>
+                            <td rowSpan="3">
+                                <img src="https://biblioteka.almaks.rs/get-image/posledice.png" alt="" />
                             </td>
-                        ))}
-                    </tr>
-                    <tr style={{ textAlign: "center" }}>
-                        <td style={{ textAlign: "left", fontSize: "9px" }}>Озбиљне</td>
-                        <td rowSpan="3">
-                            <img src="https://biblioteka.almaks.rs/get-image/posledice.png" alt="" />
-                        </td>
-                        <td>4</td>
-                        {tabela.drugi.map(m => (
-                            <td ref={el => OpcijaVerovatnoceRef2.current[m] = el} key={m} style={{ border: "1px solid black", width: "30px", height: "30px" }}>
-                                {proracun === m && <Slika />}
-                            </td>
-                        ))}
-                    </tr>
-                    <tr style={{ textAlign: "center" }}>
-                        <td style={{ textAlign: "left", fontSize: "9px" }}>Умерене</td>
-                        <td>3</td>
-                        {tabela.treci.map(m => (
-                            <td ref={el => OpcijaVerovatnoceRef3.current[m] = el} key={m} style={{ border: "1px solid black", width: "30px", height: "30px" }}>
-                                {proracun === m && <Slika />}
-                            </td>
-                        ))}
-                    </tr>
-                    <tr style={{ textAlign: "center" }}>
-                        <td style={{ textAlign: "left", fontSize: "9px" }}>Мале</td>
-                        <td>2</td>
-                        {tabela.cetvrti.map(m => (
-                            <td ref={el => OpcijaVerovatnoceRef4.current[m] = el} key={m} style={{ border: "1px solid black", width: "30px", height: "30px" }}>
-                                {proracun === m && <Slika />}
-                            </td>
-                        ))}
-                    </tr>
-                    <tr style={{ textAlign: "center" }}>
-                        <td style={{ textAlign: "left", fontSize: "9px" }}>Минималне</td>
-                        <td></td>
-                        <td>1</td>
-                        {tabela.peti.map(m => (
-                            <td ref={el => OpcijaVerovatnoceRef5.current[m] = el} key={m} style={{ border: "1px solid black", width: "30px", height: "30px" }}>
-                                {proracun === m && <Slika />}
-                            </td>
-                        ))}
-                    </tr>
-                    <tr>
-                        <th></th>
-                        <th></th>
-                        <th></th>
-                        <th>1</th>
-                        <th>2</th>
-                        <th>3</th>
-                        <th>4</th>
-                        <th>5</th>
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td colSpan="5">Вероватноћa</td>
+                            <td>4</td>
+                            {tabela.drugi.map(m => (
+                                <td ref={el => OpcijaVerovatnoceRef2.current[m] = el} key={m} style={{ border: "1px solid black", width: "30px", height: "30px" }}>
+                                    {proracun === m && <Slika />}
+                                </td>
+                            ))}
+                        </tr>
+                        <tr style={{ textAlign: "center" }}>
+                            <td style={{ textAlign: "left", fontSize: "9px" }}>Умерене</td>
+                            <td>3</td>
+                            {tabela.treci.map(m => (
+                                <td ref={el => OpcijaVerovatnoceRef3.current[m] = el} key={m} style={{ border: "1px solid black", width: "30px", height: "30px" }}>
+                                    {proracun === m && <Slika />}
+                                </td>
+                            ))}
+                        </tr>
+                        <tr style={{ textAlign: "center" }}>
+                            <td style={{ textAlign: "left", fontSize: "9px" }}>Мале</td>
+                            <td>2</td>
+                            {tabela.cetvrti.map(m => (
+                                <td ref={el => OpcijaVerovatnoceRef4.current[m] = el} key={m} style={{ border: "1px solid black", width: "30px", height: "30px" }}>
+                                    {proracun === m && <Slika />}
+                                </td>
+                            ))}
+                        </tr>
+                        <tr style={{ textAlign: "center" }}>
+                            <td style={{ textAlign: "left", fontSize: "9px" }}>Минималне</td>
+                            <td></td>
+                            <td>1</td>
+                            {tabela.peti.map(m => (
+                                <td ref={el => OpcijaVerovatnoceRef5.current[m] = el} key={m} style={{ border: "1px solid black", width: "30px", height: "30px" }}>
+                                    {proracun === m && <Slika />}
+                                </td>
+                            ))}
+                        </tr>
+                        <tr>
+                            <th></th>
+                            <th></th>
+                            <th></th>
+                            <th>1</th>
+                            <th>2</th>
+                            <th>3</th>
+                            <th>4</th>
+                            <th>5</th>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td colSpan="5">Вероватноћa</td>
 
-                    </tr>
-                    <tr style={{ fontSize: "9px" }}>
-                        <th></th>
-                        <th></th>
-                        <th></th>
-                        <th style={{ verticalAlign: "top" }}>
-                            <img src="https://biblioteka.almaks.rs/get-image/zanemarljiva.png" alt="" />
-                        </th>
-                        <th style={{ verticalAlign: "top" }}>
-                            <img src="https://biblioteka.almaks.rs/get-image/mala.png" alt="" />
-                        </th>
-                        <th style={{ verticalAlign: "top" }}>
-                            <img src="https://biblioteka.almaks.rs/get-image/srednja.png" alt="" />
+                        </tr>
+                        <tr style={{ fontSize: "9px" }}>
+                            <th></th>
+                            <th></th>
+                            <th></th>
+                            <th style={{ verticalAlign: "top" }}>
+                                <img src="https://biblioteka.almaks.rs/get-image/zanemarljiva.png" alt="" />
+                            </th>
+                            <th style={{ verticalAlign: "top" }}>
+                                <img src="https://biblioteka.almaks.rs/get-image/mala.png" alt="" />
+                            </th>
+                            <th style={{ verticalAlign: "top" }}>
+                                <img src="https://biblioteka.almaks.rs/get-image/srednja.png" alt="" />
 
-                        </th>
-                        <th style={{ verticalAlign: "top" }}>
-                            <img src="https://biblioteka.almaks.rs/get-image/velika.png" alt="" />
+                            </th>
+                            <th style={{ verticalAlign: "top" }}>
+                                <img src="https://biblioteka.almaks.rs/get-image/velika.png" alt="" />
 
-                        </th>
-                        <th style={{ verticalAlign: "top" }}>
-                            <img src="https://biblioteka.almaks.rs/get-image/izrazito.png" alt="" />
+                            </th>
+                            <th style={{ verticalAlign: "top" }}>
+                                <img src="https://biblioteka.almaks.rs/get-image/izrazito.png" alt="" />
 
-                        </th>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-    </>
+                            </th>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </>
     )
 }
 
-export default MatricaEkonimijaWord;
+export default MatricaInfraWord;
