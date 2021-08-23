@@ -35,8 +35,8 @@ useEffect(() => {
     return(
         <div className='kalkulator'>
             <form action="">
-            <input  type="number" onWheel={(e) => e.target.blur()} placeholder="Unos budzeta" value={budzetValue} name="budzet" id="" onChange={UnosBudzeta} />
-            <input type="number" onWheel={(e) => e.target.blur()} placeholder="Unos procenta" value={procenatValue} name="procenat" id="" onChange={UnosProcenta} />
+            <input  type="number" onWheel={(e) => e.target.blur()} placeholder="Унос буџета" value={budzetValue} name="budzet" id="" onChange={UnosBudzeta} />
+            <input type="number" onWheel={(e) => e.target.blur()} placeholder="Унос процента" value={procenatValue} name="procenat" id="" onChange={UnosProcenta} />
             {budzetValue&&procenatValue&&<h1>{procBudzetValue} rsd</h1>}
             </form>
         </div>
