@@ -34,13 +34,11 @@ const VrednostVerovatnoceRef2=useRef([])
 const VrednostVerovatnoceRef3=useRef([])
 
 const ProracunProcenta=(e)=>{
-let broj=budzetValue-e.target.value;
-setEkonomijaInfoValue((broj/budzetValue)*100);
+setEkonomijaInfoValue(Math.round(((e.target.value*100)/budzetValue)*100)/100);
 setUnosStetaValue(e.target.value)
 }
 const ProracunProcetaSteta=(e)=>{
-let broj=budzetValue-e.target.value;
-setInfroInfoValue((broj/budzetValue)*100);
+setInfroInfoValue(Math.round(((e.target.value*100)/budzetValue)*100)/100);
 setUnosStetaInfraValue(e.target.value)  
 }
 
@@ -126,7 +124,7 @@ useEffect(() => {
         VrednostVerovatnoceRef2.current[3].style.backgroundColor="white";
         VrednostVerovatnoceRef2.current[4].style.backgroundColor="white";
     }
-   else if(ekonomijaInfoValue>0&&ekonomijaInfoValue<1){
+   else if(ekonomijaInfoValue>0&&ekonomijaInfoValue<=1){
         VrednostVerovatnoceRef2.current[0].style.backgroundColor="gray";
         VrednostVerovatnoceRef2.current[1].style.backgroundColor="white";
         VrednostVerovatnoceRef2.current[2].style.backgroundColor="white";
@@ -134,7 +132,7 @@ useEffect(() => {
         VrednostVerovatnoceRef2.current[4].style.backgroundColor="white";
         setEkonomijaIdRedValue(1)
         }
-            else if(ekonomijaInfoValue>=1&&ekonomijaInfoValue<=3){
+            else if(ekonomijaInfoValue>1&&ekonomijaInfoValue<=3){
                 VrednostVerovatnoceRef2.current[0].style.backgroundColor="white";
                 VrednostVerovatnoceRef2.current[1].style.backgroundColor="gray";
                 VrednostVerovatnoceRef2.current[2].style.backgroundColor="white";

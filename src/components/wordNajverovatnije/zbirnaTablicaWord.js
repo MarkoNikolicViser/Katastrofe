@@ -80,9 +80,9 @@ const ZbirnaTablicaWord = () => {
                     </tr>
                     <tr style={{height:"30px"}}>
                         <td style={{ backgroundColor: "green", border: "1px solid black" }}></td>
-                        <td style={{ border: "1px solid black", padding: "6px 10px 6px 10px" }}>Умерен</td>
-                        <td style={{ border: "1px solid black", padding: "6px 10px 6px 10px" }}>НИЗАК</td>
-                        <td style={{borderBottom:"1px solid black",textAlign:"center"}}>Низак ризик, може значити да се не предузима нкаква радња</td>
+                        <td style={{ border: "1px solid black", padding: "6px 10px 6px 10px" }}>Низак</td>
+                        <td style={{ border: "1px solid black", padding: "6px 10px 6px 10px" }}>ПРИХВАТЉИВ</td>
+                        <td style={{borderBottom:"1px solid black",textAlign:"center"}}>Низак ризик, може значити да се не предузима никаква радња</td>
                         <td style={{ border: "1px solid black", textAlign:"center" }}>{prikazi.prvi && <Slika />}</td>
                     </tr>
                 </tbody>

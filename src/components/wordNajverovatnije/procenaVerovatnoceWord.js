@@ -19,11 +19,13 @@ const ProcenaVerovatnoceWord = () => {
     const OpcijaVerovatnoceRef3 = useRef([])
     const OpcijaVerovatnoceRef4 = useRef([])
     const OpcijaVerovatnoceRef5 = useRef([])
+    const SencenjeSlikeRef = useRef([])
+
 
 
     const [tabela, setTabela] = useState(
         {
-            heder: ["Kатегорија", "(а)Вероватноћа", "(б)Учесеталост", "(ц)Стручна процена", "Одобрено"],
+            heder: ["Kатегорија", "(а)Вероватноћа", "(б)Учесталост", "(ц)Стручна процена", "Одобрено"],
             prvi: ["1", "< 1 %", "1 догађај у 100 година и ређе", "Занемарљива"],
             drugi: ["2", "1 - 5 %", "1 догађај у 20 до 100 година", "Мала"],
             treci: ["3", "6 - 50 %", "1 догађај у 2 до 20 година", "Средња"],
@@ -51,6 +53,7 @@ const ProcenaVerovatnoceWord = () => {
                 OpcijaVerovatnoceRef1.current[index].style.backgroundColor = '#d3d3d3'
                 OpcijaVerovatnoceRef1.current[0].style.backgroundColor = '#d3d3d3'
                 setdivSlika({ prvi: true, drugi: false, treci: false, cetvrti: false, peti: false })
+                SencenjeSlikeRef.current[1].style.backgroundColor = "#d3d3d3";
                 setVerKolonaValue(1)
             }
         })
@@ -59,6 +62,7 @@ const ProcenaVerovatnoceWord = () => {
                 OpcijaVerovatnoceRef2.current[index].style.backgroundColor = '#d3d3d3'
                 OpcijaVerovatnoceRef2.current[0].style.backgroundColor = '#d3d3d3'
                 setdivSlika({ prvi: false, drugi: true, treci: false, cetvrti: false, peti: false })
+                SencenjeSlikeRef.current[2].style.backgroundColor = "#d3d3d3";
                 setVerKolonaValue(2)
             }
         })
@@ -67,6 +71,7 @@ const ProcenaVerovatnoceWord = () => {
                 OpcijaVerovatnoceRef3.current[index].style.backgroundColor = '#d3d3d3'
                 OpcijaVerovatnoceRef3.current[0].style.backgroundColor = '#d3d3d3'
                 setdivSlika({ prvi: false, drugi: false, treci: true, cetvrti: false, peti: false })
+                SencenjeSlikeRef.current[3].style.backgroundColor = "#d3d3d3";
                 setVerKolonaValue(3)
             }
         })
@@ -75,6 +80,7 @@ const ProcenaVerovatnoceWord = () => {
                 OpcijaVerovatnoceRef4.current[index].style.backgroundColor = '#d3d3d3'
                 OpcijaVerovatnoceRef4.current[0].style.backgroundColor = '#d3d3d3'
                 setdivSlika({ prvi: false, drugi: false, treci: false, cetvrti: true, peti: false })
+                SencenjeSlikeRef.current[4].style.backgroundColor = "#d3d3d3";
                 setVerKolonaValue(4)
             }
         })
@@ -83,6 +89,7 @@ const ProcenaVerovatnoceWord = () => {
                 OpcijaVerovatnoceRef5.current[index].style.backgroundColor = '#d3d3d3'
                 OpcijaVerovatnoceRef5.current[0].style.backgroundColor = '#d3d3d3'
                 setdivSlika({ prvi: false, drugi: false, treci: false, cetvrti: false, peti: true })
+                SencenjeSlikeRef.current[5].style.backgroundColor = "#d3d3d3";
                 setVerKolonaValue(5)
             }
         })
@@ -97,7 +104,7 @@ const ProcenaVerovatnoceWord = () => {
             {odabranaVerovatnocaValue &&
                 <div style={{ fontFamily: "sans-serif" }}>
                     <h1 style={{ fontSize: "14.5px", textDecoration: "underline" }}>Процена вероватноће</h1>
-                    <p style={{ fontSize: "14.5px",textAlign:"justify" }}>Разматрајучћи опасност на основу доступних података и анализа, радна група за процену ризика се пределила да вероватноћу одреди на основу {odabranaVerovatnocaValue === "verovatnoca" && "вероватноће"}{odabranaVerovatnocaValue === "ucestanost" && "учестаности"}{odabranaVerovatnocaValue === "strucna" && "стручне процене"} појављивања {opasnostTabelaValue}.</p>
+                    <p style={{ fontSize: "14.5px",textAlign:"justify" }}>Разматрајући опасност на основу доступних података и анализа, радна група за процену ризика се определила да вероватноћу одреди на основу {odabranaVerovatnocaValue === "verovatnoca" && "вероватноће"}{odabranaVerovatnocaValue === "ucestanost" && "учестаности"}{odabranaVerovatnocaValue === "strucna" && "стручне процене"} појављивања {opasnostTabelaValue}.</p>
                     <table style={{ fontFamily: "sans-serif", borderCollapse: "collapse", fontSize: "11px", width: "100%" }}>
                         <thead style={{ fontSize: "13px" }}>
                                 <tr>
@@ -114,7 +121,7 @@ const ProcenaVerovatnoceWord = () => {
                                 {tabela.prvi.map((m, index) => (
                                     <td id={m} ref={el => OpcijaVerovatnoceRef1.current[index] = el} key={index} style={{ border: "1px solid black", height:"20px" }}>{m}</td>
                                 ))}
-                                <td style={{ border: "1px solid black" }}>
+                                <td ref={el => SencenjeSlikeRef.current[1] = el}  style={{ border: "1px solid black" }}>
                                     {divSlika.prvi && <Slika />}
                                 </td>
                             </tr>
@@ -122,11 +129,11 @@ const ProcenaVerovatnoceWord = () => {
                                 {tabela.drugi.map((m, index) => (
                                     <td id={m} ref={el => OpcijaVerovatnoceRef2.current[index] = el} key={index} style={{ border: "1px solid black", height:"20px"}}>{m}</td>
                                 ))}
-                                <td style={{ border: "1px solid black" }}>
+                                <td ref={el => SencenjeSlikeRef.current[2] = el}  style={{ border: "1px solid black" }}>
                                     {divSlika.drugi && <Slika />}
                                 </td>
                             </tr>
-                            <tr style={{ textAlign: "center" }}>
+                            <tr ref={el => SencenjeSlikeRef.current[3] = el}  style={{ textAlign: "center" }}>
                                 {tabela.treci.map((m, index) => (
                                     <td id={m} ref={el => OpcijaVerovatnoceRef3.current[index] = el} key={index} style={{ border: "1px solid black", height:"20px"}}>{m}</td>
                                 ))}
@@ -134,7 +141,7 @@ const ProcenaVerovatnoceWord = () => {
                                     {divSlika.treci && <Slika />}
                                 </td>
                             </tr>
-                            <tr style={{ textAlign: "center" }}>
+                            <tr ref={el => SencenjeSlikeRef.current[4] = el}  style={{ textAlign: "center" }}>
                                 {tabela.cetvrti.map((m, index) => (
                                     <td id={m} ref={el => OpcijaVerovatnoceRef4.current[index] = el} key={index} style={{ border: "1px solid black", height:"20px"}}>{m}</td>
                                 ))}
@@ -142,7 +149,7 @@ const ProcenaVerovatnoceWord = () => {
                                     {divSlika.cetvrti && <Slika />}
                                 </td>
                             </tr>
-                            <tr style={{ textAlign: "center" }}>
+                            <tr ref={el => SencenjeSlikeRef.current[5] = el}  style={{ textAlign: "center" }}>
                                 {tabela.peti.map((m, index) => (
                                     <td id={m} ref={el => OpcijaVerovatnoceRef5.current[index] = el} key={index} style={{ border: "1px solid black", height:"20px"}}>{m}</td>
                                 ))}

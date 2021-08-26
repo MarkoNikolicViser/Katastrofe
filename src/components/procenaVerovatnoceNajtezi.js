@@ -81,7 +81,7 @@ const Procenaverovatnoce = () => {
             <h3>Изабери вероватноће</h3>
             <div className="izborVerovatnoce">
                 <button onClick={PromenaVerovatnoce} ref={VerovatnocaRef} value="verovatnoca">Вероватноћа</button>
-                <button onClick={PromenaVerovatnoce} ref={UcestalostRef} value="ucestalost">Учесеталост</button>
+                <button onClick={PromenaVerovatnoce} ref={UcestalostRef} value="ucestalost">Учесталост</button>
                 <button onClick={PromenaVerovatnoce} ref={StrucnaRef} value="strucna">Стручна процена</button>
             </div>
             <div className="procene-nizovi">

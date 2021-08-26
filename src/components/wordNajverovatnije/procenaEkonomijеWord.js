@@ -24,6 +24,7 @@ const ProcenaEkonomijeWord = () => {
   const VrednostPoslediceRef3 = useRef([])
   const VrednostPoslediceRef4 = useRef([])
   const VrednostPoslediceRef5 = useRef([])
+  const SencenjeSlikeRef = useRef([])
 
 
 
@@ -32,26 +33,31 @@ const ProcenaEkonomijeWord = () => {
       VrednostPoslediceRef1.current.map(m => {
         m.style.backgroundColor = '#d3d3d3'
         setdivSlika({ prvi: true, drugi: false, treci: false, cetvrti: false, peti: false })
+        SencenjeSlikeRef.current[1].style.backgroundColor = "#d3d3d3";
       })
     else if (ekonomijaInfoValue > 1 && ekonomijaInfoValue <= 3)
       VrednostPoslediceRef2.current.map(m => {
         m.style.backgroundColor = '#d3d3d3'
         setdivSlika({ prvi: false, drugi: true, treci: false, cetvrti: false, peti: false })
+        SencenjeSlikeRef.current[2].style.backgroundColor = "#d3d3d3";
       })
     else if (ekonomijaInfoValue > 3 && ekonomijaInfoValue <= 7)
       VrednostPoslediceRef3.current.map(m => {
         m.style.backgroundColor = '#d3d3d3'
         setdivSlika({ prvi: false, drugi: false, treci: true, cetvrti: false, peti: false })
+        SencenjeSlikeRef.current[3].style.backgroundColor = "#d3d3d3";
       })
     else if (ekonomijaInfoValue > 7 && ekonomijaInfoValue <= 10)
       VrednostPoslediceRef4.current.map(m => {
         m.style.backgroundColor = '#d3d3d3'
         setdivSlika({ prvi: false, drugi: false, treci: false, cetvrti: true, peti: false })
+        SencenjeSlikeRef.current[4].style.backgroundColor = "#d3d3d3";
       })
     else if (ekonomijaInfoValue > 10)
       VrednostPoslediceRef5.current.map(m => {
         m.style.backgroundColor = '#d3d3d3'
         setdivSlika({ prvi: false, drugi: false, treci: false, cetvrti: false, peti: true })
+        SencenjeSlikeRef.current[5].style.backgroundColor = "#d3d3d3";
       })
   }, [ekonomijaInfoValue]);
   useEffect(() => {
@@ -82,7 +88,7 @@ const ProcenaEkonomijeWord = () => {
                 {tabela.prvi.map((m, index) => (
                   <td ref={el => VrednostPoslediceRef1.current[index] = el} id={m} key={index} style={{ border: "1px solid black", height:"20px"  }}>{m}</td>
                 ))}
-                <td style={{ border: "1px solid black" }}>
+                <td ref={el => SencenjeSlikeRef.current[1] = el} style={{ border: "1px solid black" }}>
                   {divSlika.prvi && <Slika />}
                 </td>
               </tr>
@@ -90,7 +96,7 @@ const ProcenaEkonomijeWord = () => {
                 {tabela.drugi.map((m, index) => (
                   <td id={m} ref={el => VrednostPoslediceRef2.current[index] = el} key={index} style={{ border: "1px solid black", height:"20px"  }}>{m}</td>
                 ))}
-                <td style={{ border: "1px solid black" }}>
+                <td ref={el => SencenjeSlikeRef.current[2] = el} style={{ border: "1px solid black" }}>
                   {divSlika.drugi && <Slika />}
                 </td>
               </tr>
@@ -98,7 +104,7 @@ const ProcenaEkonomijeWord = () => {
                 {tabela.treci.map((m, index) => (
                   <td id={m} ref={el => VrednostPoslediceRef3.current[index] = el} key={index} style={{ border: "1px solid black", height:"20px" }}>{m}</td>
                 ))}
-                <td style={{ border: "1px solid black" }}>
+                <td ref={el => SencenjeSlikeRef.current[3] = el} style={{ border: "1px solid black" }}>
                   {divSlika.treci && <Slika />}
                 </td>
               </tr>
@@ -106,7 +112,7 @@ const ProcenaEkonomijeWord = () => {
                 {tabela.cetvrti.map((m, index) => (
                   <td id={m} ref={el => VrednostPoslediceRef4.current[index] = el} key={index} style={{ border: "1px solid black", height:"20px"  }}>{m}</td>
                 ))}
-                <td style={{ border: "1px solid black" }}>
+                <td ref={el => SencenjeSlikeRef.current[4] = el} style={{ border: "1px solid black" }}>
                   {divSlika.cetvrti && <Slika />}
                 </td>
               </tr>
@@ -114,7 +120,7 @@ const ProcenaEkonomijeWord = () => {
                 {tabela.peti.map((m, index) => (
                   <td id={m} ref={el => VrednostPoslediceRef5.current[index] = el} key={index} style={{ border: "1px solid black", height:"20px"  }}>{m}</td>
                 ))}
-                <td style={{ border: "1px solid black" }}>
+                <td ref={el => SencenjeSlikeRef.current[5] = el} style={{ border: "1px solid black" }}>
                   {divSlika.peti && <Slika />}
                 </td>
               </tr>

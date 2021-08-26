@@ -66,6 +66,7 @@ const Preview = () => {
         <div className="orient">
             <div>
                 <div id="source-html">
+                    {verovatnocaIndexValue&&<>
                     <ProcenaVerovatnoceWord />
                     <ProcenaPosledica />
                     <ProcenaEkonomijeWord />
@@ -110,7 +111,9 @@ const Preview = () => {
                         </tbody>
                     </table>
                     {verovatnocaIndexValue ? ( <ZbirnaTablicaWord />) : null}
+                    </>}
                     {/* /// */}
+                    {verovatnocaIndexValueN&&<>
                     <ProcenaVerovatnoceWordN />
                     <ProcenaPosledicaN />
                     <ProcenaEkonomijeWordN />
@@ -156,6 +159,7 @@ const Preview = () => {
                     </table>
                     {verovatnocaIndexValueN ? ( <ZbirnaTablicaWordN />) : null}
                     {/* /// */}
+                    </>}
                 </div>
                 <Link to="/">
                     <button>Nazad</button>
