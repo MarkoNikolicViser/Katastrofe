@@ -103,8 +103,8 @@ const ProcenaVerovatnoceWord = () => {
         <>
             {odabranaVerovatnocaValue &&
                 <div style={{ fontFamily: "sans-serif" }}>
-                    <h1 style={{ fontSize: "14.5px", textDecoration: "underline" }}>Процена вероватноће</h1>
-                    <p style={{ fontSize: "14.5px",textAlign:"justify" }}>Разматрајући опасност на основу доступних података и анализа, радна група за процену ризика се определила да вероватноћу одреди на основу {odabranaVerovatnocaValue === "verovatnoca" && "вероватноће"}{odabranaVerovatnocaValue === "ucestanost" && "учестаности"}{odabranaVerovatnocaValue === "strucna" && "стручне процене"} појављивања {opasnostTabelaValue}.</p>
+                    <h3 style={{ fontSize: "16px", textDecoration: "underline" }}>Процена вероватноће</h3>
+                    <p style={{ fontSize: "14.5px",textAlign:"justify" }}>Разматрајући опасност на основу доступних података и анализа, радна група за процену ризика се определила да вероватноћу одреди на основу {odabranaVerovatnocaValue === "verovatnoca" && "вероватноће"}{odabranaVerovatnocaValue === "ucestalost" && "учестаности"}{odabranaVerovatnocaValue === "strucna" && "стручне процене"} појављивања {opasnostTabelaValue}.</p>
                     <table style={{ fontFamily: "sans-serif", borderCollapse: "collapse", fontSize: "11px", width: "100%" }}>
                         <thead style={{ fontSize: "13px" }}>
                                 <tr>

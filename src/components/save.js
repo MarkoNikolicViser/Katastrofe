@@ -46,7 +46,7 @@ const Save = () => {
 
     return (
         <div className='save'>
-            <button onClick={Cuvanje}>Sacuvaj sve</button>
+            {/* <button onClick={Cuvanje}>Sacuvaj sve</button> */}
             <Link to="/preview">
                 <button>Vidi Preview</button>
             </Link>
