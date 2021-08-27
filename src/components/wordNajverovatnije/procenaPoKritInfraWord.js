@@ -72,7 +72,7 @@ const ProcenaPoKritInfraWord = () => {
       {infroInfoValue &&
         <div style={{ fontFamily: "sans-serif" }}>
                     <p style={{ fontSize: "14.5px", textDecoration: "underline", fontWeight: "600" }}>Последице по критичну инфраструктуру</p>
-          <p style={{ fontSize: "14.5px",textAlign:"justify" }}>Последице по критичну инфраструктуру добијају се упоређивањем штете са збиром вредности основних средстава и обртног капитала у складу са наведеим критеријума.</p>
+          <p style={{ fontSize: "14.5px",textAlign:"justify" }}>Последице по критичну инфраструктуру добијају се упоређивањем штете са збиром вредности основних средстава и обртног капитала у складу са наведеним критеријумима.</p>
           <table style={{ fontFamily: "sans-serif", borderCollapse: "collapse", fontSize: "11px", width: "100%" }}>
             <thead style={{ fontSize: "13px" }}>
               <tr>

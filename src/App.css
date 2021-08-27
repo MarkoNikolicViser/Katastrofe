@@ -100,7 +100,7 @@ width: 20rem;
 }
 .verovatnoce{
   width: 100%;
-  height: 50rem;
+  height: 45rem;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -134,11 +134,12 @@ width: 20rem;
   justify-content: space-evenly;
 }
 .posledice-nizovi{
-  height: 50rem;
+  height: 45rem;
   display: flex;
   width: 100%;
   align-items: center;
   justify-content: space-evenly;
+  padding-bottom: 10%;
 }
 .inputi-posledice input{
   margin-bottom: 1rem;

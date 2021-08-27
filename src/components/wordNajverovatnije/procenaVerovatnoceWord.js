@@ -25,7 +25,7 @@ const ProcenaVerovatnoceWord = () => {
 
     const [tabela, setTabela] = useState(
         {
-            heder: ["Kатегорија", "(а)Вероватноћа", "(б)Учесталост", "(ц)Стручна процена", "Одобрено"],
+            heder: ["Kатегорија", "(а)Вероватноћа", "(б)Учесталост", "(ц)Стручна процена", "Одабрано"],
             prvi: ["1", "< 1 %", "1 догађај у 100 година и ређе", "Занемарљива"],
             drugi: ["2", "1 - 5 %", "1 догађај у 20 до 100 година", "Мала"],
             treci: ["3", "6 - 50 %", "1 догађај у 2 до 20 година", "Средња"],
@@ -104,7 +104,7 @@ const ProcenaVerovatnoceWord = () => {
             {odabranaVerovatnocaValue &&
                 <div style={{ fontFamily: "sans-serif" }}>
                     <h3 style={{ fontSize: "16px", textDecoration: "underline" }}>Процена вероватноће</h3>
-                    <p style={{ fontSize: "14.5px",textAlign:"justify" }}>Разматрајући опасност на основу доступних података и анализа, радна група за процену ризика се определила да вероватноћу одреди на основу {odabranaVerovatnocaValue === "verovatnoca" && "вероватноће"}{odabranaVerovatnocaValue === "ucestalost" && "учестаности"}{odabranaVerovatnocaValue === "strucna" && "стручне процене"} појављивања {opasnostTabelaValue}.</p>
+                    <p style={{ fontSize: "14.5px",textAlign:"justify" }}>Разматрајући опасност на основу доступних података и анализа, радна група за процену ризика се определила да вероватноћу одреди на основу {odabranaVerovatnocaValue === "verovatnoca" && "вероватноће"}{odabranaVerovatnocaValue === "ucestalost" && "учесталости"}{odabranaVerovatnocaValue === "strucna" && "стручне процене"} појављивања {opasnostTabelaValue}.</p>
                     <table style={{ fontFamily: "sans-serif", borderCollapse: "collapse", fontSize: "11px", width: "100%" }}>
                         <thead style={{ fontSize: "13px" }}>
                                 <tr>

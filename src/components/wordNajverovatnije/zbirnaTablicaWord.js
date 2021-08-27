@@ -45,7 +45,7 @@ const ZbirnaTablicaWord = () => {
 
     return (
         <>
-        <p style={{ fontSize: "14.5px", fontFamily: "sans-serif" }}>На основу одређених нивоа ризика одређује се прихватљивост ризика од дате опасности</p>
+        <p style={{ fontSize: "14.5px", fontFamily: "sans-serif", textAlign:"justify" }}>На основу одређених нивоа ризика одређује се прихватљивост ризика од дате опасности</p>
             <table style={{ fontFamily: "sans-serif", borderCollapse: "collapse", fontSize: "11px", width: "100%" }}>
                 <thead style={{ fontSize: "13px" }}>
                     <tr>
