@@ -71,11 +71,9 @@ const Preview = () => {
                     <ProcenaPosledica />
                     <ProcenaEkonomijeWord />
                     <ProcenaPoKritInfraWord />
+                    {verovatnocaIndexValue ? (<h3 style={{ fontSize: "16px", textDecoration: "underline", fontFamily: "sans-serif" }}>Ниво и прихваљивост ризика</h3>) : null}
                     <table style={{ fontFamily: "sans-serif", borderCollapse: "collapse", fontSize: "11px", width: "50%" }}>
                         <tbody>
-                            <tr>
-                            {verovatnocaIndexValue ? ( <td style={{ fontSize: "14.5px", textDecoration: "underline",fontWeight:"600", paddingTop:"30px", paddingBottom:"10px" }}>Ниво и прихваљивост ризика</td>) : null}
-                            </tr>
                             <tr>
                                 {zivotIdRedValue ? (<td style={{ width: "100%", height: "20px", borderLeft: "1px solid black", borderTop: "1px solid black" }}>Матрица 1. Ризик по живот и здравље људи</td>) : null}
                                 {zivotIdRedValue ? (<td style={{ width: "100%", height: "20px", borderTop: "1px solid black", borderRight: "1px black solid" }}></td>) : null}
@@ -118,11 +116,9 @@ const Preview = () => {
                     <ProcenaPosledicaN />
                     <ProcenaEkonomijeWordN />
                     <ProcenaPoKritInfraWordN />
+                    {verovatnocaIndexValueN ? (<h3 style={{ fontSize: "16px", textDecoration: "underline", fontFamily: "sans-serif" }}>Ниво и прихваљивост ризика</h3>) : null}
                     <table style={{ fontFamily: "sans-serif", borderCollapse: "collapse", fontSize: "11px", width: "50%" }}>
                         <tbody>
-                            <tr>
-                            {verovatnocaIndexValueN ? ( <td style={{ fontSize: "14.5px", textDecoration: "underline",fontWeight:"600", paddingTop:"30px", paddingBottom:"10px" }}>Ниво и прихваљивост ризика</td>) : null}
-                            </tr>
                             <tr>
                                 {zivotIdRedValueN ? (<td style={{ width: "100%", height: "20px", borderLeft: "1px solid black", borderTop: "1px solid black" }}>Матрица 1. Ризик по живот и здравље људи</td>) : null}
                                 {zivotIdRedValueN ? (<td style={{ width: "100%", height: "20px", borderTop: "1px solid black", borderRight: "1px black solid" }}></td>) : null}

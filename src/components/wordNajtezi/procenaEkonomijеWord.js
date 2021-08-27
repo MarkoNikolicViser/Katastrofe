@@ -70,7 +70,7 @@ const ProcenaEkonomijeWord = () => {
     <>
       {ekonomijaInfoValue &&
         <div style={{ fontFamily: "sans-serif" }}>
-          <h3 style={{ fontSize: "14.5px", textDecoration: "underline" }}>Последице по економију/екологију</h3>
+          <p style={{ fontSize: "14.5px", textDecoration: "underline",fontWeight:"600" }}>Последице по економију/екологију</p>
           <p style={{ fontSize: "14.5px",textAlign:"justify" }}>Последице по економију/екологију добијају се упоређивањем штете са збиром вредности основних средства и обртног капитала у складу са наведеним критеријумима.</p>
           <table style={{ fontFamily: "sans-serif", borderCollapse: "collapse", fontSize: "11px", width: "100%" }}>
             <thead style={{ fontSize: "13px" }}>

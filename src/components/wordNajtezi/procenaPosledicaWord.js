@@ -73,7 +73,7 @@ const ProcenaPosledica = () => {
                 <div style={{ fontFamily: "sans-serif" }}>
                     <h3 style={{ fontSize: "16px", textDecoration: "underline" }}>Процена последице по штићене вредности</h3>
                     <p style={{ fontSize: "14.5px",textAlign:"justify" }}>Последице представљају ефекат штетног догађаја по живот и здравље људи, економију/екологију и критичну инфраструктуру, а манифестује се кроз величину губитка (штету).</p>
-                    <h3 style={{ fontSize: "14.5px", textDecoration: "underline" }}>Последицe по живот и здравље људи</h3>
+                    <p style={{ fontSize: "14.5px", textDecoration: "underline", fontWeight:"600"  }}>Последицe по живот и здравље људи</p>
                     <p style={{ fontSize: "14.5px" }}>Последице представљају ефекат штетног догађаја по живот и здравље људи, а изражавају се према критеријума датим у табели.</p>
                    <table style={{ fontFamily: "sans-serif", borderCollapse: "collapse", fontSize: "11px", width: "100%" }}>
                         <thead style={{ fontSize: "13px" }}>
