@@ -24,9 +24,10 @@ const[proracun,setProracun]=useState()
     const OpcijaVerovatnoceRef5 = useRef([])
 
     const Proracun=()=>{
-        const rez=verKolonaValue+(zivotIdRedValue-1)*5
+        const rez=verKolonaValue+((zivotIdRedValue-1)*5)
         setProracun(rez)
     }
+
 useEffect(() => {
     Proracun()
 }, [proracun]);

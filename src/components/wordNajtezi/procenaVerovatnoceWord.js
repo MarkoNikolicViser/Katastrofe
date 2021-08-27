@@ -149,11 +149,11 @@ const ProcenaVerovatnoceWord = () => {
                                     {divSlika.cetvrti && <Slika />}
                                 </td>
                             </tr>
-                            <tr ref={el => SencenjeSlikeRef.current[5] = el} style={{ textAlign: "center" }}>
+                            <tr style={{ textAlign: "center" }}>
                                 {tabela.peti.map((m, index) => (
                                     <td id={m} ref={el => OpcijaVerovatnoceRef5.current[index] = el} key={index} style={{ border: "1px solid black", height:"20px"}}>{m}</td>
                                 ))}
-                                <td style={{ border: "1px solid black" }}>
+                                <td ref={el => SencenjeSlikeRef.current[5] = el} style={{ border: "1px solid black" }}>
                                     {divSlika.peti && <Slika />}
                                 </td>
                             </tr>
