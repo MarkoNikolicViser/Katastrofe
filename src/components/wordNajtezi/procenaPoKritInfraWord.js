@@ -119,9 +119,9 @@ const ProcenaPoKritInfraWord = () => {
                             </tr>
                             <tr style={{ textAlign: "center" }}>
                                 {tabela.peti.map((m, index) => (
-                                    <td ref={el => SencenjeSlikeRef.current[5] = el} id={m}  ref={el => VrednostPoslediceRef5.current[index] = el} key={index} style={{ border: "1px solid black", height:"20px"  }}>{m}</td>
+                                    <td ref={el => VrednostPoslediceRef5.current[index] = el} key={index} style={{ border: "1px solid black", height:"20px"  }}>{m}</td>
                                 ))}
-                                <td style={{ border: "1px solid black"}}>
+                                <td ref={el => SencenjeSlikeRef.current[5] = el} style={{ border: "1px solid black"}}>
                                 {divSlika.peti&&<Slika/>}
                                 </td>
                             </tr>

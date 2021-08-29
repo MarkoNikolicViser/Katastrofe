@@ -7,8 +7,8 @@ const MatricaEkonimijaWord = () => {
 
 
 
-    const { verKolonaN, ekonomijaIdRedN } = useContext(TContext)
-    const [verKolonaValue, setVerKolonaValue] = verKolonaN
+    const { verovatnocaIndexN, ekonomijaIdRedN } = useContext(TContext)
+    let [verovatnocaIndexValue, setVerovatnocaIndexValue] = verovatnocaIndexN
     const [ekonomijaIdRedValue, setEkonomijaIdRedValue] = ekonomijaIdRedN
     const [proracun, setProracun] = useState()
 
@@ -29,7 +29,7 @@ const MatricaEkonimijaWord = () => {
     const OpcijaVerovatnoceRef5 = useRef([])
 
     const Proracun = () => {
-        const rez = verKolonaValue + (ekonomijaIdRedValue - 1) * 5
+        const rez = ++verovatnocaIndexValue + (ekonomijaIdRedValue - 1) * 5
         setProracun(rez)
     }
     useEffect(() => {

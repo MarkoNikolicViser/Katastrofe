@@ -5,13 +5,13 @@ import { TContext } from '../context';
 
 
 const Legenda = () => {
-    const { verKolonaN, ekonomijaIdRedN } = useContext(TContext)
-    const [verKolonaValue, setVerKolonaValueN] = verKolonaN
+    const { verovatnocaIndexN, ekonomijaIdRedN } = useContext(TContext)
+    let [verovatnocaIndexValue, setVerovatnocaIndexValue] = verovatnocaIndexN
     const [ekonomijaIdRedValue, setekonomijaIdRedValue] = ekonomijaIdRedN
     const [proracun, setProracun] = useState()
 
     const Proracun = () => {
-        const rez = verKolonaValue + (ekonomijaIdRedValue - 1) * 5
+        const rez = ++verovatnocaIndexValue + (ekonomijaIdRedValue - 1) * 5
         setProracun(rez)
     }
     useEffect(() => {

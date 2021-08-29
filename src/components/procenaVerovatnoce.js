@@ -16,7 +16,7 @@ const Procenaverovatnoce = () => {
     const VrednostVerovatnoceRef = useRef([])
 
     const [verovatnocaNiz, setVerovatnocaNiz] = useState(["< 1 %", "1 - 5 %", "6 - 50 %", "51 - 98 %", "> 98 %"])
-    const [ucestanostNiz, setUncestanostNiz] = useState(["1 догађај у 100 година и ређе", "1 догађај у 20 до 100 година ", "1 догађај у 2 до 20 година", "1 догађај у 1 до 2 године", "1 догађај годишње и чешће"])
+    const [ucestanostNiz, setUncestanostNiz] = useState(["1 догађај у 100 година и ређе", "1 догађај у 20 до 100 година", "1 догађај у 2 до 20 година", "1 догађај у 1 до 2 године", "1 догађај годишње и чешће"])
     const [strucnaProcena, setStrucnaProcena] = useState(["Занемарљива", "Мала", "Средња", "Велика", "Изразито велика"])
 
     const PromenaVerovatnoce = (e) => {

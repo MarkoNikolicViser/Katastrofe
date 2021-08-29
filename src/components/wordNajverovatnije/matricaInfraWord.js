@@ -7,8 +7,8 @@ const MatricaInfraWord = () => {
 
 
 
-    const { verKolona, infraIdRed, } = useContext(TContext)
-    const [verKolonaValue, setVerKolonaValue] = verKolona
+    const { verovatnocaIndex, infraIdRed, } = useContext(TContext)
+    let [verovatnocaIndexValue, setVerovatnocaIndexValue] = verovatnocaIndex
     const [infraIdRedValue, setInfraIdRedValue] = infraIdRed;
     const [proracun, setProracun] = useState()
 
@@ -29,7 +29,7 @@ const MatricaInfraWord = () => {
     const OpcijaVerovatnoceRef5 = useRef([])
 
     const Proracun = () => {
-        const rez = verKolonaValue + (infraIdRedValue - 1) * 5
+        const rez = ++verovatnocaIndexValue + (infraIdRedValue - 1) * 5
         setProracun(rez)
     }
     useEffect(() => {

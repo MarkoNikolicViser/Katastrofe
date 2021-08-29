@@ -4,8 +4,8 @@ import { TContext } from '../context';
 
 
 const ZbirnaTablicaWord = () => {
-    const { verKolonaN, ekonomijaIdRedN, infraIdRedN, zivotIdRedN } = useContext(TContext)
-    const [verKolonaValue, setVerKolonaValue] = verKolonaN
+    const { verovatnocaIndexN, ekonomijaIdRedN, infraIdRedN, zivotIdRedN } = useContext(TContext)
+    let [verovatnocaIndexValue, setVerovatnocaIndexValue] = verovatnocaIndexN
     const [ekonomijaIdRedValue, setEkonomijaIdRedValue] = ekonomijaIdRedN
     const [infraIdRedValue, setInfraIdRedValue] = infraIdRedN
     const [zivotIdRedValue, setZivotIdRedValue] = zivotIdRedN
@@ -15,7 +15,7 @@ const ZbirnaTablicaWord = () => {
     const Proracun = () => {
         let zbirnaVrednost = (ekonomijaIdRedValue + infraIdRedValue + zivotIdRedValue) / 3
         zbirnaVrednost=Math.round(zbirnaVrednost)
-        const rez = verKolonaValue + (zbirnaVrednost - 1) * 5
+        const rez = ++verovatnocaIndexValue + (zbirnaVrednost - 1) * 5
         setProracun(rez)
     }
     useEffect(() => {

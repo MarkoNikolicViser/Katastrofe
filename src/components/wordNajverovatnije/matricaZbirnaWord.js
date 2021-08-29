@@ -7,8 +7,8 @@ const MatricaZbirnaWord = () => {
 
 
 
-    const { verKolona, ekonomijaIdRed, infraIdRed, zivotIdRed } = useContext(TContext)
-    const [verKolonaValue, setVerKolonaValue] = verKolona
+    const { verovatnocaIndex, ekonomijaIdRed, infraIdRed, zivotIdRed } = useContext(TContext)
+    let [verovatnocaIndexValue, setVerovatnocaIndexValue] = verovatnocaIndex
     const [ekonomijaIdRedValue, setEkonomijaIdRedValue] = ekonomijaIdRed
     const [infraIdRedValue, setInfraIdRedValue] = infraIdRed;
     const [zivotIdRedValue, setZivotIdRedValue] = zivotIdRed
@@ -46,7 +46,7 @@ const MatricaZbirnaWord = () => {
 
         let zbirnaVrednost = (ekonomijaIdRedValue + infraIdRedValue + zivotIdRedValue) / deljenaVrednost
         zbirnaVrednost = Math.round(zbirnaVrednost)
-        const rez = verKolonaValue + (zbirnaVrednost - 1) * 5
+        const rez = ++verovatnocaIndexValue + (zbirnaVrednost - 1) * 5
         setProracun(rez)
     }
     useEffect(() => {

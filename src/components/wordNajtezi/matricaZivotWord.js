@@ -4,8 +4,8 @@ import { TContext } from '../context';
 
 const Matrica = () => {
 
-const{verKolonaN,zivotIdRedN}=useContext(TContext)
-const[verKolonaValue,setVerKolonaValue]=verKolonaN
+const{verovatnocaIndexN,zivotIdRedN}=useContext(TContext)
+let [verovatnocaIndexValue, setVerovatnocaIndexValue] = verovatnocaIndexN
 const[zivotIdRedValue,setZivotIdRedValue]=zivotIdRedN
 const[proracun,setProracun]=useState()
 
@@ -24,7 +24,7 @@ const[proracun,setProracun]=useState()
     const OpcijaVerovatnoceRef5 = useRef([])
 
     const Proracun=()=>{
-        const rez=verKolonaValue+(zivotIdRedValue-1)*5
+        const rez=++verovatnocaIndexValue+(zivotIdRedValue-1)*5
         setProracun(rez)
     }
 useEffect(() => {

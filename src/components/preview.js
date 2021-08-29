@@ -148,7 +148,7 @@ const Preview = () => {
                                     <td style={{ borderLeft: "1px solid black", borderBottom: "1px solid black", verticalAlign: "top" }}><MatricaInfraN /></td>
                                     <td style={{ borderRight: "1px solid black", borderBottom: "1px solid black", verticalAlign: "top" }}><LegendaInfraN /></td>
                                 </>) : null}
-                                {verovatnocaIndexValueN ? (<><td style={{ borderLeft: "1px solid black", borderBottom: "1px solid black", verticalAlign: "top" }}><MatricaZbirna /></td>
+                                {verovatnocaIndexValueN ? (<><td style={{ borderLeft: "1px solid black", borderBottom: "1px solid black", verticalAlign: "top" }}><MatricaZbirnaN /></td>
                                     <td style={{ borderRight: "1px solid black", borderBottom: "1px solid black", verticalAlign: "top" }}><LegendaZbirnaN /></td></>) : null}
                             </tr>
                         </tbody>

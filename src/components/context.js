@@ -30,7 +30,6 @@ export const TProvider = (props) => {
     const [zivotInfo, setZivotInfo] = useState('')
     const [ekonomijaInfo, setEkonomijaInfo] = useState('')
     const [infroInfo, setInfroInfo] = useState('')
-    const [verKolona, setVerKolona] = useState('')
     const [zivotIdRed, setZivotIdRed] = useState(0)
     const [ekonomijaIdRed, setEkonomijaIdRed] = useState(0)
     const [infraIdRed, setInfraIdRed] = useState(0)
@@ -57,7 +56,6 @@ export const TProvider = (props) => {
     const [zivotInfoN, setZivotInfoN] = useState('')
     const [ekonomijaInfoN, setEkonomijaInfoN] = useState('')
     const [infroInfoN, setInfroInfoN] = useState('')
-    const [verKolonaN, setVerKolonaN] = useState('')
     const [zivotIdRedN, setZivotIdRedN] = useState(0)
     const [ekonomijaIdRedN, setEkonomijaIdRedN] = useState(0)
     const [infraIdRedN, setInfraIdRedN] = useState(0)
@@ -85,7 +83,6 @@ export const TProvider = (props) => {
             zivotInfo: [zivotInfo, setZivotInfo],
             ekonomijaInfo: [ekonomijaInfo, setEkonomijaInfo],
             infroInfo: [infroInfo, setInfroInfo],
-            verKolona: [verKolona, setVerKolona],
             zivotIdRed: [zivotIdRed, setZivotIdRed],
             ekonomijaIdRed: [ekonomijaIdRed, setEkonomijaIdRed],
             infraIdRed: [infraIdRed, setInfraIdRed],
@@ -106,7 +103,6 @@ export const TProvider = (props) => {
             procVerovatnoceN: [procVerovatnoceN, setProcVerovatnoceN],
             odabranaVerovatnocaN: [odabranaVerovatnocaN, setOdabranaVerovatnocaN],
             odabranaVrednostVerN: [odabranaVrednostVerN, setOdabranaVrednostVerN],
-            verKolonaN: [verKolonaN, setVerKolonaN],
             unosStetaN: [unosStetaN, setUnosStetaN],
             unosStetaInfraN:[unosStetaInfraN,setUnosStetaInfraN],
             unosEkonomijaN: [unosEkonomijaN, setUnosEkonomijaN],

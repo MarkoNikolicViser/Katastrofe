@@ -5,13 +5,13 @@ import { TContext } from '../context';
 
 
 const Legenda = () => {
-    const { verKolonaN, infraIdRedN } = useContext(TContext)
-    const [verKolonaValue, setVerKolonaValue] = verKolonaN
+    const { verovatnocaIndexN, infraIdRedN } = useContext(TContext)
+    let [verovatnocaIndexValue, setVerovatnocaIndexValue] = verovatnocaIndexN
     const [infraIdRedValue, setInfraIdRedValue] = infraIdRedN
     const [proracun, setProracun] = useState()
 
     const Proracun = () => {
-        const rez = verKolonaValue + (infraIdRedValue - 1) * 5
+        const rez = ++verovatnocaIndexValue + (infraIdRedValue - 1) * 5
         setProracun(rez)
     }
     useEffect(() => {

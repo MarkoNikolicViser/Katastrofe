@@ -4,15 +4,14 @@ import Slika from '../Slika'
 
 const ProcenaVerovatnoceWord = () => {
 
-    const { procVerovatnoce, odabranaVerovatnoca, odabranaVrednostVer, verKolona, opasnost,opasnostTabela } = useContext(TContext)
+    const { procVerovatnoce, odabranaVerovatnoca, odabranaVrednostVer, verovatnocaIndex, opasnost,opasnostTabela } = useContext(TContext)
     const [procVerovatnoceValue, setProcVerovatnoceValue] = useState(procVerovatnoce);
     const [odabranaVerovatnocaValue, setodabranaVerovatnocaValue] = odabranaVerovatnoca
     const [odabranaVrednostVerValue, setOdabranaVrednostVerValue] = odabranaVrednostVer
     const [opasnostValue, setOpasnostValue] = opasnost;
     const [opasnostTabelaValue,setOpasnostTabelaValue]=opasnostTabela
 
-    const [verKolonaValue, setVerKolonaValue] = verKolona
-
+    let [verovatnocaIndexValue, setVerovatnocaIndexValue] = verovatnocaIndex
     const VrednostVerovatnoceRef = useRef([])
     const OpcijaVerovatnoceRef1 = useRef([])
     const OpcijaVerovatnoceRef2 = useRef([])
@@ -47,13 +46,12 @@ const ProcenaVerovatnoceWord = () => {
 
         }
         OpcijaVerovatnoceRef1.current.map((m, index) => {
-            if (m.id == odabranaVrednostVerValue) {
+           if (m.id == odabranaVrednostVerValue) {
                 OpcijaVerovatnoceRef1.current[index].style.backgroundColor = '#d3d3d3'
                 OpcijaVerovatnoceRef1.current[0].style.backgroundColor = '#d3d3d3'
                 setdivSlika({ prvi: true, drugi: false, treci: false, cetvrti: false, peti: false })
                 SencenjeSlikeRef.current[1].style.backgroundColor = "#d3d3d3";
-                setVerKolonaValue(1)
-            }
+           }
         })
         OpcijaVerovatnoceRef2.current.map((m, index) => {
             if (m.id == odabranaVrednostVerValue) {
@@ -61,7 +59,6 @@ const ProcenaVerovatnoceWord = () => {
                 OpcijaVerovatnoceRef2.current[0].style.backgroundColor = '#d3d3d3'
                 setdivSlika({ prvi: false, drugi: true, treci: false, cetvrti: false, peti: false })
                 SencenjeSlikeRef.current[2].style.backgroundColor = "#d3d3d3";
-                setVerKolonaValue(2)
             }
         })
         OpcijaVerovatnoceRef3.current.map((m, index) => {
@@ -70,7 +67,6 @@ const ProcenaVerovatnoceWord = () => {
                 OpcijaVerovatnoceRef3.current[0].style.backgroundColor = '#d3d3d3'
                 setdivSlika({ prvi: false, drugi: false, treci: true, cetvrti: false, peti: false })
                 SencenjeSlikeRef.current[3].style.backgroundColor = "#d3d3d3";
-                setVerKolonaValue(3)
             }
         })
         OpcijaVerovatnoceRef4.current.map((m, index) => {
@@ -79,7 +75,6 @@ const ProcenaVerovatnoceWord = () => {
                 OpcijaVerovatnoceRef4.current[0].style.backgroundColor = '#d3d3d3'
                 setdivSlika({ prvi: false, drugi: false, treci: false, cetvrti: true, peti: false })
                 SencenjeSlikeRef.current[4].style.backgroundColor = "#d3d3d3";
-                setVerKolonaValue(4)
             }
         })
         OpcijaVerovatnoceRef5.current.map((m, index) => {
@@ -88,7 +83,6 @@ const ProcenaVerovatnoceWord = () => {
                 OpcijaVerovatnoceRef5.current[0].style.backgroundColor = '#d3d3d3'
                 setdivSlika({ prvi: false, drugi: false, treci: false, cetvrti: false, peti: true })
                 SencenjeSlikeRef.current[5].style.backgroundColor = "#d3d3d3";
-                setVerKolonaValue(5)
             }
         })
     }, [procVerovatnoceValue, odabranaVrednostVerValue]);
