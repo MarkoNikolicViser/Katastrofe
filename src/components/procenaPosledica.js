@@ -63,6 +63,7 @@ setProcPosledicaValue([{zivot:zivot,ekonomiju:ekonomiju,infra:true}])
 }
 
 useEffect(() => {
+    if(!procPosledicaValue[0].zivot){
     if(zivotInfoValue<5&&zivotInfoValue>0){
         VrednostVerovatnoceRef.current[0].style.backgroundColor="gray";
         VrednostVerovatnoceRef.current[1].style.backgroundColor="white";
@@ -112,10 +113,12 @@ useEffect(() => {
                             VrednostVerovatnoceRef.current[3].style.backgroundColor="white";
                             VrednostVerovatnoceRef.current[4].style.backgroundColor="white";
                         }
+                    }
 }, [zivotInfoValue]);
 
 
 useEffect(() => {
+    if(!procPosledicaValue[0].ekonomiju){
     if(unosEkonomijaValue==''&&unosStetaValue=='')
     {
         VrednostVerovatnoceRef2.current[0].style.backgroundColor="white";
@@ -172,9 +175,11 @@ useEffect(() => {
                         VrednostVerovatnoceRef2.current[3].style.backgroundColor="white";
                         VrednostVerovatnoceRef2.current[4].style.backgroundColor="white";
                     }
+                }
 }, [ekonomijaInfoValue,unosEkonomijaValue,unosStetaValue]);
 
 useEffect(() => {
+    if(!procPosledicaValue[0].infra){
     if(unosProcInfraValue==''&&unosStetaInfraValue=='')
     {
         VrednostVerovatnoceRef3.current[0].style.backgroundColor="white";
@@ -231,20 +236,21 @@ useEffect(() => {
                     VrednostVerovatnoceRef3.current[3].style.backgroundColor="white";
                     VrednostVerovatnoceRef3.current[4].style.backgroundColor="white";
                 }
+            }
 }, [infroInfoValue,unosProcInfraValue,unosStetaInfraValue]);
 
 useEffect(() => {
-if(procPosledicaValue[0].zivot===true)
+if(!procPosledicaValue[0].zivot)
 ZivotRef.current.style.backgroundColor="gray"
 else{
     ZivotRef.current.style.backgroundColor="white"
 }
-if(procPosledicaValue[0].ekonomiju===true)
+if(!procPosledicaValue[0].ekonomiju)
 EkonomijaRef.current.style.backgroundColor="gray"
 else{
     EkonomijaRef.current.style.backgroundColor="white"
 }
-if(procPosledicaValue[0].infra===true)
+if(!procPosledicaValue[0].infra)
 InfraRef.current.style.backgroundColor="gray"
 else{
     InfraRef.current.style.backgroundColor="white"
@@ -262,7 +268,7 @@ else{
             </div>
             <div className="posledice-nizovi">
     {/* ///////////////////////////////////////////////////////////// */}
-           {procPosledicaValue[0].zivot&&
+           {!procPosledicaValue[0].zivot&&
             <div className="procene-niz">
                 <label htmlFor="zdravlje">Унети бр људи</label>
                 <div className="inputi-posledice">
@@ -280,7 +286,7 @@ else{
             </div>
             }
      {/* ///////////////////////////////////////////////////////////// */}
-                {procPosledicaValue[0].ekonomiju&&
+                {!procPosledicaValue[0].ekonomiju&&
             <div className="procene-niz"> 
             <label htmlFor="ekonomija">Унети проценат или износ штете</label>
             <div className="inputi-posledice">
@@ -301,7 +307,7 @@ else{
             }
       {/* ///////////////////////////////////////////////////////////// */}
 
-              {procPosledicaValue[0].infra&&  
+              {!procPosledicaValue[0].infra&&  
             <div className="procene-niz"> 
             <label htmlFor="infro">Унети проценат или износ штете</label>
             <div className="inputi-posledice">
