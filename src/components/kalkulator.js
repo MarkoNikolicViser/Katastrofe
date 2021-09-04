@@ -21,7 +21,7 @@ const UnosProcenta=(e)=>{
 }
 const Obracun=()=>{
     let proracun=((budzetValue/100)*procenatValue)
-    seProctBudzetValue(budzetValue-proracun)
+    seProctBudzetValue(proracun)
 }
 
 useEffect(() => {
